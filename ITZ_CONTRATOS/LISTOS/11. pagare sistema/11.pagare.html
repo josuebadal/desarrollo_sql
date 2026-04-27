@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PAGARE</title>
+
+<style type="text/css">
+
+  .contenedor {
+  height: 23cm;
+  width: 19cm;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  }
+
+ .borde_bajo {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+}
+
+ .borde_arriba {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #000;
+}
+
+.alinear_der {
+	text-align: right;
+}
+
+.alinear_izq {
+	text-align: left;
+}
+.alinear_just {
+	text-align: justify;
+}
+
+</style>
+
+
+</head>
+<body onload="seccion()">
+ <div class="contenedor">
+    <br>
+<!--  ENCABEZADO PRINCIPAL ********************************************************************************************* -->
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+
+          <th colspan="8" >  <div  ><font size="4">
+            REGISTRO NUM: 4933-439-032364/04-04344-1022<BR><br>PAGARE
+                                             </font>  </div> </th>
+        </tr>
+
+
+           <tr>
+           <td colspan="2"> <font size="3"><center>PRESTAMO</center></font></td>   
+           <td colspan="2"> <font size="3"><center>SOCIO</center></font></td>           
+           <td colspan="2"> <font size="3"><center>FECHA DE VENCIMIENTO</center></font></td>                   
+          <td colspan="2"> <font size="3"><center>IMPORTE</center></font></td>             
+          </tr>
+
+
+
+
+
+
+            <tr>
+           <td colspan="8" class="alinear_just"   ><br><font size="3">
+Por este pagar&eacute;, reconozco(cemos) y me obligo(amos) a pagar incondicionalmente, en la fecha de su vencimiento, en esta cuidad o en la
+ciudad de M&Eacute;RIDA, YUCAT&Aacute;N, a elecci&oacute;n del tenedor, a la orden de CAJA ITZAEZ, SOCIEDAD COOPERATIVA DE AHORRO Y PRESTAMO
+DE RESPONSABILIDAD LIMITADA DE CAPITAL VARIABLE, la cantidad de: $ <u>@@cantidad@@</u> (SON: <u>@@cantidad@@</u> 00/100 MONEDA
+NACIONAL)valor que he(mos) recibido en efectivo a mi (nuestra) entera satisfacci&oacute;n.
+Dicha cantidad devengar&aacute; un inter&eacute;s ordinario a una tasa del <u>@@tasa@@</u> % anual, que se causara en forma mensual, que se pagar&aacute; junto con el
+abono mensual a capital y los pagos deber&aacute;n realizarse conforme al siguiente plan de pagos:      
+          </font>
+          <br> <br> <br> <br> 
+          </td>           
+            </tr>
+
+           <amortizaciones|numero_pago,corte,abono_principal,anualidad,saldo_insoluto,ios,ivas,monto_total>
+
+
+        <tr>
+           <td colspan="8" class="alinear_just"   ><br><br> <br> <br> <br> <font size="3">
+De no pagarse en las fechas establecidas, se causar&aacute; un inter&eacute;s moratorio a una tasa del <u>@@tasa@@</u>  % anual sobre el importe de cada abono a
+capital mensual vencido y no pagado.
+De igual forma me(nos) obligo(amos) a pagar el impuesto al Valor Agregado (IVA) que se genere por los intereses ordinarios y moratorios.
+Todos los abonos a capital mensual, est&aacute;n sujetos a la condici&oacute;n de que, al no pagarse tres abonos a su vencimiento, ser&aacute;n exigibles todos
+los que sigan, d&aacute;ndose por vencido anticipadamente el plazo y podr&aacute; exigirse el total adeudado.
+Los intereses se calcular&aacute;n dividiendo la tasa de inter&eacute;s aplicable entre trescientos sesenta dias, multiplicando el resultado asi obtenido por el
+n&uacute;mero de dias efectivamente transcurridos por el saldo insoluto.
+
+          </font>
+          <br> <br> <br> <br> 
+          </td>  
+
+</tr>
+            <tr>
+           <td colspan="8" class="alinear_just"  ><br><font size="3"><center>
+M&Eacute;RIDA,YUCAT&Aacute;N a <u> @@dia@@</u> de <u> @@mes@@</u> de 20<u> @@anio@@</u> 
+         </center> </font>
+          </td>           
+            </tr>
+
+
+            <tr>
+           <td colspan="3" class="alinear_der"   ><br><font size="3">
+            NOMBRE Y FIRMA DEL DEUDOR
+          </font>
+          </td>           
+            </tr>
+
+
+          <tr>
+           <td><br><br><font size="3">
+            Nombre:
+          </font>
+          </td>           
+            </tr>
+
+            <tr>
+           <td><font size="3">
+            Domicilio:
+          </font>
+          </td>           
+            </tr>
+
+            <tr>
+           <td><font size="3">
+            C.P:
+          </font>
+          </td>           
+            </tr>
+
+
+            <tr>
+           <td><font size="3">
+            Telefono(s);
+          </font>
+          </td>           
+            </tr>
+          </table>
+<BR><BR>
+</body>
+</div>
+
+</html>

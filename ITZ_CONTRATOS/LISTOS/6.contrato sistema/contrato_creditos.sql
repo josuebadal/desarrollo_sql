@@ -1,0 +1,1324 @@
+INSERT INTO tablas (idtabla,idelemento,nombre,dato1,dato3,dato4,tipo,dato2)
+VALUES ('texto_html_contratos',
+'contrato_creditos',
+'Contrato De Creditos',
+'iconv %s -f ISO-8859-1 -t UTF-8 -o %s.html',
+'gnome-open %s.html; sleep 100',
+'rm -rf %s.*',0,
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>CONTRATO</title>
+<style type="text/css">
+  .contenedor {
+  height: 23cm;
+  width: 18cm;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  }
+
+ .borde_bajo {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+}
+
+ .borde_arriba {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #000;
+}
+
+.alinear_der {
+	text-align: right;
+}
+
+.alinear_izq {
+	text-align: left;
+}
+.alinear_just {
+	text-align: justify;
+}
+.borde_completo {
+  
+	border: 1px solid #000;
+}
+
+.colap {
+  border: 1px solid #000;
+ border-collapse: collapse;
+
+}
+</style>
+</head>
+<body onload="seccion()">
+ <div class="contenedor">
+    <br>
+<!--  ENCABEZADO PRINCIPAL ********************************************************************************************* -->
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+          <th > <div  ><font size="4">
+            CAJA ITZAEZ, SC DE AP DE RL DE CV<BR><br>
+                                             </font>  </div> </th>
+        </tr>
+           <tr>
+           <tH class="alinear_der"  > <font size="3">
+            <br>No de Registro: 4933-439-032364/04-04344-1022 </font></tH>           
+            </tr>
+
+            <tr>
+           <td class="alinear_just" ><font size="2">
+            <br>
+            CONTRATO DE APERTURA DE CR&Eacute;DITO SIMPLE QUE CELEBRAN POR UNA PARTE LA SOCIEDAD CAJA ACREDITANTE QUE SE INDICA
+EN LA CAR&Aacute;TULA ADJUNTA AL PRESENTE CONTRATO, A QUIEN EN LO SUCESIVO SE LE DENOMINARA LA "CAJA ACREDITANTE" Y
+DE LA OTRA PARTE, EL SOCIO QUE SE NOMBRA EN LA REFERIDA CAR&Aacute;TULA, A QUIEN PARA LOS EFECTOS DE ESTE CONTRATO SE
+LE DENOMINAR&Aacute; EL "SOCIO ACREDITADO" . CONTRATO QUE SUJETAN AL TENOR DE LAS SIGUIENTES:</font></td>           
+            </tr>
+
+            <tr>
+          <th > <font size="2">
+            DECLARACIONES</font>  </th>
+        </tr>
+
+            <tr>
+           <td class="alinear_just" > <font size="2">
+           PRIMERA.- Las contratantes se reconocen entre s&iacute; la capacidad para la celebraci&oacute;n de este contrato, reconoci&eacute;ndose mutuamente las personalidades con la
+que comparecen a la celebraci&oacute;n del mismo, declarando los que comparecen en representaci&oacute;n de alguno de los contratantes, bajo formal protesta de decir
+verdad que cuenta(n) con las facultades necesarias y suficientes para celebrar este contrato y para obligarla en todos sus t&eacute;rminos, que sus poderes y
+facultades no le(s) han sido revocadas, limitadas, ni restringidas en ninguna de sus partes, reconociendo la existencia y subsistencia legal de sus respectivos
+mandantes.</font></td>           
+            </tr>
+
+            <tr>
+           <td class="alinear_just" > <font size="2">
+           SEGUNDA.- El "SOCIO ACREDITADO" declara que la informaci&oacute;n que han proporcionado es verdadera y que no se encuentran sujetos a ning&uacute;n proceso
+o procedimiento civil, mercantil, penal, laboral, administrativo o fiscal, que de determinarse en su contra motivar&iacute;a un cambio importante adverso en su
+situaci&oacute;n financiera.</font></td>           
+            </tr>
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+           TERCERA.- Las partes contratantes declaran que este contrato consta de las siguientes partes: <br>
+          a) Caratula: Se refiere a la car&aacute;tula que contiene las especificaciones y caracter&iacute;sticas del CR&Eacute;DITO.<br>
+          b) Contrato: Se refiere al contenido de las declaraciones y cl&aacute;usulas del presente contrato.<br>
+          c) ANEXO A: Tabla de Amortizaciones.<br>
+          d) ANEXO B: Manifiesto para el Fondo de Administraci&oacute;n de Riesgos (INAES), aplicar&aacute; de acuerdo al inciso b) de la clausula D&eacute;cima Segunda de este
+          contrato.<br>
+          e) ANEXO C: Autorizaci&oacute;n para pagos Adelantados.<br>
+          f) ANEXO D: Disposiciones Legales.<br>
+          
+          
+          
+          </font></td>           
+            </tr>
+
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+En el entendido que el compareciente se obliga a estar y pasar a ambas partes, reconociendo que las mismas forman parte integrante de este contrato para
+todos los efectos legales correspondientes y sus t&eacute;rminos y condiciones se complementan entre s&iacute; para generar un solo documento.
+<br>
+Asimismo, las partes manifiestan que a la firma del presente contrato la "CAJA ACREDITANTE" entrega a el "SOCIO ACREDITADO" un ejemplar del
+presente documento, acompa&ntilde;ado de todos sus anexos.</font></td>           
+            </tr>
+
+            <tr>
+          <th > <font size="2">
+            DE LAS CLAUSULAS</font>  </th>
+        </tr>
+
+                    <tr>
+           <td class="alinear_just" > <font size="2">
+           PRIMERA.- OTORGAMIENTO DE CR&Eacute;DITO Y SU DISPOSICI&oacute;N.- La "CAJA ACREDITANTE" otorga a favor del "SOCIO ACREDITADO" un
+CR&Eacute;DITO bajo la forma de apertura de CR&Eacute;DITO simple por la cantidad de $_________(son: ___________________________00/100 M.N.) que se indica en la
+car&aacute;tula de este contrato en su apartado "Monto o l&iacute;nea del CR&Eacute;DITO" y la cual forma parte integrante del mismo; suma de dinero que se obliga a devolver en
+las condiciones pactadas en el presente documento. Dentro del CR&Eacute;DITO no quedan comprendidos los intereses ordinarios, moratorios, ni dem&aacute;s accesorios
+legales y gastos que deba cubrir el "SOCIO ACREDITADO" con motivo de este contrato.</font></td>           
+            </tr>
+                    <tr>
+           <td class="alinear_just" > <font size="2">
+El "SOCIO ACREDITADO" podr&aacute; disponer en una sola exhibici&oacute;n la cantidad del CR&Eacute;DITO se&ntilde;alado en la caratula de este contrato, conforme a cualquiera de
+las siguientes opciones que le instruya a la "CAJA ACREDITANTE":</font></td>           
+            </tr>
+
+                                <tr>
+           <td class="alinear_just" > <font size="2">
+a) Abono de la cantidad correspondiente al importe del CR&Eacute;DITO en una sola exhibici&oacute;n mediante una transferencia interna a cualquiera de las cuentas de
+ahorro que tiene contratado con la "CAJA ACREDITANTE"; y <br>
+b) Directamente en ventanilla en efectivo y/o transferencia interbancaria y/o cheque en la red de sucursales de la "CAJA ACREDITANTE".
+          </font></td>           
+            </tr>
+
+                                            <tr>
+           <td class="alinear_just" > <font size="2">
+En el entendido que, en este acto el "SOCIO ACREDITADO" le otorga a la "CAJA ACREDITANTE" con respecto a la cantidad recibida del CR&Eacute;DITO el
+recibo m&aacute;s amplio que en derecho proceda, en consecuencia, al momento de la disposici&oacute;n deber&aacute; suscribir el "SOCIO ACREDITADO" a favor de la
+"CAJA ACREDITANTE" un t&iacute;tulo de CR&Eacute;DITO de los denominados por la Ley como "PAGARE" que documenta el importe correspondiente al monto
+dispuesto del CR&Eacute;DITO, de forma individual o global. La Suscripci&oacute;n del pagar&eacute; y su entrega a la "CAJA ACREDITANTE" no se entender&aacute; como pago de la
+contraprestaci&oacute;n asumida ni de sus parcialidades en t&eacute;rminos de Ley.
+          </font></td>           
+            </tr>
+
+            <tr>
+           <td class="alinear_just" > <font size="2">
+            Para efectos administrativos, este contrato quedar&aacute; identificado con el n&uacute;mero de CR&Eacute;DITO que se indica en el ANEXO "A", Tabla de Amortizacion.
+          </font></td>           
+            </tr>
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+          El "SOCIO ACREDITADO" suscribe en este acto en favor de la "CAJA ACREDITANTE" un t&iacute;tulo de CR&Eacute;DITO de los denominados por la Ley como
+"PAGARE" que documenta el presente adeudo, de forma individual o global. La Suscripci&oacute;n del pagar&eacute; y su entrega a la "CAJA ACREDITANTE" no se
+entender&aacute; como pago de la contraprestaci&oacute;n asumida ni de sus parcialidades en t&eacute;rminos de Ley.
+          </font></td>           
+            </tr>
+
+            <tr>
+           <td class="alinear_just" > <font size="2">
+            El presente contrato junto con la certificaci&oacute;n del adeudo que haga el Contador general de la "CAJA ACREDITANTE", constituir&aacute;n t&iacute;tulo ejecutivo en
+            contra del "SOCIO ACREDITADO," pudiendo la "CAJA ACREDITANTE" ejercitar sus acciones de Ley correspondientes. Las partes acuerdan que la
+            "CAJA ACREDITANTE" tambi&eacute;n podr&aacute; presentar Juicio Ejecutivo Mercantil con el pagare que se firma, de manera aut&oacute;noma al contrato, lo anterior a fin
+            de reclamar el adeudo.
+          </font></td>           
+            </tr>
+<!-- PUNTO DE VISTA 1-->
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+         CASO DE EJECUCION DE GARANTIA. Las partes convienen en que la "CAJA ACREDITANTE" podr&aacute; pedir judicialmente el cumplimiento de las
+obligaciones a cargo del "SOCIO ACREDITADO" y podr&aacute; optar por cualquiera de los procedimiento establecidos por el C&oacute;digo de Procedimientos Civiles
+para el Distrito Federal o su correlativo de C&oacute;digo Procedimientos Civiles para los dem&aacute;s Estados de la Rep&uacute;blica Mexicana, as&iacute; como por cualquiera de los
+procedimientos establecidos por el C&oacute;digo de Comercio o por los procedimientos establecidos por la Ley de Instituciones de CR&Eacute;DITO, Ver ANEXO "D"
+Disposiciones legales.
+          </font></td>           
+            </tr>
+
+              <tr>
+           <td class="alinear_just" > <font size="2">
+            SEGUNDA.- DESTINO DEL CR&Eacute;DITO.- El "SOCIO ACREDITADO" se obliga a destinar el CR&Eacute;DITO que se le concede para: ________________________
+          </font></td>           
+            </tr>
+
+             <tr>
+           <td class="alinear_just" > <font size="2">
+            TERCERA - PAGO DEL CR&Eacute;DITO. - El "SOCIO ACREDITADO" se obliga a pagar el importe del CR&Eacute;DITO otorgado mediante el n&uacute;mero de pagos
+          semanales, quincenales o mensuales, vencidas, sucesivas y continuas, sin que puedan exceder de la vigencia del contrato, conforme a las opciones siguientes
+que elija:
+          </font></td>           
+            </tr>
+
+                                      <tr>
+           <td class="alinear_just" > <font size="2">
+a) Saldo insoluto.- El pago de principal se realizar&aacute; mediante el n&uacute;mero de amortizaciones consecutivas de capital, intereses ordinarios e impuesto al valor
+agregado que se generen respecto de los citados intereses y sobre el saldo insoluto del CR&Eacute;DITO. <br>
+b) Pagos fijos.- El CR&Eacute;DITO se amortizar&aacute; en un n&uacute;mero fijo de pagos nivelados, crecientes de capital y decrecientes de intereses conforme a una tasa de inter&eacute;s
+fija previamente establecida, en el entendido de que si el "SOCIO ACREDITADO" efect&uacute;a sus pagos en los t&eacute;rminos pactados, no generar&aacute; mayores
+intereses a favor de la "CAJA ACREDITANTE". En caso de que el "SOCIO ACREDITADO" incumpla con los pagos acordados para esta modalidad, se
+generar&aacute;n los intereses ordinarios, moratorios, gastos y comisiones establecidos en este contrato.
+          </font></td>           
+            </tr>
+
+                         <tr>
+           <td class="alinear_just" > <font size="2">
+La opci&oacute;n que elija el "SOCIO ACREDITADO" para su obligaci&oacute;n de pago del CR&Eacute;DITO y su periodicidad se har&aacute; constar en la car&aacute;tula adjunta a este
+contrato, en el apartado plazo del CR&Eacute;DITO.
+          </font></td>           
+            </tr>
+
+                                     <tr>
+           <td class="alinear_just" > <font size="2">
+El n&uacute;mero de pagos, el monto de cada uno y las fecha de pago se har&aacute;n constar en el pagar&eacute; y en la tabla de amortizaciones que se adjunta a este contrato
+como "Anexo A", debidamente firmado por las partes y que forma parte integrante del mismo, quedando una copia de &eacute;sta en poder de "el SOCIO
+ACREDITADO" al momento de celebrarse el contrato.
+          </font></td>           
+            </tr>
+
+           <tr>
+           <td class="alinear_just" > <font size="2">
+Las amortizaciones ser&aacute;n peri&oacute;dicas y sucesivas y tendr&aacute;n un componente de capital, otro de inter&eacute;s ordinario y un &uacute;ltimo componente de Impuesto al Valor
+Agregado (IVA).
+          </font></td>           
+            </tr>
+
+                       <tr>
+           <td class="alinear_just" > <font size="2">
+CUARTA.- TASAS DE INTERESES.- El "SOCIO ACREDITADO" de acuerdo a la modalidad que hubiese escogido para pagar el CR&Eacute;DITO que se le
+concede mediante el presente contrato, se obliga a pagar a la "CAJA ACREDITANTE", intereses conforme a lo siguiente:
+          </font></td>           
+            </tr>
+
+                                   <tr>
+           <td class="alinear_just" > <font size="2">
+a) Tasa Ordinaria:
+          </font></td>           
+            </tr>
+
+                                              <tr>
+           <td class="alinear_just" > <font size="2">
+1.- Sobre saldos insolutos.- El CR&Eacute;DITO causar&aacute; un inter&eacute;s ordinario sobre saldos insolutos diarios a raz&oacute;n de la tasa fija de inter&eacute;s anual establecida en la
+car&aacute;tula, pagadero y computados por per&iacute;odo de intereses vencidos que se pagar&aacute;n juntamente con el abono a capital conforme al pagar&eacute; y la tabla de
+amortizaciones a que se refiere la cl&aacute;usula tercera de este contrato, m&aacute;s el correspondiente Impuesto al Valor Agregado (IVA).
+Forma de c&aacute;lculo de los intereses para esta modalidad:
+          </font></td>           
+            </tr>
+
+            <tr>
+           <td class="alinear_just" > <font size="2">
+          FORMULA 1
+          </font></td>           
+            </tr>
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+          Donde: <br>
+          SI = SALDO INSOLUTO <br>
+          S = SALDO DEL CR&Eacute;DITO. <br>
+          N = N&uacute;MERO DE MESES. <br>
+          IP = INTER&eacute;S A PAGAR.<br>
+          </font></td>           
+            </tr>
+
+                                    <tr>
+           <td class="alinear_just" > <font size="2">
+2.-Pagos fijos.- Los intereses ordinarios quedar&aacute;n incluidos en los pagos peri&oacute;dicos que deber&aacute; hacer el "SOCIO ACREDITADO"; ser&aacute;n pagos nivelados,
+crecientes de capital y decrecientes de inter&eacute;s sobre saldos insolutos conforme a la tasa fija que se menciona en la car&aacute;tula y conforme a la relaci&oacute;n de pagos
+que inserta en el pagar&eacute; y en la tabla de amortizaci&oacute;n a que se refiere la cl&aacute;usula tercera. Los Intereses ser&aacute;n pagados por periodos de pago vencidos en las
+mismas fechas en que se efect&uacute;en los pagos de capital. <br>
+Forma de c&aacute;lculo de los intereses para esta modalidad:
+          </font></td>           
+            </tr>
+
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+          FORMULA 2
+          </font></td>           
+            </tr>
+<!--- PUNTO DE VISTA 2-->
+                                    <tr>
+           <td class="alinear_just" > <font size="2">
+Donde: <br>
+C = PAGO FIJO. <br>
+VA = MONTO. <br>
+n = N&uacute;MERO DE MESES <br>
+i = TASA DE INTER&eacute;S. <br>
+El pago de intereses no podr&aacute; ser exigido por adelantado, sino &uacute;nicamente por per&iacute;odos vencidos. <br>
+          </font></td>           
+            </tr>
+
+
+                                    <tr>
+           <td class="alinear_just" > <font size="2">
+          Para los efectos del contrato se entiende por:
+          </font></td>           
+            </tr>
+
+
+          <tr>
+           <td class="alinear_just" > <font size="2">
+            1. Tasa fija: a la Tasa Ordinaria anualizada indicada en la car&aacute;tula adjunta a este contrato. <br>
+            2. D&iacute;a h&aacute;bil.- Los d&iacute;as en que las sucursales u oficina de la "CAJA ACREDITANTE" est&eacute;n abiertas a sus socios para la realizaci&oacute;n de operaciones.<br>
+            3. Fecha de Pago de intereses: El &uacute;ltimo d&iacute;a de cada per&iacute;odo de intereses.<br>
+            4. Per&iacute;odo de intereses: al tiempo que transcurra entre dos fechas de pago consecutivas o, en su caso, entre la fecha de disposici&oacute;n del CR&Eacute;DITO y la primera
+            fecha de pago, con base en el cual se calcular&aacute;n los intereses que cause la suma principal insoluta del CR&Eacute;DITO.<br>
+          </font></td>           
+            </tr>
+
+
+                     <tr>
+           <td class="alinear_just" > <font size="2">
+ Los intereses se calcular&aacute;n dividiendo la tasa de inter&eacute;s aplicable entre trescientos sesenta d&iacute;as y multiplicado el resultado as&iacute; obtenido por el n&uacute;mero de d&iacute;as
+efectivamente transcurridos por el saldo insoluto y se pagar&aacute;n juntamente con el pago a capital. <br>
+          </font></td>           
+            </tr>
+
+             <tr>
+           <td class="alinear_just" > <font size="2">
+b) Tasa Moratoria.- En caso de que el "SOCIO ACREDITADO" deje de pagar puntualmente cualquier pago al capital insoluto conforme a este contrato, la
+cantidad no pagada causar&aacute; intereses moratorios a partir de la fecha en que debi&oacute; ser cubierta hasta la fecha de su pago total a raz&oacute;n de la tasa de inter&eacute;s anual establecida en la car&aacute;tula adjunto a este contrato, m&aacute;s el correspondiente Impuesto al Valor Agregado (IVA).   
+          </font></td>           
+            </tr>
+
+
+
+                         <tr>
+           <td class="alinear_just" > <font size="2">
+QUINTA.- PLAZO Y VIGENCIA DEL CREDITO. - El inicio del CR&Eacute;DITO ser&aacute; a partir de la fecha que se establezca en la Tabla de amortizaci&oacute;n bajo el
+rubro "Inicio de Vigencia", estando vigente por el plazo que se establezca en la Car&aacute;tula bajo el rubro "Plazo del CR&Eacute;DITO". Si por cualquier raz&oacute;n el "SOCIO
+ACREDITADO" pagara el CR&Eacute;DITO antes del vencimiento del plazo convenido, &eacute;ste &uacute;ltimo estar&aacute; obligado a pagar &iacute;ntegramente el saldo insoluto vigente del
+Monto del CR&Eacute;DITO. El plazo de vigencia pactado y que se precisa en la Car&aacute;tula no ser&aacute; prorrogable bajo circunstancia alguna, sin embargo, el presente
+contrato permanecer&aacute; vigente durante todo el tiempo que el "SOCIO ACREDITADO" presente saldo pendiente de pago.   
+          </font></td>           
+            </tr>
+
+
+                                 <tr>
+           <td class="alinear_just" > <font size="2">
+El "SOCIO ACREDITADO" se obliga y compromete a devolver el CR&Eacute;DITO dispuesto dentro del plazo indicado en la car&aacute;tula adjunta a este contrato en su
+apartado "Plazo del CR&Eacute;DITO".
+          </font></td>           
+            </tr>
+
+
+                                             <tr>
+           <td class="alinear_just" > <font size="2">
+SEXTA.- LUGAR DE PAGO DEL CR&Eacute;DITO. - Los pagos que el "SOCIO ACREDITADO" efect&uacute;e, tanto del capital como de los intereses convenidos en
+este contrato deber&aacute; realizarlos en las oficinas de la "CAJA ACREDITANTE", en d&iacute;as y horas h&aacute;biles, sin necesidad de previo cobro. En el supuesto de que
+la fecha en que se deba realizar alg&uacute;n pago de capital, intereses o por cualquier otro concepto de conformidad con la tabla de amortizaciones a que se refiere
+la cl&aacute;usula tercera de este contrato, resultare en un d&iacute;a inh&aacute;bil, el pago deber&aacute; de efectuarse el d&iacute;a h&aacute;bil inmediato posterior, sin que proceda el cobro de
+comisiones o intereses moratorios a cargo del "SOCIO ACREDITADO".
+          </font></td>           
+            </tr>
+
+
+             <tr>
+           <td class="alinear_just" > <font size="2">
+S&eacute;PTIMA.- FORMA DE APLICACI&oacute;N DE LOS PAGOS.- El pago que efect&uacute;e el "SOCIO ACREDITADO" se aplicar&aacute; en primer lugar al pago de los
+impuestos que determinen las autoridades fiscales sobre el monto del pago previsto en este contrato, al pago total de los intereses ordinarios devengados
+durante el per&iacute;odo correspondiente, al impuesto al valor agregado que se genere por los intereses conforme a lo dispuesto en la cl&aacute;usula cuarta y lo dem&aacute;s a
+capital.
+          </font></td>           
+            </tr>
+<!--- PUNTO DE VISTA 3-->
+
+                         <tr>
+           <td class="alinear_just" > <font size="2">
+Para el caso de que el "SOCIO ACREDITADO" haya incurrido en mora en el cumplimiento de su obligaci&oacute;n de pago conforme a las cl&aacute;usulas tercera y
+cuarta de este contrato, el o los pagos que reciba la "CAJA ACREDITANTE" se aplicar&aacute;n a cubrir el adeudo vencido en el siguiente orden:
+          </font></td>           
+            </tr>
+
+
+                      <tr>
+           <td class="alinear_just" > <font size="2">
+            a) Al pago de los impuestos que determinen las autoridades sobre el monto del pago previstos en este Contrato. <br>
+            b) Comisiones, en su caso;<br>
+            c) Impuesto al Valor Agregado que se genere por las citadas comisiones;<br>
+            d) Inter&eacute;s moratorios;<br>
+            e) Intereses ordinarios,<br>
+            f) Impuesto al Valor Agregado que se genere por los citados intereses;<br>
+            g) El resto del pago, a la amortizaci&oacute;n del capital.<br>
+          </font></td>           
+            </tr>
+
+                                    <tr>
+           <td class="alinear_just" > <font size="2">
+En caso de juicio y una vez que el "SOCIO ACREDITADO" haya sido condenado por la autoridad judicial correspondiente al pago de gastos y costas
+judiciales, determinado por el Juez de conocimiento, se aplicar&aacute; en primer t&eacute;rmino a los gastos y costas judiciales del mismo y el resto, conforme al orden
+establecido en el C&oacute;digo de Comercio, de acuerdo con los preceptos legales que se se&ntilde;alan en el anexo "D".
+          </font></td>           
+            </tr>
+
+
+          <tr>
+           <td class="alinear_just" > <font size="2">
+OCTAVA. - PAGOS ANTICIPADOS. - Se entender&aacute; por Pago Anticipado: al pago parcial o total del saldo insoluto de un CR&Eacute;DITO, antes de la fecha en que
+sea exigible.
+          </font></td>           
+            </tr>
+
+             <tr>
+           <td class="alinear_just" > <font size="2">
+El "SOCIO ACREDITADO" podr&aacute; efectuar en cualquier tiempo, pagos anticipados en reembolso del CR&Eacute;DITO, siempre que cumpla con las condiciones
+siguientes:
+          </font></td>           
+            </tr>
+
+
+                         <tr>
+           <td class="alinear_just" > <font size="2">
+a) Se encuentre al corriente en los pagos exigibles de conformidad con la Tabla de Amortizaci&oacute;n que forma parte de este contrato, y, <br>
+b) El importe del Pago Anticipado Sea por una cantidad igual o mayor al pago que debe de realizarse en el periodo correspondiente.
+          </font></td>           
+            </tr>
+
+
+                         <tr>
+           <td class="alinear_just" > <font size="2">
+Los pagos anticipados que cumplan con las condiciones se aplicar&aacute;n al saldo insoluto del CR&Eacute;DITO en base a las opciones que se le otorgaran al "SOCIO
+ACREDITADO" al momento de su pago:
+          </font></td>           
+            </tr>
+
+            <tr>
+           <td class="alinear_just" > <font size="2">
+a) Reducir el monto de los pagos peri&oacute;dicos pendientes. - El pago anticipado se aplicar&aacute; al saldo insoluto del CR&Eacute;DITO, realiz&aacute;ndose sobre el remanente un
+nuevo c&aacute;lculo para determinar el monto de los siguientes abonos que como consecuencia del pago anticipado disminuye, o; <br>
+b) Disminuir el n&uacute;mero de pagos a realizar. - El pago anticipado se aplicar&aacute; al saldo insoluto del CR&Eacute;DITO cubri&eacute;ndose los &uacute;ltimos abonos por vencer, en orden
+inverso a su pago y por consiguiente el plazo del CR&Eacute;DITO reducir&aacute; y continuar&aacute; pagando el mismo importe de pago a capital mensual.
+          </font></td>           
+            </tr>
+
+
+
+
+                                     <tr>
+           <td class="alinear_just" > <font size="2">
+La "CAJA ACREDITANTE" en caso de aplicar pagos anticipados emitir&aacute; el comprobante de pago, una nueva Tabla de Amortizaci&oacute;n, con relaci&oacute;n al nuevo
+saldo insoluto del CR&Eacute;DITO, la cual estar&aacute; a disposici&oacute;n del "SOCIO ACREDITADO" en el domicilio de la "CAJA ACREDITANTE", ser&aacute; responsabilidad del
+"SOCIO ACREDITADO" obtener la Tabla de Amortizaci&oacute;n vigente.
+          </font></td>           
+            </tr>
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+En caso de no cumplir con las condiciones antes mencionadas la "CAJA ACREDITANTE" se reservar&aacute; el derecho de aceptar el pago anticipado. <br>
+Los Pagos Anticipados no eximen al "SOCIO ACREDITADO" de efectuar sus pagos en las fechas que indica su Tabla de Amortizaci&oacute;n.          
+</font></td>           
+            </tr>
+
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+NOVENA. - PAGOS ADELANTADOS. - El "SOCIO ACREDITADO" podr&aacute; efectuar pagos que a&uacute;n no sean exigibles, con el fin de que la "CAJA
+ACREDITANTE" los aplique para cubrir pagos peri&oacute;dicos inmediatos siguientes. Cuando el importe del pago sea superior al que deba cubrirse en un
+periodo, la "CAJA ACREDITANTE" recabar&aacute; del "SOCIO ACREDITADO" un escrito se&ntilde;alado como "Anexo C" y que formar&aacute; en su caso parte integrante
+de este contrato con firma aut&oacute;grafa que incluir&aacute; la siguiente leyenda: "EL SOCIO ACREDITADO" autoriza que los recursos que se entregan en exceso a
+sus obligaciones exigibles, no se apliquen para el Pago Anticipado del principal, sino que se utilicen para cubrir por adelantado los pagos peri&oacute;dicos del
+CR&Eacute;DITO inmediatos siguientes". Cuando la "CAJA ACREDITANTE" reciba el pago a&uacute;n no exigible de periodo o importe inferiores, no ser&aacute; necesario
+recabar el escrito mencionado anteriormente.         
+</font></td>           
+            </tr>
+
+
+
+                                    <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA.- FORMA DE PAGOS: El "SOCIO ACREDITADO" seg&uacute;n el medio de pago que emplee, &eacute;ste se acreditar&aacute; en la forma siguiente:         
+</font></td>           
+            </tr>
+
+          <tr>
+           <td class="alinear_just" > <font size="2">
+a) En efectivo, el mismo d&iacute;a; <br>
+b) Con cheque, se recibir&aacute;n invariablemente salvo buen cobro y se acreditar&aacute;n solamente cuando sean cobrados por la "CAJA ACREDITANTE".<br>
+c) Por domiciliaci&oacute;n: I) En la fecha en que se acuerde con el "SOCIO ACREDITADO", o II) En la fecha l&iacute;mite de pago conforme a la tabla de amortizaci&oacute;n
+se&ntilde;alada en la cl&aacute;usula tercera de este contrato.<br>
+d) Trasferencia o deposito bancario conforme a las politicas vigentes al momento del pago.      
+</font></td>           
+            </tr>
+
+
+
+
+       <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA PRIMERA. - GASTOS Y COMISIONES. - El "SOCIO ACREDITADO" acepta y reconoce que por la celebraci&oacute;n del presente Contrato pagar&aacute; a
+la "CAJA ACREDITANTE," comisiones por los siguientes conceptos:     
+</font></td>           
+            </tr>
+
+                      <tr>
+           <td class="alinear_just" > <font size="2">
+a) Gastos de Investigaci&oacute;n y/o Formalizaci&oacute;n. -El "SOCIO ACREDITADO" pagar&aacute; una comisi&oacute;n por este concepto, misma que se especificar&aacute; en la
+CARATULA en el apartado de COMISIONES. Dicha comisi&oacute;n genera una cantidad a cargo del "SOCIO ACREDITADO" indicado en la CARATULA; a la
+cantidad antes se&ntilde;alada se le deber&aacute; de sumar, en su caso, el Impuesto al Valor Agregado correspondiente. Esta comisi&oacute;n ser&aacute; pagadera por una sola ocasi&oacute;n
+al momento en que el "SOCIO ACREDITADO" disponga del CR&Eacute;DITO y no ser&aacute; reembolsado por ning&uacute;n motivo. <br>
+b) &oacute; de Pago a Domicilio. - El "SOCIO ACREDITADO" pagar&aacute; a la "CAJA ACREDITANTE" la cantidad se&ntilde;alada en la caratula del contrato,
+por cada evento que el "SOCIO ACREDITADO" solicite que se le vaya a cobrar hasta su domicilio. <br>
+c) Reimpresi&oacute;n del Estado de Cuenta. - El "SOCIO ACREDITADO" pagar&aacute; la cantidad se&ntilde;alada en la caratula del contrato, por cada impresi&oacute;n del estado
+de cuenta a que se refiere la cl&aacute;usula D&eacute;cimo Novena del presente documento, en el entendido, que &uacute;nicamente la primera copia ser&aacute; gratuita, debido a que
+las posteriores tendr&aacute;n un costo.      
+</font></td>           
+            </tr>
+<!--- PUNTO DE VISTA 4-->
+
+                   <tr>
+           <td class="alinear_just" > <font size="2">
+En caso de que conforme a la Ley del Impuesto al Valor Agregado, se cause este impuesto por las comisiones a que se refiere esta cl&aacute;usula, el "SOCIO
+ACREDITADO" se obliga y compromete a pagar tal impuesto juntamente con la citada comisi&oacute;n.     
+</font></td>           
+            </tr>
+
+
+            <tr>
+           <td class="alinear_just" > <font size="2">
+La "CAJA ACREDITANTE" se obliga y compromete a no efectuar cargos, comisiones o gastos distintos a los indicados en este contrato.     
+</font></td>           
+            </tr>
+
+
+                        <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA SEGUNDA. - GARANT&iacute;A. - El "SOCIO ACREDITADO" a fin de garantizar el puntual pago del CR&Eacute;DITO que ampara este contrato, otorga las
+garant&iacute;as siguientes:    
+</font></td>           
+            </tr>
+
+                                    <tr>
+           <td class="alinear_just" > <font size="2">
+a) Garant&iacute;a prendar&iacute;a l&iacute;quida. - En primer lugar, grado y prelaci&oacute;n a favor de la "CAJA ACREDITANTE", por la cantidad de dinero o un porcentaje de &eacute;ste
+que tiene en su cuenta de ahorro. As&iacute; mismo, el "SOCIO ACREDITADO" se obliga a mantener vigente la referida garant&iacute;a durante la vigencia de este
+contrato y a no disponer de la misma hasta la total liquidaci&oacute;n del CR&Eacute;DITO y dem&aacute;s accesorios. <br>
+b) Garant&iacute;a INAES. - La sociedad podr&aacute; contar con apoyos de entidades gubernamentales, mismos que pueden asignarse al socio con la finalidad de acceso a
+los servicios de CR&Eacute;DITO de la Sociedad para lo cual suscribir&aacute; su acuerdo y aceptaci&oacute;n mediante el "Anexo B" que formar&aacute; parte integrante de este contrato.
+El "SOCIO ACREDITADO" acepta que los recursos provinientes de la presente garant&iacute;a no forman parte de su patrimonio, por lo tanto no podr&aacute; disponer de
+los mismos.   
+</font></td>           
+            </tr>
+
+
+                                                <tr>
+           <td class="alinear_just" > <font size="2">
+La presente garant&iacute;a &uacute;nicamente podr&aacute; ser ejecutada en el supuesto de que el CR&Eacute;DITO caiga en mora o cartera vencida.
+</font></td>           
+            </tr>
+
+
+         <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA TERCERA.- VIGENCIA Y ALCANCE DE LAS GARANT&iacute;AS.- Las garant&iacute;as prendarias constituidas en la cl&aacute;usula que antecede, garantizan el
+pago de cualquier adeudo del "SOCIO ACREDITADO" a favor de la "CAJA ACREDITANTE" sea por capital o por intereses ordinarios, moratorios o por
+cualquier otro concepto y estar&aacute; en vigor mientras el adeudo permanezca insoluto.
+</font></td>           
+            </tr>
+
+
+
+
+         <tr>
+           <td class="alinear_just" > <font size="2">
+As&iacute; mismo, el "SOCIO ACREDITADO", transfiere en propiedad la prenda otorgada bajo el inciso a) de la cl&aacute;usula que antecede y autoriza a la "CAJA
+ACREDITANTE" para disponer de la misma para el pago del adeudo pendiente de pago a la fecha de aplicaci&oacute;n. De darse lo anterior, las cantidades se
+aplicar&aacute;n conforme a lo establecido en la cl&aacute;usula s&eacute;ptima de este contrato. De acuerdo a los preceptos que se se&ntilde;alan en el anexo "D".
+</font></td>           
+            </tr>
+
+
+
+                     <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA CUARTA. - PROCEDIMIENTO DE EJECUCI&oacute;N Y VENTA. - En caso de que se d&eacute; por vencido anticipadamente el plazo del contrato por
+haber incurrido el "SOCIO ACREDITADO" en alguna de las causales establecidas en este contrato o sea de plazo cumplido, la "CAJA ACREDITANTE"
+podr&aacute; proceder a la ejecuci&oacute;n y venta de los bienes garantizados judicialmente. De acuerdo a los preceptos que se se&ntilde;alan en el anexo "D".
+</font></td>           
+            </tr>
+
+
+                                 <tr>
+           <td class="alinear_just" > <font size="2">
+Para el caso de que por cualquier motivo, el bien objeto de este CR&Eacute;DITO fuere embargado o asegurado judicial o administrativamente, se conviene
+expresamente en que ser&aacute; depositaria del bien el "SOCIO ACREDITADO" o la persona o personas que al efecto designe la "CAJA ACREDITANTE", quien
+tomar&aacute; posesi&oacute;n inmediata de la garant&iacute;a prendaria, sin necesidad de otorgar fianza.
+</font></td>           
+            </tr>
+
+
+
+                                 <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA QUINTA. - DENUNCIA. - Las partes convienen, en que la "CAJA ACREDITANTE" estar&aacute; facultada para restringir el importe del CR&Eacute;DITO o el
+plazo para disponer de &eacute;l, o ambos a la vez, o para denunciar el contrato en cualquier tiempo, mediante simple aviso que d&eacute; al "SOCIO ACREDITADO".
+Denunciando el contrato, se extinguir&aacute; el CR&Eacute;DITO en la parte no dispuesta por el "SOCIO ACREDITADO" al momento de la denuncia De acuerdo a los
+preceptos que se se&ntilde;alan en el anexo "D".
+</font></td>           
+            </tr>
+
+
+
+                                 <tr>
+           <td class="alinear_just" > <font size="2">
+Asimismo, el "SOCIO ACREDITADO" contar&aacute; con un periodo de gracia de 10 d&iacute;as h&aacute;biles posteriores a la firma del presente documento, para cancelarlo,
+en cuyo caso la "CAJA ACREDITANTE" no podr&aacute; cobrar comisi&oacute;n alguna, regresando las cosas al estado en que se encontraba antes de su firma, sin
+responsabilidad para el "SOCIO ACREDITADO". Lo anterior, siempre y cuando el "SOCIO ACREDITADO" no haya dispuesto a esa fecha total o
+parcialmente del Monto del CR&Eacute;DITO que por el presente se apertura. De acuerdo a los preceptos que se se&ntilde;alan en el anexo "D".
+</font></td>           
+            </tr>
+
+
+
+                                             <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA SEXTA.- OBLIGACIONES DE HACER DEL "SOCIO ACREDITADO".- El "SOCIO ACREDITADO" deber&aacute; cumplir con la siguiente
+obligaci&oacute;n, salvo que exista consentimiento previo y por escrito de los representantes legales de la "CAJA ACREDITANTE" que la revelen de su
+cumplimiento:
+</font></td>           
+            </tr>
+
+
+          <tr>
+           <td class="alinear_just" > <font size="2">
+a) Proporcionar a la "CAJA ACREDITANTE" cuando &eacute;sta se lo solicite, la informaci&oacute;n y documentaci&oacute;n relativa que compruebe la inversi&oacute;n del CR&Eacute;DITO
+otorgado;
+</font></td>           
+            </tr>
+
+
+     <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA S&eacute;PTIMA.- OBLIGACIONES DE NO HACER DEL SOCIO ACREDITADO.- El "SOCIO ACREDITADO" deber&aacute; cumplir con la siguiente
+obligaci&oacute;n de no hacer, salvo que exista consentimiento previo y por escrito del o de los representantes de la "CAJA ACREDITANTE" que lo revele de su
+cumplimiento: a) No otorgar a cualquier otro acreedor condiciones de pago que resulten o puedan resultar m&aacute;s favorables para tales acreedores que las que
+se encuentren vigentes a favor de la "CAJA ACREDITANTE".
+</font></td>           
+            </tr> 
+
+
+                      <tr>
+           <td class="alinear_just" > <font size="2">
+D&eacute;CIMA OCTAVA.- VENCIMIENTO ANTICIPADO.- "La CAJA ACREDITANTE" podr&aacute; de pleno derecho y sin necesidad de declaraci&oacute;n judicial dar
+por vencido anticipadamente el plazo para el reembolso de las cantidades adeudadas, as&iacute; como el pago de sus accesorios, y exigir su entrega inmediata, si el
+"SOCIO ACREDITADO" faltare al cumplimiento de cualquiera de las obligaciones contenidas en este contrato, o en cualquiera de los siguientes casos:
+        </font></td>           
+            </tr>
+
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+a) Si el "SOCIO ACREDITADO" dejar&aacute; de cubrir tres o m&aacute;s de los pagos convenidos conforme a las cl&aacute;usulas tercera y cuarta de este contrato; <br>
+b) Si al "SOCIO ACREDITADO" se le inicia o tiene proceso judicial pendiente ante autoridad judicial, administrativa o de cualquier otro genero que
+pudiera afectar su situaci&oacute;n financiera. <br>
+c) Si resulta ser falsa cualquier informaci&oacute;n o dato proporcionado por el "SOCIO ACREDITADO", en la solicitud del CR&Eacute;DITO o en cualquier informaci&oacute;n que
+deba proporcionar a la "CAJA ACREDITANTE". <br>
+d) Si no invierte el importe del CR&Eacute;DITO, conforme a lo pactado en este contrato. <br>
+e) Si dispusiese de las garant&iacute;as prendarias, cualquiera que fuera la causa para ello. <br>
+f) Si el "SOCIO ACREDITADO" otorga fianza, avales o cualquier otra, para garantizar obligaciones de terceros. <br>
+g) Si el "SOCIO ACREDITADO" incumple con cualquiera de las obligaciones de hacer o no hacer estipuladas en este contrato. <br>
+h) En cualquier otro caso en que, conforme a la ley, se puedan dar por vencidas anticipadamente las obligaciones a plazo. <br>
+
+
+
+
+        </font></td>           
+            </tr>
+<!--- PUNTO DE VISTA -->
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+Una vez declarado el vencimiento anticipado del plazo, el "SOCIO ACREDITADO" deber&aacute; cubrir de inmediato a la "CAJA ACREDITANTE" el saldo del
+CR&Eacute;DITO m&aacute;s sus intereses y cualquier otro concepto adeudado.
+        </font></td>           
+            </tr>
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+D&eacute;CIMA NOVENA.- OBLIGACI&oacute;N DE PROPORCIONAR EL COSTO ANUAL TOTAL (CAT) Y ESTADO DE CUENTA.- El "SOCIO
+ACREDITADO" y los "Obligados solidarios" manifiestan que la "CAJA ACREDITANTE" hizo de su conocimiento antes de la firma de este contrato: el
+contenido del mismo y de todos los documentos a suscribir, los cargos, gastos que en su caso se generar&aacute;n por su celebraci&oacute;n y, en su caso, los descuentos o
+bonificaciones a que podr&iacute;a tener derecho, as&iacute; como el Costo Anual Total (CAT) correspondiente que es el indicado en la car&aacute;tula adjunta a este contrato,
+para fines informativos y comparativos exclusivamente y que las tasas de intereses ordinaria y moratoria que se aplicar&aacute;n en este contrato son tasas fijas.
+        </font></td>           
+            </tr>
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+Se entender&aacute; por CAT (Costo Anual Total) lo siguiente: "CAT: El Costo Anual Total de financiamiento expresado en t&eacute;rminos porcentuales anuales que,
+para fines informativos y de comparaci&oacute;n, incorpora la totalidad de los costos y gastos inherentes a
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+La "CAJA ACREDITANTE" proporcionar&aacute; de forma mensual a el "SOCIO ACREDITADO" un estado de cuenta en el que aparezcan: nombre del "SOCIO
+ACREDITADO", n&uacute;mero de CR&Eacute;DITO, movimientos efectuados en el periodo, fecha l&iacute;mite de pago, saldo inicial y saldo final a la fecha de corte, comisiones
+cobradas, promedio de saldos diarios del periodo y tasas de inter&eacute;s. El citado estado de cuenta se pondr&aacute; a disposici&oacute;n del "SOCIO ACREDITADO" de
+acuerdo con lo se&ntilde;alado en la caratula del presente contrato; El "SOCIO ACREDITADO" tambi&eacute;n podr&aacute; acudir a la sucursal de la "CAJA ACREDITANTE"
+donde haya celebrado este contrato, para solicitar el estado de cuenta o que se consulte a trav&eacute;s de cualquier medio, incluyendo los electr&oacute;nicos, dentro de
+los 10 d&iacute;as siguientes a la fecha de corte del per&iacute;odo que corresponda.
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+Si el "SOCIO ACREDITADO" no obtiene el estado de cuenta correspondiente, no lo libera del cumplimiento de las obligaciones que asume por medio del
+presente Contrato.
+
+        </font></td>           
+            </tr>
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+El "SOCIO ACREDITADO" podr&aacute; consulta los saldos, transacciones y movimientos del CR&Eacute;DITO en cualquier sucursal de la "CAJA ACREDITANTE" o en
+la UNE, con el &uacute;nico requisito de llevar su Identificaci&oacute;n Oficial Vigente y los datos de identificaci&oacute;n de su CR&Eacute;DITO.
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+La "CAJA ACREDITANTE" podr&aacute; proporcionar a el "SOCIO ACREDITADO" una copia del estado de cuenta del periodo de que se trate en la oficina o
+sucursal que le corresponda, en el entendido de que &uacute;nicamente la primera copia ser&aacute; gratuita, en raz&oacute;n de que las posteriores tendr&aacute;n un costo, el cual se
+indica en la car&aacute;tula adjunta a este contrato en el apartado de comisiones.
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+VIG&eacute;SIMA. - SEGURO. - ADVERTENCIA: Las partes contratantes manifiestan que este producto de CR&Eacute;DITO no cuenta con seguro deudor, por lo tanto, el
+socio acreditado se hace sabedor de que, para el caso de su fallecimiento durante la vigencia de este contrato, la cantidad que no estuviere cubierta ser&aacute;
+exigible a la sucesion intestada o testamentaria que corresponda.
+
+        </font></td>           
+            </tr>
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+VIG&eacute;SIMA PRIMERA.- CESI&oacute;N DEL CR&Eacute;DITO.- El "SOCIO ACREDITADO" faculta expresamente a la "CAJA ACREDITANTE" para ceder o
+descontar el CR&Eacute;DITO de este contrato. El "SOCIO ACREDITADO" no podr&aacute; ceder los derechos y obligaciones derivados de este Contrato.
+
+        </font></td>           
+            </tr>
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+VIG&eacute;SIMA SEGUNDA.- PROCEDIMIENTO DE ACLARACIONES.- Si el "SOCIO ACREDITADO" no est&aacute; de acuerdo con alguno de los movimientos
+que aparezca en el estado de cuenta o su equivalente, proceder&aacute; conforme a lo siguiente:
+
+        </font></td>           
+            </tr>
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+            a) Podr&aacute; presentar una solicitud de aclaraci&oacute;n dentro de los 90 d&iacute;as naturales contados a partir de la fecha de corte o de la realizaci&oacute;n del cargo en su cuenta.
+La solicitud se presentar&aacute; en las oficinas de la UNE de la "CAJA ACREDITANTE" donde hubiese contratado el CR&Eacute;DITO y ser&aacute; acusada de recibo por la
+"CAJA ACREDITANTE". <br>
+b) La "CAJA ACREDITANTE" tendr&aacute; 45 d&iacute;as naturales para entregar por escrito el dictamen correspondiente, anexando copia simple del documento o
+evidencia considerada para la emisi&oacute;n de dicho dictamen, con base en la informaci&oacute;n que, conforme a las disposiciones aplicables, deba obrar en su poder,
+as&iacute; como un informe detallado en el que se respondan todos los hechos contenidos en la solicitud presentada por "el SOCIO ACREDITADO". <br>
+c) Dentro del plazo de 45 d&iacute;as naturales contados a partir de la entrega del dictamen a que se refiere el inciso anterior, la "CAJA ACREDITANTE" pondr&aacute; a
+disposici&oacute;n de "el SOCIO ACREDITADO" en las oficinas de la UNE de la "CAJA ACREDITANTE", el expediente generado con motivo de la solicitud, as&iacute;
+como a integrar en &eacute;ste, toda la documentaci&oacute;n e informaci&oacute;n que, conforme a las disposiciones aplicables, deba obrar en su poder y que se relacione
+directamente con la solicitud de aclaraci&oacute;n que corresponda y sin incluir datos correspondientes a operaciones relacionadas con terceras personas.
+
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+El procedimiento previsto en esta cl&aacute;usula quedar&aacute; sin efectos a partir de que el "SOCIO ACREDITADO" presente su demanda ante autoridad jurisdiccional
+o conduzca su reclamaci&oacute;n en t&eacute;rminos de la Ley de Protecci&oacute;n y Defensa al Usuario de Servicios Financieros. <br>
+En cumplimiento a lo establecido en las Disposiciones Legales Aplicables, la "CAJA ACREDITANTE" da a conocer a el "SOCIO ACREDITADO", el
+n&uacute;mero y datos de identificaci&oacute;n de la Unidad Especializada de Atenci&oacute;n de Usuarios (UNE), as&iacute; como la informaci&oacute;n de la Comisi&oacute;n Nacional para la
+Protecci&oacute;n y Defensa de los Usuarios de Servicios Financieros (CONDUSEF). <br>
+Unidad Especializada de Atenci&oacute;n a Usuarios de CAJA ITZAEZ SC DE AP DE RL DE CV, ubicada en la calle 43 # 587 X 88 Y 88 A Colonia INAL&Aacute;MBRICA
+C.P. 97069, M&Eacute;RIDA, YUCAT&Aacute;N; Correo electr&oacute;nico: aclara_itzaez@cajaitzaez.mx, tel&eacute;fono: 99 99 20 52 40 horario de 9:00 a 17:00 horas, Comisi&oacute;n Nacional
+para la Protecci&oacute;n y Defensa de los Usuarios de Servicios Financieros (CONDUSEF), tel&eacute;fono 55 5340 0999, pagina de internet: www.condusef.gob.mx y
+Correo electr&oacute;nico: asesoria@condusef.gob.mx. <br>
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+            VIG&eacute;SIMA TERCERA. - MODIFICACIONES AL CONTRATO. - Las partes acuerdan que cualquier modificaci&oacute;n a los t&eacute;rminos de este Contrato, ser&aacute;
+dada a conocer a el "SOCIO ACREDITADO" por lo menos con treinta d&iacute;as naturales de anticipaci&oacute;n de la fecha prevista de la entrada en vigor, mediante
+aviso incluido en el estado de cuenta correspondiente. El aviso o notificaci&oacute;n deber&aacute; especificar de forma notoria la fecha en que las modificaciones surtir&aacute;n
+efecto..
+
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+En el supuesto que el "SOCIO ACREDITADO" no est&eacute; de acuerdo con las modificaciones propuestas por la "CAJA ACREDITANTE", podr&aacute; solicitar la
+terminaci&oacute;n del Contrato dentro de los treinta d&iacute;as posteriores al aviso arriba se&ntilde;alado, sin responsabilidad ni comisi&oacute;n alguna a su cargo y bajo las
+condiciones originalmente pactadas, debiendo cubrir el "SOCIO ACREDITADO" en su caso, los adeudos que ya se hubieren generado a la fecha en que
+solicite dar por terminada la operaci&oacute;n o servicio de que se trate, sin que la "CAJA ACREDITANTE" pueda cobrarle penalizaci&oacute;n alguna por dicha causa..
+
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+            Una vez transcurrido el plazo conforme a lo se&ntilde;alado en el p&aacute;rrafo anterior, sin que la "CAJA ACREDITANTE" haya recibido comunicaci&oacute;n alguna por
+            parte del "SOCIO ACREDITADO", se tendr&aacute;n por aceptadas las modificaciones al Contrato. .
+        </font></td>           
+            </tr>
+
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+El presente contrato no podr&aacute; modificarse en lo referente a tasas de inter&eacute;s, as&iacute; como tampoco podr&aacute;n establecerse nuevas comisiones, modificarse las
+mismas, ni incrementarse los montos de las existentes y establecidos al momento de la firma del presente Contrato, salvo pacto en contrario, o cuando se
+trate de reestructuraci&oacute;n del presente CR&Eacute;DITO, debiendo observarse en estos supuestos el consentimiento expreso del "SOCIO ACREDITADO".
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+            VIG&eacute;SIMA CUARTA. - REQUISITOS Y PROCEDIMIENTOS PARA LA CANCELACI&oacute;N O TERMINACI&oacute;N ANTICIPADA DEL CONTRATO.- El
+"SOCIO ACREDITADO" puede solicitar la terminaci&oacute;n anticipada del Contrato, por medio de solicitud que presente en la Unidad Especializada, en d&iacute;as y
+horas h&aacute;biles, en un horario de 9:00 a 17:00 horas Dicha solicitud deber&aacute; estar debidamente firmada por el "SOCIO ACREDITADO" y se deber&aacute; adjuntar a
+la misma copia de identificaci&oacute;n oficial a fin de cerciorarse de la autenticidad y veracidad de la informaci&oacute;n del "SOCIO ACREDITADO", nombre completo
+del titular del CR&Eacute;DITO y el n&uacute;mero de referencia del mismo, quedando facultado la "CAJA ACREDITANTE" a confirmar v&iacute;a telef&oacute;nica con el "SOCIO
+ACREDITADO" cualquier dato o informaci&oacute;n proporcionada. Una vez presentada la solicitud, la "CAJA ACREDITANTE" proporcionar&aacute; a el "SOCIO
+ACREDITADO" un acuse de recibo, clave de confirmaci&oacute;n o n&uacute;mero de folio.
+
+
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+            Asimismo, la "CAJA ACREDITANTE" al momento de recibir la solicitud arriba mencionada:
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+I. Cancelar&aacute;, en caso de que existan, los Medios de Disposici&oacute;n vinculados al Contrato. El "SOCIO ACREDITADO" deber&aacute; hacer entrega de &eacute;stos o
+manifestar por escrito y bajo protesta de decir verdad, que fueron destruidos o que no cuenta con ellos, por lo que no podr&aacute; hacer disposici&oacute;n alguna a partir
+de dicha fecha. <br>
+II. Rechazar&aacute; cualquier disposici&oacute;n que pretenda efectuarse con posterioridad a la solicitud presentada. En consecuencia, no se podr&aacute;n hacer nuevas
+disposiciones, excepto las ya generadas. <br>
+III. Cancelar&aacute;, sin su responsabilidad, los servicios de domiciliaci&oacute;n en la fecha de la solicitud de terminaci&oacute;n, con independencia de qui&eacute;n conserve la
+autorizaci&oacute;n de los cargos correspondientes.
+
+        </font></td>           
+            </tr>
+
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+La "CAJA ACREDITANTE" dar&aacute; por terminado el contrato el d&iacute;a h&aacute;bil siguiente a aqu&eacute;l en que reciba la solicitud, siempre y cuando no existan adeudos.
+De lo contrario, a m&aacute;s tardar el d&iacute;a h&aacute;bil siguiente al de la recepci&oacute;n de la solicitud, comunicar&aacute; a el "SOCIO ACREDITADO" el importe de los adeudos y
+dentro de los cinco d&iacute;as h&aacute;biles siguientes a su solicitud pondr&aacute; a su disposici&oacute;n dicho dato en la Unidad Especializada, y una vez liquidados los adeudos se
+dar&aacute; por terminado el contrato. Asimismo, la "CAJA ACREDITANTE" entregar&aacute; a el "SOCIO ACREDITADO" el saldo, en su caso, en la fecha en que se
+d&eacute; por terminada la operaci&oacute;n o al no haber acudido el "SOCIO ACREDITADO" a la Unidad Especializada o sucursales de la "CAJA ACREDITANTE",
+esta &uacute;ltima informar&aacute; a el "SOCIO ACREDITADO" por escrito o por v&iacute;a telef&oacute;nica que dicho saldo a su favor se encuentra a su disposici&oacute;n y determinar&aacute; la
+forma como le puede ser devuelto. La "CAJA ACREDITANTE" pondr&aacute; a disposici&oacute;n del "SOCIO ACREDITADO", dentro de diez d&iacute;as h&aacute;biles a partir de
+que se hubiera realizado el pago de los adeudos o en la siguiente fecha de corte, una carta finiquito en el que conste el fin de la relaci&oacute;n contractual y la
+inexistencia de adeudos derivados exclusivamente de dicha relaci&oacute;n. La "CAJA ACREDITANTE" reportar&aacute; a su vez a las sociedades de informaci&oacute;n
+crediticia que la cuenta est&aacute; cerrada sin adeudo alguno dentro del plazo que para tales efectos se&ntilde;ala la Ley para Regular las Sociedades de Informaci&oacute;n
+Crediticia. La "CAJA ACREDITANTE" se abstendr&aacute; en todo momento de condicionar la terminaci&oacute;n del Contrato a la devoluci&oacute;n del contrato que obre en
+poder del "SOCIO ACREDITADO", y se abstendr&aacute; de igual manera de cobrar comisi&oacute;n o penalizaci&oacute;n por la terminaci&oacute;n del contrato.
+
+        </font></td>           
+            </tr>
+
+<tr>
+          <td class="alinear_just" > <font size="2">
+En tanto no sea liquidada la totalidad de los adeudos, la terminaci&oacute;n del Contrato no surtir&aacute; efectos: sin embargo, la "CAJA ACREDITANTE" solo podr&aacute;
+cobrar los accesorios e intereses que se generen hasta el momento en que el "SOCIO ACREDITADO" liquide el saldo total del CR&Eacute;DITO: conservando el
+"SOCIO ACREDITADO" la misma fecha de pago y condiciones que ten&iacute;a previamente a la solicitud de terminaci&oacute;n. Para este producto de CR&Eacute;DITO no aplica
+el cobro de comisiones por incumplimiento de pago.
+</font>
+</td>           
+</tr>
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+VIG&Eacute;SIMA QUINTA.- AUTORIZACI&Oacute;N PARA EFECTUAR COMPENSACI&Oacute;N.- El "SOCIO ACREDITADO" otorga a la "CAJA ACREDITANTE" el
+mandato m&aacute;s amplio y suficiente que en derecho corresponda a favor de la "CAJA ACREDITANTE" e instruye a &eacute;sta para compensar, sin necesidad de
+notificaci&oacute;n o requerimiento previo, todas las cantidades vencidas conforme a lo pactado en las cl&aacute;usulas tercera, cuarta y s&eacute;ptima de este contrato y no
+pagadas del CR&Eacute;DITO contra cualquier deuda l&iacute;quida y exigible que existiera a cargo de la "CAJA ACREDITANTE" y a favor del "SOCIO ACREDITADO",
+incluyendo sin limitaci&oacute;n, dep&oacute;sitos a la vista, dep&oacute;sitos retirables en d&iacute;as preestablecidos, dep&oacute;sitos de ahorro, dep&oacute;sitos a plazo fijo, dep&oacute;sitos retirable con
+previo aviso y constituidas por el "SOCIO ACREDITADO" en la "CAJA ACREDITANTE".
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+Una vez efectuada la compensaci&oacute;n, la "CAJA ACREDITANTE" notificar&aacute; al "SOCIO ACREDITADO" que ha realizado la misma por cualquier forma de
+las pactadas en este contrato, en el entendido de que la falta de notificaci&oacute;n no afectar&aacute; la validez de la compensaci&oacute;n.
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+
+VIG&Eacute;SIMA SEXTA.- CANCELACI&Oacute;N DE DOMICILIACI&Oacute;N BANCARIA.- EL "SOCIO ACREDITADO" podr&aacute; solicitar, en cualquier momento, la
+cancelaci&oacute;n del servicio de domiciliaci&oacute;n del pago de bienes y servicios con cargo a sus cuentas, sin responsabilidad alguna para la "CAJA
+ACREDITANTE", bastando para ello que dicha solicitud sea presentada en cualquier sucursal u oficina de la "CAJA ACREDITANTE", dicha solicitud
+surtir&aacute; efectos en un plazo no mayor a tres d&iacute;as h&aacute;biles siguientes contados a partir de su recepci&oacute;n, sin que se requiera de la previa autorizaci&oacute;n de los
+respectivos proveedores de bienes o servicios.
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+En la fecha de la solicitud de terminaci&oacute;n de este contrato, se entender&aacute; cancelado el servicio de domiciliaci&oacute;n, con independencia de qui&eacute;n conserve la
+autorizaci&oacute;n de los cargos correspondientes, sin responsabilidad alguna para la "CAJA ACREDITANTE".
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+VIG&Eacute;SIMA SEPTIMA.- DOMICILIOS.- Para los efectos de este contrato, las partes comparecientes se&ntilde;alan como sus domicilios los indicados en el
+apartado de generales del presente contrato.
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+Mientras el "SOCIO ACREDITADO" y los "Obligados solidarios" no notifiquen por escrito a la "CAJA ACREDITANTE" el cambio de sus domicilios, los
+emplazamientos y dem&aacute;s diligencias judiciales y extrajudiciales ser&aacute;n practicadas en el domicilio se&ntilde;alado en la car&aacute;tula adjunta a este contrato.
+
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+VIG&Eacute;SIMA OCTAVA. - DE LA CONFIDENCIALIDAD: Las partes manifiestan que la informaci&oacute;n y documentaci&oacute;n relativa a las operaciones y servicios
+contratados por el "SOCIO ACREDITADO" y proporcionados a "LA CAJA ADREDITANTE", tendr&aacute;n car&aacute;cter confidencial, por lo que "LA CAJA
+ACREDITANTE", en protecci&oacute;n del derecho a la privacidad de sus Socios, en ning&uacute;n caso podr&aacute;n dar noticias o informaci&oacute;n de los dep&oacute;sitos, operaciones o servicios, sino al depositante, deudor, titular, beneficiario, a sus representantes legales o a quienes tengan otorgado poder para disponer de la cuenta o para
+intervenir en la operaci&oacute;n o servicio. De acuerdo a los preceptos que se se&ntilde;alan en el anexo "D".
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+VIG&eacute;SIMA NOVENA. - AUTORIZACI&oacute;N PARA CONSULTA DE BUR&oacute; DE CREDITO: "EL SOCIO" previo a la firma del presente instrumento y
+mediante documental que extendi&oacute; autorizaci&oacute;n basta y suficiente para consultar su historial crediticio e cualquiera de las sociedades de informaci&oacute;n
+crediticia, dicha autorizaci&oacute;n se extiende mietras exista saldo insoluto del presente credito o sus accesorios.
+        </font></td>           
+            </tr>
+
+                                 <tr>
+           <td class="alinear_just" > <font size="2">
+TRIGESIMA: ACEPTACI&Oacute;N DE LA CARATULA DEL CONTRATO: "EL SOCIO" acepta en su totalidad todas y cada una de las obligaciones plasmadas
+en el presente instrumento asi como en la car&aacute;tula respectiva, misma que forma parte integral del presente contrato.
+        </font></td>           
+            </tr>
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+TRIG&Eacute;SIMA PRIMERA.- TRIBUNALES COMPETENTES.- Para la interpretaci&oacute;n y cumplimiento de este contrato, as&iacute; como para cualquier controversia
+que se suscite con motivo del mismo, el "SOCIO ACREDITADO" , se somete expresamente a la jurisdicci&oacute;n y competencia de los Tribunales de la ciudad
+de M&Eacute;RIDA, YUCAT&Aacute;N y/o del "lugar de Celebraci&oacute;n" indicado en la car&aacute;tula adjunta a este documento, a elecci&oacute;n y conveniencia de la "CAJA
+ACREDITANTE", renunciando expresamente todas las partes contratantes a cualquier otro domicilio que pudiera corresponderles en raz&oacute;n del fuero de su
+domicilio o vecindad presente o futura.
+
+        </font></td>           
+            </tr>
+
+                                 <tr>
+           <td class="alinear_just" > <font size="2">
+TRIG&eacute;SIMA SEGUNDA. - CASO FORTUITO O DE FUERZA MAYOR. - El "SOCIO ACREDITADO" acepta responder por las obligaciones derivadas
+de este contrato, a&uacute;n en caso fortuito o de fuerza mayor, a&uacute;n cuando no hayan dado causa o contribuido a ello, renunciando a lo dispuesto por el art&iacute;culo
+2111 del C&oacute;digo Civil Federal, Ver ANEXO "D" Disposiciones legales.
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+TRIG&eacute;SIMA TERCERA. - GASTOS, DERECHOS Y HONORARIOS. - Este producto de CR&Eacute;DITO no genera gastos, derechos y honorarios.
+
+        </font></td>           
+            </tr>
+
+
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+Asimismo estar&aacute;n a cargo del "SOCIO ACREDITADO", las comisiones que continuaci&oacute;n se mencionan:
+<ul>
+<li>
+  Gastos de Investigaci&oacute;n y/o Formalizaci&oacute;n: $ 30 + IVA por &uacute;nica ocasi&oacute;n
+</li>
+
+<li>
+  &oacute; de Pago a Domicilio: $ 40 + IVA por evento
+</li>
+
+<li>
+  Reimpresi&oacute;n de Estado de Cuenta: $ 30 + IVA por evento
+</li>
+
+
+</ul>
+
+
+        </font></td>           
+            </tr>
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+TRIG&eacute;SIMA CUARTA.- T&iacute;TULOS DE LAS CL&aacute;USULAS.- Los t&iacute;tulos de las cl&aacute;usulas que aparecen en este contrato se han puesto con el &uacute;nico y
+exclusivo prop&oacute;sito de facilitar su lectura, por lo que de ninguna manera establecen el sentido de las mismas, ni mucho menos las limitan, por lo que para los
+efectos de interpretaci&oacute;n de este contrato se estar&aacute; a lo establecido en las cl&aacute;usulas y de ninguna manera en los t&iacute;tulos de las mismas.
+
+        </font></td>           
+            </tr>
+            
+            
+
+                      <tr>
+           <td class="alinear_just" > <font size="2">
+TRIGESIMA QUINTA. - DISPOSICIONES LEGALES. - El presente documento y los que forman parte integral del mismo, no contienen preceptos legales
+especificos; las disposiones legales que rigen y son aplicables al presente contrato se encuentran contenidos y pueden consultarse en el ANEXO "D" que
+forma parte integrante del presente contrato o de manera impresa en sus sucursales con las que cuenta "LA CAJA ACREDITANTE".
+
+        </font></td>           
+            </tr>
+
+
+
+
+                                  <tr>
+           <td class="alinear_just" > <font size="2">
+El presente contrato lo firman los comparecientes en la "fecha" y "lugar de celebraci&oacute;n" indicados en la car&aacute;tula adjunta al mismo.
+
+        </font></td>           
+            </tr>
+
+
+
+
+
+</font></td>           
+            </tr>
+
+
+ </table>
+
+<BR><BR>
+
+
+
+<table border="1"  width="100%" class="colap">
+
+  <tr>
+<th colspan="5">  <Center>
+GENERALES
+</Center>
+</th>
+  </tr>
+
+  <tr>
+<td colspan="1"> 
+  <b> 
+LA CAJA ACREDITANTE:
+</b>
+</td>
+  
+
+  <td colspan="4"> <center>
+
+CAJA ITZAEZ, SC DE AP DE RL DE CV
+  </center>
+
+  </td>
+</tr>
+
+
+  <tr>
+<td colspan="1">  
+<b>
+  Representante legal:
+</b>
+</td>
+  
+
+  <td colspan="4"> <center>
+
+  
+  </center>
+
+  </td>
+</tr>
+
+
+  <tr>
+<th colspan="5">  <Center>
+"EL SOCIO ACREDITADO"
+</Center>
+</th>
+  </tr>
+
+
+
+    <tr>
+<td colspan="3">  
+<b> Nombre del socio:
+</b>
+</td>
+  
+
+  <td colspan="1"> 
+    <b>
+Num. de socio:
+  </b>
+
+
+  </td>
+
+  <td colspan="1"><b>
+
+  RFC:
+  </b>
+
+
+  </td>
+
+</tr>
+
+
+
+
+
+
+
+
+    <tr>
+<th colspan="1">  <Center>
+Fecha de Nac:
+</Center>
+</th>
+  
+
+  <td colspan="1"> <b>
+Lugar de Nac:
+  
+</b>
+
+  </td>
+
+  <td colspan="1"> <b>
+
+ Estado Civil:
+  </b>
+
+  </td>
+
+    <td colspan="1"> 
+<b>
+      Tel&eacute;fono:
+  
+  </b>
+
+  </td>
+
+  <td colspan="1"> 
+<b>
+Actividad Econ&oacute;mica:
+</b>
+
+  </td>
+
+</tr>
+
+
+
+  <tr>
+<td colspan="5"> 
+  <b>
+Domicilio:
+</b>
+</td>
+  </tr>
+
+
+
+
+</table>
+<br>
+
+<table width="100%" border="0">
+
+<tr>
+<th colspan="3"> <center>DE CONFORMIDAD:</center></th>
+
+</tr>
+<tr>
+  <td>
+   <center> CAJA ITZAEZ, SC DE AP DE RL DE CV </center>
+  </td>
+  <td width="20%" >&nbsp;</td>
+
+   <td>
+  <center>  "El SOCIO ACREDITADO" </center>
+  </td>
+</tr>
+
+<tr>
+  <td colspan="3"> <br></td>
+</tr>
+
+<tr>
+  <td colspan="3" > <br></td>
+</tr>
+
+<tr>
+  <td class="borde_arriba">
+ <center> Representante Legal</center>
+  </td>
+  <td>&nbsp;</td>
+
+   <td class="borde_arriba">
+ <center>  Nombre y n&uacute;mero de socio</center>
+  </td>
+</tr>
+
+
+<tr>
+  <td colspan="3"> <br></td>
+</tr><tr>
+  <td colspan="3"> <br></td>
+</tr>
+
+<tr>
+<td colspan="3" class="borde_completo alinear_just">
+
+El presente contrato se encuentra en el Registro de Contratos de Adhesi&oacute;n (RECA), ante la Comisi&oacute;n Nacional para la Protecci&oacute;n y Defensa de los Usuarios
+de Servicios Financieros (CONDUSEF), bajo el n&uacute;mero _4933-439-032364/04-04344-1022_ con fecha 20 de octubre del 2022. El cual podr&aacute; ser
+consultado a trav&eacute;s de la P&aacute;gina web www.condusef.gob.mx.
+</td>
+
+</tr>
+
+</table>
+<BR><BR>
+
+</div>
+</body>
+</html>
+');

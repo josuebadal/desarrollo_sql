@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      .contenedor {
+         height: 25cm;
+         width: 17cm;
+         font-family: Time new roman;
+         font-size: 9px;
+      }
+      .contenedor2 {
+         width: 17cm;
+         font-family: Time new roman;
+         background-image: url("/usr/local/saicoop/img_pagare_prestamos/logo_fondo.png");
+      }
+      .encabezado {
+         font: .9em Arial, Helvetica, sans-serif;
+         text-align: center;
+      }
+      .encabezado2 {
+         font:  Arial, Helvetica, sans-serif;
+         font-size: 10px;
+      }
+      .normal {
+         font: .7em Arial, Helvetica, sans-serif;
+      }
+      .ovalado {
+         border: .1px solid;
+         border-radius: 15px;
+         background-color: #BDBDBD;
+         border-color: #000000;
+         width: 100%;
+      }
+      .ovaladosin {
+         border: .1px solid;
+         border-radius: 15px;
+         background-color: #ffffff;
+         border-color: #000000;
+         width: 100%;
+      }
+      .ovalado_blanco{
+         border: .1px solid;
+         border-radius: 15px;
+         background-color: #ffffff;
+         border-color: #2DC066;
+      }
+      .ovalado_blanco_arriba {
+         border: .1px solid;
+         border-top-left-radius:1em;
+         border-top-right-radius:1em;
+         background-color: #ffffff;
+         border-color: #2DC066;
+         width: 100%;
+      }
+      .linea_abajo {
+         border-bottom-width: 1px;
+         border-bottom-style: solid;
+         border-bottom-color: #000;
+      }
+      .sombra {
+         text-shadow: 2px 4px 2px rgba(120,120,120,0.9);
+         font-size: 50px;
+         font-weight: bold;
+         font-family: "Arial Black";
+      }
+      .raya_abajo { border-bottom: 1px solid #000; }
+      .raya_abajo_color { border-bottom: 1px solid #2DC066; }
+      .raya_derecha { border-right: 1.5px solid #2DC066; }
+      .raya_izquierda { border-left: 1.5px solid #2DC066; }
+      .raya_arriba { border-top: 1.5px solid #2DC066; }
+      .borde {
+         border: 1px solid #000;
+      }
+      .alinear_top {
+         vertical-align: top;
+      }
+    </style>
+  <body>
+    <div class="contenedor">
+    	<center>
+        <!--<center><img src="/usr/local/saicoop/img_caratula_prestamos/logo.jpg" width="101" height="99" alt="logo" /></center>-->
+        <table width=100%>
+          <tr>
+          	<td width=30%>
+          		<center>
+          			<img src="/usr/local/saicoop/img_caratula_prestamos/logo.jpg" width="200" height="99" alt="logo" />
+          		</center>
+          	</td>
+            <td width=40%><span class="sombra" >PAGAR&Eacute;</span></td>
+            <td width=30%>
+            	<table class="encabezado2 ovalado" >
+            		<tr><th colspan="3" > IMPORTE</th></tr>
+                <tr><td bgcolor="#ffffff" ><center>@@@importe|@@@</center></td></tr>
+                <tr><th>MONEDA NACIONAL</th></tr>
+              </table>
+            </td>
+          </tr>
+          <!-- separador de primeras filas-->
+          <tr>
+          	<td width=30%>
+          		<table class="encabezado2 ovalado">
+          			<tr>
+          				<th colspan="3"> FECHA DE EXPEDICION</th>
+          			</tr>
+                <tr>
+                	<td bgcolor="#ffffff" ><center>@@@fecha_apertura|dd@@@</center></td>
+                	<td bgcolor="#ffffff" ><center>@@@fecha_apertura|ml@@@</center></td>
+                	<td bgcolor="#ffffff" ><center>@@@fecha_apertura|aaaa@@@</center></td>
+                </tr>
+                <tr>
+                	<th>DIA</th>
+                	<th>MES</th>
+                	<th>A&Ntilde;O</th>
+                </tr>
+              </table>
+            </td>
+            <td width="40%">
+              <table class="encabezado2 ovalado">
+              	<tr>
+              		<th colspan="3" > LUGAR DE EXPEDICION</th>
+              	</tr>
+                <tr>
+                	<td bgcolor="#ffffff"><center>@@@exp_origenp.sql|@@@</center></td>
+                </tr>
+                <tr> <th>&nbsp;</th></tr>
+              </table>
+            </td>
+            <td width="30">
+            	<table class="encabezado2 ovalado">
+            		<tr>
+            			<th colspan="3" > FECHA DE VENCIMIENTO</th>
+            		</tr>
+                <tr>
+                	<td bgcolor="#ffffff" ><center>@@@fecha_ven|dd@@@</center></td>
+                	<td bgcolor="#ffffff" ><center>@@@fecha_ven|ml@@@</center></td>
+                	<td bgcolor="#ffffff" ><center>@@@fecha_ven|aaaa@@@</center></td>
+                </tr>
+                <tr>
+                	<th>DIA</th>
+                	<th>MES</th>
+                	<th>A&Ntilde;O</th>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <div class="contenedor2">
+          <p align="left">
+          	POR ESTE PAGAR&Eacute; PROMETO(EMOS) Y ME(NOS) OBLIGO(AMOS) A PAGAR INCONDICIONALMENTE A LA ORDEN DE  <b>CAJA FAMA,
+            S.C DE A.P DE R.L DE C.V. </b> EN LA CIUDAD DE <b> @@@exp_origenp.sql|@@@</b>, LA CANTIDAD DE <b>$ @@@importe|@@@.</b>
+          </p>
+          <table class="encabezado2 ovalado">
+          	<tr>
+          		<th colspan="3">
+          			<p align="center">@@@importe|letra@@@</p>
+          		</th>
+          	</tr>
+          </table>
+          <p align="justify">
+            VALOR RECIBIDO EN EFECTIVO A MI ENTERA SATISFACCION, ESTE PAGAR&Eacute; EST&Aacute; SUJETO A PAGARSE EN 
+            <b><u>@@@abonos|@@@&nbsp;</u></b> ABONOS @@@frecuencia_de_pagos|@@@ES DE <b>$<u> @@@amort_total_2|@@@&nbsp;</u></b>CADA UNO,
+            CAUSANDO UN INTER&Eacute;S DEL <b><u>@@@tasaio_anual|2@@@%&nbsp;</u></b> ANUAL SOBRE SALDOS INSOLUTOS M&Aacute;S EL 
+            <b><u>@@@tasaim_anual|2@@@%&nbsp;</u></b> DE INTER&Eacute;S MORATORIO POR LOS ABONOS NO CUBIERTOS,
+            CONVENGO EXPRESAMENTE QUE A LA FALTA DE PAGO DE <b><u>3</u></b> PAGOS CONSECUTIVOS PODR&Aacute;
+            DARSE POR VENCIDO ANTICIPADAMENTE ESTE PAGAR&Eacute;, SIN NECESIDAD DE REQUERIMIENTO JUDICIAL PUDIENDO EL BENEFICIARIO
+            EXIGIR EL SALDO INSOLUTO A LAS OFICINAS, <b>CAJA FAMA, S.C DE A.P DE R.L DE C.V.</b> UBICADO EN SANTA CATARINA N.L.
+          </p>
+          <table width="100%" border="0" cellspacing="0" cellpadding="5">
+            <tr>
+              <th width="45%">SUSCRIPTOR U OBLIGADO PRINCIPAL </th>
+              <th width="10%">&nbsp;</th>
+              <th width="45%">DATOS DEL PRIMER AVAL </th>
+            </tr>
+            <tr>
+              <td class="ovalado_blanco alinear_top">
+                NUMERO SOCIO:@@@ogs|@@@ <br />
+                NOMBRE: @@@nombre_socio|@@@ <br />
+                DIRECCION: @@@direccion|callecolonia@@@, @@@direccion|cp@@@ <br />
+                CIUDAD: @@@direccion|munest@@@ <br /><br /><br /><br />
+                <center>
+                  &nbsp;&nbsp; __________________________________ &nbsp;&nbsp; <br />
+                                             FIRMA
+                </center>
+              </td>
+              <td>&nbsp;</td>
+              <td class="ovalado_blanco alinear_top">
+                NOMBRE: @@@nombre_aval1|@@@. <br />
+                DIRECCION: @@@direccion_aval1|callecolonia@@@, @@@direccion_aval1|cp@@@ <br />
+                CIUDAD: @@@direccion_aval1|munest@@@. <br /><br /><br /><br />
+                <center>
+                  &nbsp;&nbsp; __________________________________ &nbsp;&nbsp; <br />
+                                            FIRMA
+                </center>
+              </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+              <th>DATOS DEL CODEUDOR</th>
+              <th>&nbsp;</td>
+              <th>DATOS DEL GARANTE QUIROGRAFARIO </th>
+            </tr>
+            <tr>
+              <td class="ovalado_blanco alinear_top"><br />
+                NOMBRE: @@@nombre_codeudor|@@@. <br />
+                DIRECCION: @@@direccion_codeudor|callecolonia@@@, @@@direccion_codeudor|cp@@@. <br />
+                CIUDAD: @@@direccion_codeudor|munest@@@. <br /><br /><br /><br />
+                <center>
+                  &nbsp;&nbsp; __________________________________ &nbsp;&nbsp; <br />
+                                             FIRMA
+                </center>
+              </td>
+              <td>&nbsp;</td>
+              <td class="ovalado_blanco alinear_top">
+                NOMBRE: @@@nombre_gp|@@@ <br />
+                DIRECCION: @@@direccion_gp|callecolonia@@@, @@@direccion_gp|cp@@@. <br />
+                CIUDAD: @@@direccion_gp|municipio@@@. <br /><br /><br /><br />
+                <!-- DIRECCION: @@@direccion_aval2|callecolonia@@@, @@@direccion_aval2|cp@@@. <br /> 
+                CIUDAD: @@@direccion_gp|munest@@@. <br /><br /><br /><br /> -->
+                <center>
+                  &nbsp;&nbsp; __________________________________ &nbsp;&nbsp; <br />
+                                             FIRMA
+                </center>
+              </td>
+            </tr>
+            <tr><td>Costo Anual Total (CAT): <b><u>@@@cat|@@@</b></u></td></tr>
+          </table>
+        </div>
+      </center>
+    </div>
+  </body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

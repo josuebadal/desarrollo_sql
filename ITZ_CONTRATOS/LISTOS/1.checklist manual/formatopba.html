@@ -1,0 +1,371 @@
+from tablas
+idtabla = 'texto_html_contratos'
+idelemento = 'ahorro_hoja_activacion'
+descripcion = 'HOJA ACTIVACION BANCA MOVIL'
+
+select idtabla,idelemento,dato1,dato3,dato4,dato5 from tablas
+where idtabla like '%html%';
+
+
+
+   SELECT tipoproducto FROM productos WHERE idproducto=205
+   SELECT * FROM devuelve_nombres_contratos_por_origen_y_producto(30321,205,0) ORDER BY nombre
+   select count(*) from   tablas where  lower(idtabla) = 'param' and idelemento = 'imprimir_todos_los_contratos' and dato1 = '1'
+
+   select greatest(dato1,'0') as dato1, greatest(dato3,'0') as dato3 from   tablas where  idtabla = 'formatos_digitales' and idelemento = 'legalario' and dato1 = '1' and case when dato2 is NULL or dato2 = '' then TRUE else sai_texto1_equalto_texto2('30312',NULL,dato2,'|') > 0 end
+
+   SELECT tipoproducto FROM productos WHERE idproducto=205
+
+   SELECT * FROM devuelve_nombres_contratos_por_origen_y_producto(30321,205,0,FALSE) ORDER BY nombre
+
+
+
+Message: contratos_destroy...
+DEBUG_DB: Query:
+   SELECT * FROM tablas WHERE LOWER(idtabla)='param' AND LOWER(idelemento)='acceso_a_limite_de_credito' AND dato1 = '1' AND (dato2 LIKE '%205%' OR dato2 IS NULL OR dato2 = '')
+DEBUG_DB: Query:
+   SELECT * FROM tablas WHERE (LOWER(idtabla)='texto_contratos' OR LOWER(idtabla)='texto_html_contratos') AND idelemento='ahorro_hoja_activacion'
+
+
+   SELECT dato1 FROM tablas WHERE LOWER(idtabla) = 'impresion_contratos_html' AND LOWER(idelemento) = 'cantidad_maxima_de_impresiones'
+
+   SELECT dato1,dato2,dato3,dato4,dato5 FROM tablas WHERE idtabla='texto_contratos' AND LOWER(idelemento)=LOWER('ahorro_hoja_activacion')
+
+   SELECT dato1,dato2,dato3,dato4,dato5 FROM tablas WHERE idtabla='texto_html_contratos' AND LOWER(idelemento)=LOWER('ahorro_hoja_activacion')
+DEBUG_DB: Query:
+   SELECT nombre,dato1,dato2,dato3,dato4,dato5 FROM tablas WHERE idtabla='texto_html_contratos' AND idelemento='ahorro_hoja_activacion'
+
+
+   SELECT lineas,columnas,ancho_img,alto_img,tam_letra,margenizq,margensup FROM formatos WHERE nombre='campos_contratos'
+Message: CARACTERES POR LINEA : 90
+Message: LINEAS POR PAGINA    : 92
+Message: TAMAÑO DE LA LETRA   : 10
+Message: MARGEN IZQUIERDO     : 120.00
+Message: MARGEN DERECHO       : 10.00
+Message: MARGEN INFERIOR      : 20.00
+Message: MARGEN SUPERIOR      : 120.00
+DEBUG_DB: Function:
+   select sai_formatos_digitales_switch_activa(205, 'ahorro_hoja_activacion')
+
+
+   select count(*) from tablas where lower(idtabla) = 'param' and lower(idelemento) = 'usar_v_auxiliares_en_busqueda_f3' and dato1 = '1'
+
+   select case when dato1 is not null and es_numero(dato1) and dato1::integer between 1 and 9 then ' where consecutivo = '||dato1||' 'else '' end from   tablas where  idtabla = 'trabajo_contratos' and idelemento = 'contrato_digital_legalario'
+DEBUG_DB: Query:
+   SELECT a.*,tasaio*12 AS tasaio_anual,tasaim*12 AS tasaim_anual,tasaiod*12 AS tasaiod_anual,TRIM(TO_CHAR(ROUND(tasaio*12,1),'9999.9')) AS tasaio_anual1,TRIM(TO_CHAR(ROUND(tasaio*12,2),'9999.99')) AS tasaio_anual2,TRIM(TO_CHAR(ROUND(tasaim*12,1),'9999.9')) AS tasaim_anual1,TRIM(TO_CHAR(ROUND(tasaim*12,2),'9999.99')) AS tasaim_anual2,TRIM(TO_CHAR(ROUND(tasaiod*12,1),'9999.9')) AS tasaiod_anual1,TRIM(TO_CHAR(ROUND(tasaiod*12,2),'9999.99')) AS tasaiod_anual2,TRIM(TO_CHAR(plazo,'9999'))||' pagos '||(CASE WHEN pagodiafijo = 1 THEN 'cada dia ' ELSE 'cada ' END)||(CASE WHEN pagodiafijo = 1 THEN TRIM(TO_CHAR((CASE WHEN estatus = 2 THEN DATE(DATE(fechaactivacion + INT4(periodoabonos)) + '1 MONTH'::INTERVAL) ELSE (CASE WHEN fechaactivacion IS NULL THEN (CASE WHEN (SELECT referencia FROM referenciasp WHERE idorigenp=a.idorigenp AND idproducto=a.idproducto AND idauxiliar=a.idauxiliar AND tiporeferencia=5 LIMIT 1) IS NULL THEN DATE(DATE(fechaape + INT4(periodoabonos)) + '1 MONTH'::INTERVAL) ELSE (SELECT DATE(referencia) FROM referenciasp WHERE idorigenp=a.idorigenp AND idproducto=a.idproducto AND idauxiliar=a.idauxiliar AND tiporeferencia=5 LIMIT 1) END) ELSE fechaactivacion END) END),'DD')) ELSE TRIM(TO_CHAR(periodoabonos,'9999')) END)||(CASE WHEN pagodiafijo = 1 THEN ' del mes' ELSE ' dias' END) AS cada_cuando FROM v_auxiliares a WHERE a.idorigen=30306 AND a.idgrupo=10 AND a.idsocio=17043 AND a.idorigenp=30321 AND a.idauxiliar=15 AND idproducto=205
+DEBUG_DB: Query:
+   select p.*, pt.*, int4(extract(year from age(p.fechanacimiento))) as edad, TRIM(p.telefono) AS tel1, TRIM(p.telefonorecados) AS tel2, p.estadocivil as edocivil, c.nombre as c_nombre, m.nombre as m_nombre,e.nombre as e_nombre,case when p.fechaciudad is NOT NULL then trim(to_char(date_mi(date('31/10/2025'),date(p.fechaciudad))/365.0,'999.9')) else '' end as tiempociudad,t.nombre as t_nombre,t.calle as t_calle,t.numero as t_numero,t.idcolonia as t_idcolonia,t.telefono as t_telefono,t.telefono2 as t_telefono2,t.ocupacion as t_ocupacion,t.fechaingreso as t_fechaingreso,t.puesto as t_puesto,t.entrecalles as t_entrecalles,t.ing_mensual_bruto as t_ing_mensual_bruto,t.ing_mensual_neto as t_ing_mensual_neto,t.ocupacion_numero as t_num_ocupacion,case when t.fechaingreso is NOT NULL then trim(to_char(date_mi(date('31/10/2025'),date(t.fechaingreso))/365.0,'999.9')) else '' end as antiguedad, t.actividad_economica as act_economica, t.actividad_economica_pld as act_economica_pld, s.estatusvivienda as s_estatusvivienda,s.mensualidadvivienda as s_mensualidadvivienda, s.fechahabitacion as s_fechahabitacion,s.dependientes as s_dependientes,s.ingresosordinarios as s_ingresosordinarios,s.ingresosextraordinarios as s_ingresosextraordinarios,s.gastosordinarios as s_gastosordinarios,s.gastosextraordinarios as s_gastosextraordinarios,s.propietariovivienda as s_propietariovivienda,s.tipoingresos as s_tipoingresos,s.valorpropiedad as s_valorpropiedad,case when s.fechahabitacion is NOT NULL then trim(to_char(date_mi(date('31/10/2025'),date(s.fechahabitacion))/365.0,'999.9')) else '' end as s_tiempodomicilio,s.gastos_tipo1 AS s_gastos_tipo1,s.gastos_tipo2 AS s_gastos_tipo2,s.gastos_tipo3 AS s_gastos_tipo3,s.gastos_tipo4 AS s_gastos_tipo4,s.gastos_tipo5 AS s_gastos_tipo5,s.gastos_tipo6 AS s_gastos_tipo6 from personas p inner join colonias   c on (p.idcolonia   = c.idcolonia) inner join municipios m on (c.idmunicipio = m.idmunicipio) inner join estados    e on (m.idestado    = e.idestado) left outer join (select   distinct on (idorigen,idgrupo,idsocio) * from     trabajo order by idorigen,idgrupo,idsocio,consecutivo desc) t on (t.idorigen = p.idorigen  and t.idgrupo = p.idgrupo  and t.idsocio = p.idsocio) left outer join socioeconomicos       s on (p.idorigen = s.idorigen  and p.idgrupo = s.idgrupo  and p.idsocio = s.idsocio) left outer join perfil_transaccional pt on (p.idorigen = pt.idorigen and p.idgrupo = pt.idgrupo and p.idsocio = pt.idsocio) where p.idorigen = 30306 and p.idgrupo = 10 and p.idsocio = 17043
+DEBUG_DB: Function:
+   SELECT tipoproducto FROM productos WHERE idproducto = 205
+DEBUG_DB: Function:
+   select count(*) from tablas where lower(idtabla) = 'param' and lower(idelemento) = 'redondea_porcentajes_sin_decimales' and dato1 = '1'
+DEBUG_DB: Query:
+   SELECT * FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=3 ORDER BY idorigenr,idgrupor,idsocior
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=8 AND referencia like '1|030321|00205|00000015%'
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=8 AND referencia like '2|030321|00205|00000015%'
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=8 AND referencia like '3|030321|00205|00000015%'
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=8 AND referencia like '4|030321|00205|00000015%'
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=8 AND referencia like '5|030321|00205|00000015%'
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=8 AND referencia like '6|030321|00205|00000015%'
+DEBUG_DB: Function:
+   SELECT vence FROM v_amortizaciones WHERE idorigenp=30321 AND idproducto=205 AND idauxiliar=15 AND idamortizacion=1
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=1 AND (referencia IS NULL OR referencia='')
+DEBUG_DB: Query:
+   select p.*, pt.*, int4(extract(year from age(p.fechanacimiento))) as edad, p.estadocivil as edocivil, c.nombre as c_nombre, m.nombre as m_nombre, e.nombre as e_nombre, case when p.fechaciudad is NOT NULL then trim(to_char(date_mi(date('31/10/2025'),date(p.fechaciudad))/365.0,'999.9')) else '' end as tiempociudad,t.nombre as t_nombre,t.calle as t_calle, t.numero as t_numero,t.idcolonia as t_idcolonia, t.telefono as t_telefono, t.telefono2 as t_telefono2, t.ocupacion as t_ocupacion,t.fechaingreso as t_fechaingreso, t.puesto as t_puesto,t.entrecalles as t_entrecalles,t.ocupacion_numero as t_num_ocupacion,t.giro_empresa,case when t.fechaingreso is NOT NULL then trim(to_char(date_mi(date('31/10/2025'),date(t.fechaingreso))/365.0,'999.9')) else '' end as antiguedad,t.actividad_economica as act_economica,t.actividad_economica_pld as act_economica_pld,s.estatusvivienda as s_estatusvivienda, s.mensualidadvivienda as s_mensualidadvivienda, s.fechahabitacion as s_fechahabitacion, s.dependientes as s_dependientes, s.ingresosordinarios as s_ingresosordinarios, s.ingresosextraordinarios as s_ingresosextraordinarios,s.gastosordinarios as s_gastosordinarios, s.gastosextraordinarios as s_gastosextraordinarios,s.propietariovivienda as s_propietariovivienda, s.tipoingresos as s_tipoingresos,s.valorpropiedad as s_valorpropiedad,case when s.fechahabitacion is NOT NULL then trim(to_char(date_mi(date('31/10/2025'),date(s.fechahabitacion))/365.0,'999.9')) else '' end as s_tiempodomicilio,s.gastos_tipo1 AS s_gastos_tipo1, s.gastos_tipo2 AS s_gastos_tipo2,s.gastos_tipo3 AS s_gastos_tipo3,s.gastos_tipo4 AS s_gastos_tipo4,s.gastos_tipo5 AS s_gastos_tipo5,s.gastos_tipo6 AS s_gastos_tipo6 from personas p inner join colonias                   c on (p.idcolonia   = c.idcolonia) inner join municipios                 m on (c.idmunicipio = m.idmunicipio) inner join estados                    e on (m.idestado    = e.idestado) left outer join (select   distinct on (idorigen,idgrupo,idsocio) * from     trabajo   order by idorigen,idgrupo,idsocio,consecutivo desc) t on (t.idorigen = p.idorigen  and t.idgrupo = p.idgrupo  and t.idsocio = p.idsocio) left outer join socioeconomicos      s  on (p.idorigen = s.idorigen  and p.idgrupo = s.idgrupo  and p.idsocio = s.idsocio) left outer join perfil_transaccional pt on (p.idorigen = pt.idorigen and p.idgrupo = pt.idgrupo and p.idsocio = pt.idsocio) where p.idorigen = 30306 and p.idgrupo = 93 and p.idsocio = 9078
+DEBUG_DB: Query:
+   SELECT idorigenr||'-'||idgrupor||'-'||idsocior AS socio_referencia FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=38 AND (referencia IS NULL OR referencia='')
+DEBUG_DB: Query:
+   SELECT * FROM notas WHERE idnota = 'C|030321|00205|00000015'
+DEBUG_DB: Function:
+   SELECT SUM(a.Saldo) FROM Auxiliares AS a INNER JOIN Productos AS p USING (idProducto) WHERE a.idorigen = 30306 AND a.idgrupo = 10 AND a.idsocio = 17043 AND a.estatus = 2 AND a.saldo>0 AND p.tipoproducto=0
+DEBUG_DB: Function:
+   SELECT SUM(a.Saldo) FROM Auxiliares AS a INNER JOIN Productos AS p USING (idProducto) WHERE a.idorigen = 30306 AND a.idgrupo = 10 AND a.idsocio = 17043 AND a.estatus = 2 AND a.saldo>0 AND p.tipoproducto=1
+DEBUG_DB: Function:
+   SELECT SUM(a.Saldo) FROM Auxiliares AS a INNER JOIN Productos AS p USING (idProducto) WHERE a.idorigen = 30306 AND a.idgrupo = 10 AND a.idsocio = 17043 AND a.estatus = 2 AND a.saldo>0 AND p.tipoproducto=8
+DEBUG_DB: Function:
+   SELECT SUM(a.Saldo) FROM Auxiliares AS a INNER JOIN Productos AS p USING (idProducto) WHERE a.idorigen = 30306 AND a.idgrupo = 10 AND a.idsocio = 17043 AND a.estatus = 2 AND a.saldo>0 AND p.tipoproducto=2
+DEBUG_DB: Function:
+   SELECT distinct idformato FROM formatos WHERE nombre='ahorro_hoja_activacion'
+DEBUG_DB: Query:
+   SELECT * FROM notas WHERE idnota LIKE 'GAR|030321|00205|00000015%' ORDER BY idnota
+DEBUG_DB: Query:
+   select * from pg_class where relname = 'garantias_hipotecarias'
+DEBUG_DB: Query:
+   select * from pg_class where relname = 'garantias_autos'
+DEBUG_DB: Query:
+   select * from garantias_autos where idorigenp = 30321 and idproducto = 205 and idauxiliar = 15 order by consecutivo
+DEBUG_DB: Query:
+   select * from garantias_hipotecarias where idorigenp = 30321 and idproducto = 205 and idauxiliar = 15 order by consecutivo
+DEBUG_DB: Query:
+   SELECT idorigenpr,idproductor,idauxiliarr,referencia FROM referenciasp WHERE idorigenp=30321 AND idproducto=205 AND idauxiliar=15 AND tiporeferencia=4
+DEBUG_DB: Query:
+   SELECT * FROM notas WHERE idnota LIKE 'GP|030321|00205|00000015%'
+DEBUG_DB: Query:
+   SELECT * FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=2 ORDER BY idorigenr,idgrupor,idsocior
+DEBUG_DB: Query:
+   SELECT p.*, INT4(EXTRACT(YEAR FROM AGE(p.fechanacimiento))) AS edad, p.estadocivil AS edocivil, c.nombre AS c_nombre, m.nombre AS m_nombre, e.nombre AS e_nombre FROM personas p INNER JOIN colonias c ON p.idcolonia = c.idcolonia INNER JOIN municipios m ON c.idmunicipio = m.idmunicipio INNER JOIN estados e ON m.idestado = e.idestado WHERE p.idorigen=30306 AND p.idgrupo=93 AND p.idsocio=9078 
+DEBUG_DB: Query:
+   SELECT idorigenr,idgrupor,idsocior FROM referencias WHERE idorigen=30306 AND idgrupo=10 AND idsocio=17043 AND tiporeferencia=24 AND referencia LIKE '%030321|00205|00000015%' ORDER BY TRIM(SAI_TOKEN(1,referencia,'|'))::INTEGER
+DEBUG_DB: Query:
+   SELECT * FROM referenciasp WHERE idorigenp=30321 AND idproducto=205 AND idauxiliar=15 AND tiporeferencia=6
+DEBUG_DB: Query:
+   select p.*, p.estadocivil as edocivil,c.nombre as c_nombre,m.nombre as m_nombre,e.nombre as e_nombre from personas p inner join colonias as c on(p.idcolonia = c.idcolonia) inner join municipios as m on(c.idmunicipio = m.idmunicipio) inner join estados as e on(m.idestado = e.idestado) inner join (select sai_token(1,dato1,'|')::integer as idorigen,sai_token(2,dato1,'|')::integer as idgrupo,sai_token(3,dato1,'|')::integer as idsocio from tablas where lower(idtabla) = 'funcionario_autorizado' and sai_texto1_like_texto2(text(30321),NULL,dato2,'|') > 0) as fa using(idorigen,idgrupo,idsocio)
+DEBUG_DB: Query:
+   select idorigen,idgrupo,idsocio from personas where (idorigen,idgrupo,idsocio) in (select idorigenr, idgrupor, idsocior from referencias where idorigen = 30306 and idgrupo = 10 and idsocio = 17043 and tiporeferencia = 27 order by idorigenr,idgrupor,idsocior)
+DEBUG_DB: Query:
+   SELECT * FROM notas WHERE idnota = 'BDPF1|030321|00205|00000015'
+DEBUG_DB: Query:
+   SELECT * FROM notas WHERE idnota = 'BDPF2|030321|00205|00000015'
+DEBUG_DB: Query:
+   SELECT SAI_TOKEN(2,referencia,'|') AS idorigen,SAI_TOKEN(3,referencia,'|') AS idgrupo,SAI_TOKEN(4,referencia,'|') AS idsocio,SAI_TOKEN(5,referencia,'|') AS porcentaje FROM referenciasp WHERE idorigenp = 30321 AND idproducto = 205 and idauxiliar = 15 AND tiporeferencia = 16 ORDER BY SAI_TOKEN(1,referencia,'|')::INTEGER
+DEBUG_DB: Function:
+   SELECT referencia FROM referenciasp WHERE idorigenp=30321 AND idproducto=205 AND idauxiliar=15 AND tiporeferencia=13
+DEBUG_DB: Query:
+   SELECT o.idcolonia,o.calle,o.numeroext,o.numeroint,'' AS entrecalles,vc.nombre AS c_nombre,vc.estado AS e_nombre,vc.municipio AS m_nombre,vc.codigopostal FROM origenes o INNER JOIN vcolonias vc USING (idcolonia) WHERE o.idorigen = 30321
+DEBUG_DB: Query:
+   SELECT o.idcolonia,o.calle,o.numeroext,o.numeroint,'' AS entrecalles,vc.nombre AS c_nombre,vc.estado AS e_nombre,vc.municipio AS m_nombre,vc.codigopostal FROM origenes o INNER JOIN vcolonias vc USING (idcolonia) WHERE o.idorigen = 30306
+Message: ------------------------ CAMPO : idorigenp, FORMATO : 
+Message: ------------------------ CAMPO : idorigenp, FORMATO : nombre
+Message: ------------------------ CAMPO : fecha_apertura, FORMATO : dd
+Message: ------------------------ CAMPO : fecha_apertura, FORMATO : ml
+Message: ------------------------ CAMPO : fecha_apertura, FORMATO : aaaa
+Message: ------------------------ CAMPO : ogs, FORMATO : 
+Message: ------------------------ CAMPO : num_usuario_banca_movil.sql, FORMATO : 
+DEBUG_DB: Function:
+   select (case when alias_usuario is NULL then '' else alias_usuario end) from banca_movil_usuarios
+        where idorigen = 30306 and idgrupo = 10 and idsocio = 17043 and
+              idorigenp = 30321 and idproducto = 205 and idauxiliar = 15
+Message: ------------------------ CAMPO : nombre_socio, FORMATO : 
+Message: ------------------------ CAMPO : idorigenp, FORMATO : 
+Message: ------------------------ CAMPO : idproducto, FORMATO : 
+Message: ------------------------ CAMPO : idauxiliar, FORMATO : 
+Message: ------------------------ CAMPO : p130_banca_movil.sql, FORMATO : 
+DEBUG_DB: Function:
+   select trim(to_char(idorigenp,'999999'))||'-'||trim(to_char(idproducto,'99999'))||'-'||
+               trim(to_char(idauxiliar,'99999999'))
+        from auxiliares
+        where idorigen = 30306 and idgrupo = 10 and idsocio = 17043 and
+              idorigenp > 0 and idproducto = 130 and idauxiliar > 0
+Message: ------------------------ CAMPO : email, FORMATO : 
+Message: ------------------------ CAMPO : celular, FORMATO : 
+Message: ------------------------ CAMPO : direccion, FORMATO : cp
+Message: ------------------------ CAMPO : rfc, FORMATO : 
+Message: ------------------------ CAMPO : fechanacimiento, FORMATO : 
+Message: ------------------------ CAMPO : curp, FORMATO : 
+Message: ------------------------ CAMPO : telefono1, FORMATO : 
+Message: ------------------------ CAMPO : fecha_hoy, FORMATO : dd
+Message: ------------------------ CAMPO : fecha_hoy, FORMATO : ml
+Message: ------------------------ CAMPO : fecha_hoy, FORMATO : aaaa
+Message: ------------------------ CAMPO : direccion_idorigenp, FORMATO : munest
+Message: ------------------------ CAMPO : elaboro, FORMATO : 
+Message: ------------------------ CAMPO : nombre_elaboro, FORMATO : 
+Message: ------------------------ CAMPO : nombre_socio, FORMATO : 
+Message: comando: iconv /tmp/999104424~ -f iso-8859-1 -t utf-8 -o /tmp/999104424~.html
+Message: comando: gnome-open /tmp/999104424~.html; sleep 20
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css">
+                .contenedor {
+                        height: 25cm;
+                        width: 19cm;
+                        font-family: Arial, Helvetica, sans-serif;
+                }
+                .encabezado {
+                        color: #000;
+                        text-align: center;
+                        font-size: 11pt;
+                        background-color: #FFFFFF;
+                        font-weight: bold;
+                }
+                .borde_bajo {
+                        border-bottom-width: 1px;
+                        border-bottom-style: solid;
+                        border-bottom-color: #000;
+                }
+                .izq {
+                        text-align: left;
+                        font-size: 11pt;
+                }
+                .centro {
+                        text-align: center;
+                }
+                .der {
+                        text-align: right;
+                }
+                .pos_abajo {
+                        vertical-align: bottom;
+                        border-bottom-width: 1px;
+                        border-bottom-style: solid;
+                        border-bottom-color: #000;
+                        height: 50px;
+                }
+                .top_texto {
+                        vertical-align: top;
+                        height: 100px;
+                }
+                .texto {
+                        font-size: 11pt;
+                        text-align: justify;
+                }
+                .texto_par {
+                        font-size: 10pt;
+                        text-align: justify;
+                }
+                .texto_logo {
+                        font-size: 12pt;
+                        font-weight: bold;
+                        text-align: left;
+                }
+                .alinear_abajo {
+                        vertical-align: bottom;
+                }
+        </style>
+        <title>Hoja de Activacion</title>
+</head>
+<body>
+        <div class="contenedor">
+                <table width="100%" class="texto" border="0" cellspacing="0" cellpadding="0">
+                        <table>
+                                <tr>
+                                        <td>
+<!----------------------Encabezado-------------------------->
+                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr><td colspan="2">&nbsp;</td></tr>
+                                                        <tr>
+                                                                <td width="25%"><center><img src="/usr/local/saicoop/img_caratula_prestamos/logo.jpg" width="101" height="99" alt="logo" /></center></td>
+                                                                <td width="50%" class="texto_logo">Caja Mitras S.C. de A.P. de R.L. DE C.V.</td>
+                                                                <td width="25%" class="texto_logo"><center>Mitras Movil <br> Banca por Internet</center></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td colspan="2">&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td colspan="2">&nbsp;</td>
+                                                        </tr>
+                                                </table>
+<!----------------------Fin Encabezado---------------------->
+                                                <tr>
+                                                        <td>
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                        <tr>
+                                                                                <td colspan="4" class="encabezado">Hoja de activaci&oacute;n del producto de banca m&oacute;vil</td>
+                                                                        </tr>
+                                                                        <tr><td colspan="4">&nbsp;</td></tr>
+                                                                        <tr class="texto">
+                                                                                <td width="25%">Sucursal de Apertura:</td>
+                                                                                <td width="25%">@@@idorigenp|@@@, @@@idorigenp|nombre@@@</td>
+                                                                                <td width="25%">Fecha de Apertura:</td>
+                                                                                <td width="25%">@@@fecha_apertura|dd@@@ de @@@fecha_apertura|ml@@@ del @@@fecha_apertura|aaaa@@@</td>
+                                                                        </tr>
+                                                                        <tr><td colspan="4" class="borde_bajo">&nbsp;</td></tr>
+                                                                        <tr>
+                                                                                <td colspan="4" class="encabezado borde_bajo">Datos del Socio</td>
+                                                                        </tr>
+                                                                        <tr><td colspan="4">&nbsp;</td></tr>
+                                                                        <tr>
+                                                                                <td colspan="4">
+                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                                <tr class="texto">
+                                                                                                        <td width="18%">No. de socio:</td>
+                                                                                                        <td width="33%">@@@ogs|@@@</td>
+                                                                                                        <td width="19%">No. de Usuario:</td>
+                                                                                                        <td width="30%">@@@num_usuario_banca_movil.sql|@@@</td>
+                                                                                                </tr>
+                                                                                                <tr class="texto">
+                                                                                                        <td width="18%">Nombre:</td>
+                                                                                                        <td width="33%">@@@nombre_socio|@@@</td>
+                                                                                                        <td width="19%">Folio del producto:</td>
+                                                                                                        <td width="30%">@@@idorigenp|@@@-@@@idproducto|@@@-@@@idauxiliar|@@@</td>
+                                                                                                </tr>
+                                                                                                <tr class="texto">
+                                                                                                        <td width="18%">N&uacute;mero de cuenta:</td>
+                                                                                                        <td width="33%">@@@p130_banca_movil.sql|@@@</td>
+                                                                                                        <td width="19%">Correo electr&oacute;nico:</td>
+                                                                                                        <td width="30%">@@@email|@@@</td>
+                                                                                                </tr>
+                                                                                                <tr class="texto">
+                                                                                                        <td width="18%">No. celular:</td>
+                                                                                                        <td width="33%">@@@celular|@@@</td>
+                                                                                                        <td width="19%">C&oacute;digo postal:</td>
+                                                                                                        <td width="30%">@@@direccion|cp@@@</td>
+                                                                                                </tr>
+                                                                                                <tr class="texto">
+                                                                                                        <td width="18%">RFC:</td>
+                                                                                                        <td width="33%">@@@rfc|@@@</td>
+                                                                                                        <td width="19%">Fecha de nac.:</td>
+                                                                                                        <td width="30%">@@@fechanacimiento|@@@</td>
+                                                                                                </tr>
+                                                                                                <tr class="texto">
+                                                                                                        <td width="18%">CURP:</td>
+                                                                                                        <td width="33%">@@@curp|@@@</td>
+                                                                                                        <td width="19%">Tel&eacute;fono:</td>
+                                                                                                        <td width="30%">@@@telefono1|@@@</td>
+                                                                                                </tr>
+                                                                                        </table>
+                                                                                </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td colspan="4" class="texto_par"> <b>Las notificaci&oacute;nes de las operaciones realizadas se enviar&aacute;n al correo electronico y/o numero de celular registrados.</b></td>
+                                                                        </tr>
+                                                                        <tr><td colspan="4" class="borde_bajo">&nbsp;</td></tr>
+                                                                        <tr>
+                                                                                <tr><td colspan="4">&nbsp;</td></tr>
+                                                                                <td colspan="4" class="texto">
+                                                                                        Para hacer la activaci&oacute;n de la cuenta comunicate a nuestra <b>Linea CallCenter 8183707548</b> LADA SIN COSTO <br><br>
+                                                                                        Caja Mitras S.C. de A.P. de R.L. de C.V. Cooperativa de ahorro recibe las consultas y reclamaci&oacute;nes o aclaraci&oacute;nes, en su Unidad Especializada de Atenci&oacute;n a Usuarios, ubicada en Rodrigo G&oacute;mez No. 104-B, Col.Central, C.P.64190,Monterrey, Nuevo L&eacute;on. y por correo electr&oacute;nico a: edgartrejo@cajamitras.com &oacute; Tel&eacute;fono 01(81)83-11-34-72, as&iacute; como en cualquiera de sus sucursales u oficinas. En el caso de no obtener una respuesta satisfactoria, podr&aacute; acudir a la Comisi&oacute;n Nacional para la Protecci&oacute;n y Defensa de los Usuarios de Servicios Financieros: www.conduserf.gob.mx Tel: 01800 999 8080(55)5340 0999. <br><br>
+                                                                                        Declara el cliente en este acto, aceptar los t&eacute;rminos y codiciones del contrato y de esta hoja de activaci&oacute;n. El cliente declara en adici&oacute;n, recibir en este documento el <b>n&uacute;mero de usuario</b> de Banca por internet.(MitrasMovil)
+                                                                                </td>
+                                                                        </tr>
+                                                                        <tr><td colspan="4" class="pos_abajo">&nbsp;</td></tr>
+                                                                        <tr class="izq">
+                                                                                <tr><td colspan="4">&nbsp;</td></tr>
+                                                                                <td colspan="4"><b>@@@fecha_hoy|dd@@@ de @@@fecha_hoy|ml@@@ del @@@fecha_hoy|aaaa@@@</b><br><br>
+                                                                                        <b>@@@direccion_idorigenp|munest@@@</b>
+                                                                                </td>
+                                                                        </tr>
+                                                                </table>
+                                                        </td>
+                                                </tr>
+                                        </td>
+                                </tr>
+                        </table>
+                        <table>
+                                <tr><td colspan="4">&nbsp;</td></tr>
+                                <tr class="texto_par">
+                                        <td width="25%"><B>@@@elaboro|@@@ @@@nombre_elaboro|@@@</B></td>
+                                        <td width="10%"><B>@@@nombre_socio|@@@</B></td>
+                                </tr>
+                                <tr>
+                                        <td width="10%"><hr color="black" size="2" width="50%" align="left"></td>
+                                        <td width="15%"><hr color="black" size="2" width="100%" align="all-right"></td>
+                                </tr>
+                                <tr class="texto_par">
+                                        <td width="25%"><b>Firma del auxiliar</b></td>
+                                        <td width="10%"><b>Firma del consetimiento del titular de la cuenta</b></td>
+                                </tr>
+                        </table>
+                </table>
+        </div>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

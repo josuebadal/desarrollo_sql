@@ -1,0 +1,120 @@
+INSERT INTO tablas (idtabla,idelemento,nombre,dato1,dato3,dato4,tipo,dato2)
+VALUES ('texto_html_contratos',
+'contrato_anexoc_creditos',
+'Anexo C ITZAES',
+'iconv %s -f ISO-8859-1 -t UTF-8 -o %s.html',
+'gnome-open %s.html; sleep 100',
+'rm -rf %s.*',0,
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>ANEXO C</title>
+
+<style type="text/css">
+
+  .contenedor {
+  height: 23cm;
+  width: 19cm;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  }
+
+ .borde_bajo {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+}
+
+ .borde_arriba {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #000;
+}
+
+.alinear_der {
+	text-align: right;
+}
+
+.alinear_izq {
+	text-align: left;
+}
+.alinear_just {
+	text-align: justify;
+}
+
+</style>
+
+
+</head>
+<body onload="seccion()">
+ <div class="contenedor">
+    <br>
+<!--  ENCABEZADO PRINCIPAL ********************************************************************************************* -->
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+
+          <th > <div  ><font size="4">
+            ANEXO "C"<BR><br>AUTORIZACI&Oacute;N PARA PAGOS ADELANTADOS
+                                             </font>  </div> </th>
+        </tr>
+           <tr>
+           <td class="alinear_der" ><font size="3">
+            <br>No. de Registro: 4933-439-032364/04-04344-1022</font> </td>        
+            </tr>
+
+           <tr>
+           <td class="alinear_der" > <font size="3"><br>M&Eacute;RIDA,YUCAT&Aacute;N a <u> @@@fecha_hoy|dd@@@</u> de <u>@@@fecha_hoy|ml@@@</u> de <u>@@@fecha_hoy|aaaa@@@</u> </font></td>           
+            </tr>
+
+            <tr>
+           <td  ><font size="3"><br><b>Nombre del socio:</b> @@@nombre_socio|@@@</font></td>           
+            </tr>
+
+            <tr>
+           <td> <font size="3"><br><b>N&uacute;mero de CR&Eacute;DITO:</b>@@@idorigenp|@@@-@@@idproducto|@@@-@@@idauxiliar|@@@</font> </td>           
+            </tr>
+
+            <tr>
+           <td> <font size="3"><br><b>N&uacute;mero de socio:</b> @@@ogs|@@@</font></td>           
+           </tr>
+
+            <tr>
+           <td class="alinear_just"   ><br><font size="3">
+        El "Socio Acreditado" autoriza que los recursos que se entregan en exceso
+a sus obligaciones exigibles a la presente fecha, no se apliquen para el
+Pago Anticipado del principal, sino que se utilicen para cubrir por
+adelantado los pagos peri&oacute;dicos del CR&Eacute;DITO inmediatos siguientes.
+          </font>
+          </td>           
+            </tr>
+
+            <tr>
+           <td class="alinear_just"  ><br><font size="3">
+        Sin m&aacute;s por el momento me despido de usted, agradeciendo el apoyo
+otorgado.
+          </font>
+          </td>           
+            </tr>
+
+            <tr>
+           <td><br><font size="3"><center>
+            Atentamente
+          </center>
+          </font>
+          </td>           
+            </tr>
+ </table>
+
+<BR><BR>
+</body>
+</div>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+');

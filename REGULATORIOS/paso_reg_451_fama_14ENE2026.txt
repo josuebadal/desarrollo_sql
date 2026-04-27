@@ -1,0 +1,42 @@
+***********************PASOS A SEGUIR PARA LA ESTIMACION AL 100%*************************
+
+1.-REGRESAR LOS PARAMETROS AL SOCIO (Esto solo se aplica una vez y en la base de prueba para regresar los cambios realizados en el archivo adjunto anterior)
+
+
+UPDATE referenciasp 
+set tiporeferencia = 2,
+    referencia = '0|C',
+    idorigenpr = 30502,
+    idproductor = 30303,
+    idauxiliarr = 2046
+where (idorigenp,idproducto,idauxiliar) = (30502,30112,172);
+
+
+2.- ACTUALIZAR LOS DATOS FINALES (Se debera correr el UPDATE para aplicar los cambios en el socio 225389)
+
+
+UPDATE referenciasp 
+set tiporeferencia = 14,
+    referencia = '100',
+    idorigenpr   = null,
+    idproductor = null,
+    idauxiliarr = null
+where (idorigenp,idproducto,idauxiliar) = (30502,30112,172)
+AND (idorigenpr,idproductor,idauxiliarr) = (30502,30303,2046);
+
+
+3.- SE DEBERA CREAR LA TABLA DEL EPRC (La fecha esta puesta acorde a la base de fin de mes de diciembre) 
+
+
+select crea_tabla_temporal_eprcc_2('31/12/2025');
+
+
+4.-Se debera cargar el archivo  llamado "451_fama_14ENE2026.SQL" ADJUNTO DOCUMENTO
+
+
+5.-SE DEBERA CORRER NUEVAMENTE EL REGULATORIO 
+
+
+select reg_451();
+
+

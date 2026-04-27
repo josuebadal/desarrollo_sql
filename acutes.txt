@@ -1,0 +1,2 @@
+./psqlaccess.sh 192.168.99.203 prueba saicoop
+

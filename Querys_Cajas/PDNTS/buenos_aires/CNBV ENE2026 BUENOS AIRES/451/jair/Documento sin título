@@ -1,0 +1,1 @@
+﻿psql buenos2025dic31 admin2 -f /etc/q_cartera_nueva.sql -A -o DBCarterabuenos2025dic31.txt

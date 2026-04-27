@@ -1,0 +1,1 @@
+1. Existen dos formulas matematicas en la pagina 2 para calcular el saldo insoluto y el pago fijo, no es posible replicar las formulas en diseño en html, se pondria como imagen o representar las formulas de manera mas simplificada para se adapte al diseño en html?

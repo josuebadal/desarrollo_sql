@@ -1,0 +1,32 @@
+select
+(TRIM(TO_CHAR(per.idorigen,'099999')) ||'-' || per.idgrupo ||'-'|| TRIM(TO_CHAR(per.idsocio,'09999999'))) AS "Numero de socio",
+'|' AS "|",
+per.fechaingreso  as "Ingreso",
+'|' AS "|",
+per.fechanacimiento as "Nacimiento",
+'|' AS "|",
+(select sum(aux2.saldo) from auxiliares as aux2 where aux2.idproducto=101 and aux2.idorigen=aux.idorigen and aux2.idgrupo=aux.idgrupo and aux2.idsocio=aux.idsocio ) as "Parte social",
+'|' AS "|",
+EXTRACT(YEARS FROM AGE((select date(fechatrabajo) from origenes limit 1) ,per.fechanacimiento )) as "Edad",
+'|' AS "|",
+(select sum(aux2.saldo) from auxiliares as aux2 where aux2.idproducto in(200,110,130) and aux2.idorigen=aux.idorigen and aux2.idgrupo=aux.idgrupo and aux2.idsocio=aux.idsocio  ) as "Saldo de ahorros",
+'|' AS "|",
+TRIM(TO_CHAR(aux.idorigenp, '099999')) || '-' || TRIM(TO_CHAR(aux.idproducto, '09999')) || '-' || TRIM(TO_CHAR(aux.idauxiliar , '09999999')) AS "Numero de folio",
+'|' AS "|",
+aux.fechaape as "Fecha otorgamiento",
+'|' AS "|",
+aux.montoprestado as "Monto otorgado",
+'|' AS "|",
+(select sum(aux2.saldo) from auxiliares as aux2 where aux2.idproducto in( select idproducto from productos where tipoproducto in (0,1,8)) and aux2.idorigen=aux.idorigen and aux2.idgrupo=aux.idgrupo and aux2.idsocio=aux.idsocio  ) as "Saldo capital",
+'|' AS "|",
+(select coalesce(sum(c.saldo),0) from carteravencida as c where c.idorigen=aux.idorigen and c.idgrupo=aux.idgrupo and c.idsocio=aux.idsocio and c.idorigenp=aux.idorigenp and c.idproducto=aux.idproducto and  c.idauxiliar=aux.idauxiliar ) as "Saldo vencido",
+'|' AS "|",
+(select coalesce(c1.io,0) from carteravencida as c1 where c1.idorigen=aux.idorigen and c1.idgrupo=aux.idgrupo and c1.idsocio=aux.idsocio and c1.idorigenp=aux.idorigenp and c1.idproducto=aux.idproducto and  c1.idauxiliar=aux.idauxiliar ) as "Interes generado",
+'|' AS "|",
+(select coalesce(c2.im,0) from carteravencida as c2 where c2.idorigen=aux.idorigen and c2.idgrupo=aux.idgrupo and c2.idsocio=aux.idsocio and c2.idorigenp=aux.idorigenp and c2.idproducto=aux.idproducto and  c2.idauxiliar=aux.idauxiliar ) as "Interes moratorio",
+'|' AS "|",
+(select am.vence from amortizaciones as am where am.idorigenp=aux.idorigenp and am.idproducto=aux.idproducto and am.idauxiliar=aux.idauxiliar order by am.vence desc limit 1) as "Fecha de vencimiento",
+'|' AS "|"
+from personas as per
+inner join auxiliares as aux using(idorigen,idgrupo,idsocio)
+where aux.idproducto between 30000 and 39999 and aux.estatus in (2,3) and per.estatus=true;

@@ -1,0 +1,30 @@
+Regulatorio 841 Mensual / Trimestral
+1.- Cargar pólizas extemporaneas 
+
+2.- Ejecutar función en ambos respaldos de garantía líquida
+
+3.- Cargar función en el respaldo que nos piden el regulatorio reg_841_12jun25.sql   /  NOTA: PARA MITRAS ES LA: reg_841_16mar23.sql / NOTA: PARA NUEVE DE AGOSTO TIENE LA: reg_841_mensual.sql PARA EL MENSUAL
+
+4.- Cargar o Revisar listado de productos en la lista prod_garantia_841
+
+-------  select * from tablas where idtabla='prod_garantia_841';
+
+NOTA: SI NO SE ENCUENTRAN LOS PRODUCTOS DESDE LA RUTA: respaldos/regulatorios/REG841/abril22/lista_prods
+
+5.- Cargar función claves_siti_nm.sql - **SOLO NUEVO MEXICO**
+
+6.- Ejecutar en ssh del servidor en el tmp el script importa
+
+7.- Ejecutar en el respaldo que piden el regulatorio:
+                select * from reg_841();  
+
+8.- Cuando sean realizados localmente podremos verificarlos con la consulta que esta en la siguiente ruta: Proyecto_SAICoop/REGULATORIO_V1/TODAS_CAJAS/reg_841_2022/comprobacion_reg841
+SE LLAMA: CONCILICION DE CAPTACION 9 DE AGOSTO (SE DEBE DE CARGAR EN EL RESPALDO DEL MES QUE NOS PIDE EL REGULATORIO EL TOTAL DEBE CUADRAR CON EL EXCEL DE LA COLUMNA AG)
+
+
+
+
+
+
+
+

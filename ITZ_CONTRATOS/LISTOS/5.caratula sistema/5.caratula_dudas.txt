@@ -1,0 +1,15 @@
+idorigen           | 31002
+idsocio            | 5157
+idorigenp          | 31002
+idproducto         | 30102
+idauxiliar         | 2277
+
+select * from auxiliares a inner join personas p using(idorigen,idgrupo,idsocio) where idproducto between 30000 AND 39999 AND a.estatus = 2 and idproducto = 30102;
+
+BORRAR TODAS LAS CARATULAS
+
+La caratula se puso el dato @@representante_legal@@
+este dato no existe en "pl_caratula_prestamos.sql" se debera crear el elemento para mandar a llamar al gerente asignado a esa sucursal, tambien validar cuando se genere y la sucursal no tenga gerente.
+
+
+

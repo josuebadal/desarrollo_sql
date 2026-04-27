@@ -1,0 +1,75 @@
+Buen dia, ya se valido con el oficial de cumplimiento los formularios del cuestionario operativo 2025, pero me hizo una observacion sobre la cantidad y monto de las operaciones de entrada y salida en los formularios B,C,D1 realizo una comparación con la informacion que se reporto del 2024 en numero de operaciones fueron 239,316 y ahora en 2025 arroja 136,186 y en monto de operaciones 2024 fueron 470,388,949 y en 2025 da como resultado 176,398,086 lo que llama la atencion que existe mucha diferencia entre ambos años.
+
+Comparando con el del año 2024 se estaba tomando en cuenta como tipo de instrumento con clave 8 Traspaso de Fondos con la cuenta eje las operaciones en  traspasos, las polizas de diario y en el de este año 2025 no aparecen esos registros.
+
+COLUMNAS DEL 2023 CUESTIONARIO OPERATIVO
+-----A1 -----
+CREATE TYPE numero_de_socios_de_la_entidad as (
+anio                                       integer,
+clave_formulario                           text,
+clave_de_entidad		                   integer,
+tipo_cliente_o_usuario	                   integer,
+clasificacion_grado_riesgo                 integer,
+pais_nacionalidad                          integer,
+pais_residencia                            integer,
+entidad_federativa_residencia              integer,
+numero_total_clientes                      integer);
+
+-----A2 -----
+create type numero_clientes_usuarios_operaron_periodo as (
+  anio                        integer,
+  clave_formulario            text,
+  clave_entidad               text,
+  producto_servicio           integer,
+  tipo_cliente_usuario        integer,
+  clasificacion_grado_riesgo  integer,
+  numero_clientes_usuarios    integer
+);
+
+-----B -----
+create type numero_operaciones_producto_servicio_por_moneda_instmonetario as (
+  anio                        integer,
+  clave_formulario            text,
+  clave_entidad               text,
+  producto_servicio           integer,
+  tipo_moneda                 integer,
+  tipo_instrumento_monetario  integer,
+  operac_entr_salida          integer,
+  numero_operaciones          integer,  
+  monto_operaciones           integer
+);
+
+-----C -----
+CREATE TYPE numero_de_cleintes_de_la_entidad as (
+anio                                       text,
+clave_del_formulario                       text,
+clave_de_entidad		                   		 integer,
+producto_servicio 					       				 integer,
+pais_origen_envio_de_los_recursos          integer,
+entrada_federativa                         integer,
+operacion_entrada_salida                   integer,
+numero_operaciones_entrada_salida          integer,
+monto_de_operaciones_de_entrada_Salida     numeric
+
+);
+
+-----D1 -----
+create type numero_operaciones_producto_servicio_por_canal_envio as (
+	anio    							integer,
+	clave_formulario 					text,
+	clave_entidad 						text,
+	producto_servicio 					integer,
+	tipo_canal 							integer,
+	operacion_entrada_salida            integer,
+	num_operaciones 					integer,
+	monto_operaciones 					varchar
+);
+
+-----D2 -----
+create type numero_clientes_aperturaron_cuenta_por_canal_envio as (
+	anio 							    integer,
+	clave_formulario 					text,
+	clave_entidad 						text,
+	tipo_canal 							integer,
+	num_clientes_aper 					integer
+);
