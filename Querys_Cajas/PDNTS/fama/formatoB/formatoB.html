@@ -204,16 +204,17 @@
       */
       function fporcentaje(monto){        
         var saldo = parseFloat(monto);
-        var porce = document.getElementById("porcentaje");
+        var porce = document.getElementById("porcentaje"); //id="porcentaje"
         var monto_mensual = document.getElementById("monto_mensual").innerHTML;
-        var monto_men = monto_mensual.replace(",","");
-        var valor = document.getElementById("fujo_efec");
+        var monto_men = monto_mensual.replace(",",""); 
+        var valor = document.getElementById("flujo_efec");
         var si_no_morosidad = document.getElementById("cali").innerHTML; 
         var flujo_efectivo_necesatio = 0;
         var morosidad_30 = 0;
         if (saldo == 0) { 
           var num = 0;
-        } 
+        }
+        //EMPIEZA A CALCULAR EL PORCENTAJE 
          else { 
           var div = monto_men / saldo;
           var num = Math.round(div * 100) / 100 ; // esta linea redondea a dos digitos la divicion
@@ -221,7 +222,7 @@
         var total = num * 100;
         console.log("El porcentaje es" + total);
         porce.innerHTML = total + "%";
-        if (total >= 1 && total <= 100) {
+        if (total >= 1 && total <= 60) {
            valor.innerHTML = "SI";
            flujo_efectivo_necesatio = 1;
         }else {
@@ -399,7 +400,7 @@
               </tr>
 
               <tr>
-                <td><h3 class="text_cent">$ <a id="monto_mensual">@@monto_mensual_credito@@</a></h3></td>
+                <td><h3 class="text_cent">$ <a>@@monto_mensual_credito@@</a></h3></td>
               </tr>
               <tr><td>&nbsp;</td></tr>
             </table>
@@ -503,7 +504,7 @@
               <tr>
                 <td class="text_cent"><h3>Total</h3></td>
                 <td><h3>$ </h3></td> 
-                <td class="text_der"><h3><a id="efectivo">@@dif_promedio_flujos_pr_ah@@</a></h3></td>
+                <td class="text_der"><h3><a>@@dif_promedio_flujos_pr_ah@@</a></h3></td>
               </tr>
               <tr><td class="padding">&nbsp;</td></tr>
             </table>
@@ -579,7 +580,7 @@
           <td width="45%">
             <table class="texto_central" width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <th colspan="4" class="encabezado borde_abajo">Ingreso a considerar</th>
+                <th colspan="4" class="encabezado borde_abajo">Ingreso declarado</th>
               </tr>
               <tr>
                 <td colspan="2" class="borde_L">Ingresos </td>
@@ -593,7 +594,7 @@
                 <th colspan="4" class="encabezado borde_abajo">Importe a considerar </th>
               </tr>
               <tr>
-                <td colspan="4" class="borde_U text_cent fondo">@@ing_men_sueldo_neto@@</td>
+                <td colspan="4" class="borde_U text_cent fondo"><a id="monto_mensual">@@ing_men_sueldo_neto@@ </a></td>
               </tr>
             </table>
           </td>
@@ -620,8 +621,8 @@
                 <th colspan="2" class="encabezado borde_abajo text_cent">Ingreso estimado </th>
               </tr>
               <tr>
-                <td colspan="2" class="text_cent">@@indicador_inegi@@%</td>
-                <td colspan="2" class="text_cent">0.00</td>
+                <td colspan="2" class="text_cent">@@indicador_inegi@@ %</td>
+                <td colspan="2" class="text_cent">@@estimacion_gastos@@</td>
               </tr>
             </table>
           </td>
@@ -666,7 +667,7 @@
         </tr>
         <tr>
             <th colspan="3" class="encabezado borde_completo">Suma de Gastos</th>
-            <td colspan="7" class="borde_completo monto text_cent">$<a id="gastos">@@suma_gastos@@</a></td>
+            <td colspan="7" class="borde_completo monto text_cent">$<a id="efectivo">@@suma_gastos@@</a></td>
         </tr>
       </table>
       </table>
@@ -714,7 +715,7 @@
           <td class="borde_L text_cent">
             Cuenta el socio con efectivo necesario para el pago del pr&eacute;stamo?
           </td>
-          <td class="borde_U text_cent" id="fujo_efec">SI</td> 
+          <td class="borde_U text_cent" id="cali">NO</td> 
         </tr>
        <!--  <tr>
           <td class="borde_L text_cent">Incurri&oacute; el socio en morosidad mayor a 30 d&iacute;as?</td>
@@ -722,7 +723,7 @@
          ---ESTA LINEA SE DEBRA MANTER COMENTADA  <td class="borde_U text_cent fondo" id="cali" onclick="calificacion();">@@morosidad_gt_30@@</td>
          
         </tr>-->
-        <tr><td colspan="2" class="borde_U text_cent"><h2 id="leyenda">Acredit&oacute; capacidad de pago</h2></td></tr>
+        <tr><td colspan="2" class="borde_U"><h2 align="center" id="leyenda">Acredit&oacute; capacidad de pago</h2></td></tr>
       </table>
       <br>
       <table class="texto_central" width="100%" border="0" cellspacing="0" cellpadding="0">

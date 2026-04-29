@@ -65,7 +65,8 @@ declare
   x_cod_gasto4              numeric;
   x_cod_gasto5              numeric;
   x_cod_gasto6              numeric;
-  x_inegi                   numeric; ---ADD ABRIL 2026 FAMA
+  x_inegi                   numeric; ---ADD ABRIL 2026 JJBADAL
+  x_divide_estimacion       numeric; ---ADD ABRIL 2026 JJBADAL 
 begin
 
   select
@@ -198,7 +199,8 @@ begin
   end if;
 
   raise notice 'r_aux: %', r_aux;
-  x_formato := replace(x_formato,'@@indicador_inegi@@', trim(to_char(coalesce(x_inegi,0),             '00.00')));
+  x_formato := replace(x_formato,'@@indicador_inegi@@', trim(to_char(coalesce(x_inegi,0),'00.00'))); ---ADD 2026 JJBADAL
+
   x_formato := replace(x_formato,'@@fecha_impresion_de@@',    replace(sai_fecha_mes_con_letra(x_fecha_hoy), '/', ' DE '));
 raise notice '%', case when x_formato is NULL then 'a) x_formato is NULL' else '' end;
   x_formato := replace(x_formato,'@@nombre_socio@@',          r_aux.nombre);
@@ -374,9 +376,13 @@ raise notice '%', case when x_formato is NULL then 'f) x_formato is NULL' else '
     x_formato := replace(x_formato,'@@promedio_flujo_pr@@', trim(to_char(x_prom_flujo_pr, '999,999,999.00')));
     
     x_suma_prom_flujos_pr_ah := x_prom_flujo_pr + x_prom_flujo_ah;
-    
     x_formato := replace(x_formato,'@@dif_promedio_flujos_pr_ah@@', trim(to_char(x_suma_prom_flujos_pr_ah, '999,999,999.00')));
-  
+    
+    ---------- BADAL ----------
+    RAISE NOTICE 'INEGI: %, SUMA: %', x_inegi, x_suma_prom_flujos_pr_ah;
+
+    x_divide_estimacion  := (x_suma_prom_flujos_pr_ah / x_inegi)*100.00 ;
+    x_formato := replace(x_formato,'@@estimacion_gastos@@',trim(to_char(x_divide_estimacion,'999,999,999.00'))); ---ADD ABRIL 2026 JJBADAL
   end if;
 
 
