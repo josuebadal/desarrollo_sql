@@ -121,14 +121,16 @@
         } else {
                 console.log("No Funciona, por que el navegador no soporta Web Storage...");
         }
+        console.log("Valida Numero")
         console.log(numero);
-      }      
+      }
+       // funcion para el apartado Flujo de efectivo neto
       function permite(elEvento) {
-        document.getElementById("saldo").addEventListener("click", onFocusValue);
-        // funcion para que el pulsor siempre se mande al final
-        function  onFocusValue () {
-          this.setSelectionRange(this.value.length, this.value.length);
-        }          
+          document.getElementById("saldo").addEventListener("click", onFocusValue);
+            //funcion pone el FOCUS en el TYPE para captura del usuario
+            function  onFocusValue () {
+            this.setSelectionRange(this.value.length, this.value.length);
+            }          
         // Variables que definen los caracteres permitidos
         var numeros = ["0","1","2","3","4","5","6","7","8","9",".","Backspace"];
         // se trae el codigo permitido
@@ -152,51 +154,69 @@
         return valor;
       }
 
-      function operacion(tipo){ // el tipo de refiere si el resultado es maual == 0  o automatico == 1
-                                // o tipo == 3 es lo que se carga al inicio
-        // console.log("Tipo de operacion:" + tipo);
-        // Inicio de formate ej 451,125.23
-        var formatNumber = {
-         separador: ",", // separador para los miles
-         sepDecimal: ".", // separador para los decimales
-         formatear:function (num){
-         num +="";
-         var splitStr = num.split(".");
-         var splitLeft = splitStr[0];
-         var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : "";
-         var regx = /(\d+)(\d{3})/;
-         while (regx.test(splitLeft)) {
-         splitLeft = splitLeft.replace(regx, "$1" + this.separador + "$2");
-         }
-         return this.simbol + splitLeft +splitRight;
-         },
-         new:function(num, simbol){
-         this.simbol = simbol ||"";
-         return this.formatear(num);
-         }
-        }  
-        // fin de apartado de formateo 
-        if (tipo == 1) {
-           var numero_tecleado = localStorage.getItem("importe");
-           var importe_tecleado = numero_tecleado.replace("$","");
-        }else if (tipo == 2){
-          var importe_tecleado = document.getElementById("importe").value;
-        }else if (tipo == 3) {
-          var importe_tecleado = 0;
-        }
+      function operacion(tipo){ 
+  // el tipo se refiere si el resultado es manual == 0  o automatico == 1
+  // o tipo == 3 es lo que se carga al inicio
 
-        var efec = document.getElementById("efectivo").innerHTML;
-        var efectivo = efec.replace(",","");
-        var total = efectivo - importe_tecleado;
-        var redondeo = Math.round(total * 100) / 100 ; // esta linea redondea a dos digitos el total
-        var resultado = document.getElementById("resultado_monto");
-        var tot_redo = formatNumber.new(redondeo);
-        resultado.innerHTML = tot_redo;
-       // console.log("Efectivo" + efectivo);
-       // console.log("antes del redondeado" total);
-       // console.log("Numero  redondeado" + redondeo);
-        fporcentaje(redondeo);
-      } 
+  // ===== FORMATEADOR =====
+  var formatNumber = {
+    separador: ",",
+    sepDecimal: ".",
+    formatear:function (num){
+      num +="";
+      var splitStr = num.split(".");
+      var splitLeft = splitStr[0];
+      var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : "";
+      var regx = /(\d+)(\d{3})/;
+      while (regx.test(splitLeft)) {
+        splitLeft = splitLeft.replace(regx, "$1" + this.separador + "$2");
+      }
+      return this.simbol + splitLeft + splitRight;
+    },
+    new:function(num, simbol){
+      this.simbol = simbol ||"";
+      return this.formatear(num);
+    }
+  };
+
+  // ===== OBTENER IMPORTE TECLEADO =====
+  if (tipo == 1) {
+    var numero_tecleado = localStorage.getItem("importe") || "0";
+    var importe_tecleado = numero_tecleado.replace("$","");
+  } else if (tipo == 2){
+    var importe_tecleado = document.getElementById("importe").value;
+  } else if (tipo == 3) {
+    var importe_tecleado = 0;
+  }
+
+  importe_tecleado = parseFloat(importe_tecleado || 0);
+
+  // ===== OBTENER DATOS DEL DOM =====
+  var ingreso = document.getElementById("monto_mensual").innerHTML;
+  var gastos = document.getElementById("efectivo").innerHTML;
+
+  // limpiar formato
+  ingreso = parseFloat(ingreso.toString().replace(/,/g,"").replace("$",""));
+  gastos = parseFloat(gastos.toString().replace(/,/g,"").replace("$",""));
+
+  // id="efectivo" = @@suma_gastos@@
+  // id="saldo"  (tecleado por el usuario)
+  // id="monto_mensual" = @@ing_men_sueldo_neto@@
+  // id="resultado_monto" (muestra el total de las operaciones)
+
+  // ===== CALCULO CORRECTO ANEXO B =====
+  var total = ingreso - gastos - importe_tecleado;
+
+  // ===== MOSTRAR RESULTADO =====
+  var redondeo = Math.round(total * 100) / 100;
+  var resultado = document.getElementById("resultado_monto");
+  var tot_redo = formatNumber.new(redondeo);
+
+  resultado.innerHTML = tot_redo;
+
+  // ===== LLAMAR PORCENTAJE =====
+  fporcentaje(redondeo);
+}
       /* para calcular el porcentaje la formula es :
          Mensualidad del credito con Iva  entre la resta del
          total de importe de flujo de efectivo acreditado menos 
@@ -205,48 +225,32 @@
       function fporcentaje(monto){        
         var saldo = parseFloat(monto);
         var porce = document.getElementById("porcentaje"); //id="porcentaje"
-        var monto_mensual = document.getElementById("monto_mensual").innerHTML;
+        var monto_mensual = document.getElementById("imp_cred_men").innerHTML; //id="imp_cred_men" 
         var monto_men = monto_mensual.replace(",",""); 
         var valor = document.getElementById("flujo_efec");
-        var si_no_morosidad = document.getElementById("cali").innerHTML; 
+        var si_no_morosidad = document.getElementById("cali").innerHTML;
         var flujo_efectivo_necesatio = 0;
         var morosidad_30 = 0;
+        
+        
         if (saldo == 0) { 
           var num = 0;
         }
         //EMPIEZA A CALCULAR EL PORCENTAJE 
          else { 
-          var div = monto_men / saldo;
+          var div = monto_men / saldo; 
           var num = Math.round(div * 100) / 100 ; // esta linea redondea a dos digitos la divicion
-        }    
+        }
         var total = num * 100;
-        console.log("El porcentaje es" + total);
         porce.innerHTML = total + "%";
-        if (total >= 1 && total <= 60) {
+        if (total >= 0 && total <= 60) {
            valor.innerHTML = "SI";
-           flujo_efectivo_necesatio = 1;
+           leyenda.innerHTML = "Acredit&oacute; capacidad de pago";
         }else {
            valor.innerHTML = "NO";
-           flujo_efectivo_necesatio = 0;
-        } 
-        // se revisa que trae del saicoop    /* Incurri&oacute; el socio en morosidad mayor a 30 d&iacute;as? */
-        if (si_no_morosidad == "NO"){
-           morosidad_30 = 1;
-        } else {
-          morosidad_30 = 0;
-        }
-        leyenda_acredita(flujo_efectivo_necesatio, morosidad_30);
+           leyenda.innerHTML = "No Acredit&oacute; capacidad de pago";
+        }          
       } 
-      // LEYENDA DE ACREDITA  1 == Si    0 == No
-      function leyenda_acredita(flujo_efectivo_necesatio, morosidad_30){
-        var leyenda = document.getElementById("leyenda");
-        if (flujo_efectivo_necesatio == 1 && morosidad_30 == 1) {
-          leyenda.innerHTML = "Acredit&oacute; capacidad de pago";
-        } else {
-          leyenda.innerHTML =  "No Acredit&oacute; capacidad de pago";
-        }
-      }
-      // Incurri&oacute; el socio en morosidad mayor a 30 d&iacute;as?
 /*
       function calificacion(){
          var tipo_calif = document.getElementById("cali").innerHTML;
@@ -400,7 +404,7 @@
               </tr>
 
               <tr>
-                <td><h3 class="text_cent">$ <a>@@monto_mensual_credito@@</a></h3></td>
+                <td><h3 class="text_cent">$ <a id="imp_cred_men">@@monto_mensual_credito@@</a></h3></td>
               </tr>
               <tr><td>&nbsp;</td></tr>
             </table>
@@ -715,7 +719,7 @@
           <td class="borde_L text_cent">
             Cuenta el socio con efectivo necesario para el pago del pr&eacute;stamo?
           </td>
-          <td class="borde_U text_cent" id="cali">NO</td> 
+          <td class="borde_U text_cent"><a id="cali">SI</a></td> 
         </tr>
        <!--  <tr>
           <td class="borde_L text_cent">Incurri&oacute; el socio en morosidad mayor a 30 d&iacute;as?</td>
