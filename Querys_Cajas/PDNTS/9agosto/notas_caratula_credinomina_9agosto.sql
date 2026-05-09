@@ -1,164 +1,33 @@
-/*DELETE FROM tablas WHERE idtabla = 'formato_caratula_prestamo' and idelemento like 'nombre_comercial%';
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial307','CR&Eacute;DITO CONFIANZA','307');
+--Se requiere cambiar una leyenda para unas caratulas de los prodcutos CREDINOMINA
+Buen día Badal te comparto la información solicitada                                                                                                                                      
+OGS: 010401-10-105548
+Nombre: Miriam Razo Vega
+OPA:010411-33101-00000023
 
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial308','CR&Eacute;DITO ORDINARIO','308');
+OGS: 010413-10-105009
+NOMBRE: Adrian Martinez Mendoza
+OPA: 010413-33201-00000073
 
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial309','CR&Eacute;DITO CREDIIMPULSO','309');
+OGS: 010420-10-115856
+NOMBRE: Juan Jose Daniel Figueroa Palacios
+OPA: 010420-33301-00000006
 
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial311','CR&Eacute;DITO DE PRODUCCION','311');
+PRODUCTOS A LOS QUE SE LE DEBE CORREGIR 
+33101
+33201
+33301
+33401
 
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial315','CR&Eacute;DITO CREDIFACIL','315');
+UPDATE tablas
+set tipo = -456
+where idtabla ='param' and idelemento ='formato_caratula_prestamo';
 
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial317','CR&Eacute;DITO CREDI 9','317');
+UPDATE tablas
+set tipo = 0
+where idtabla ='param' and idelemento ='formato_caratula_prestamo';
 
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial319','CR&Eacute;DITO AUTO 9','319');
-
-insert
-into   tablas
-       (idtabla,idelemento,dato1,dato2)
-values ('formato_caratula_prestamo','nombre_comercial320','CR&Eacute;DITO MOTO 9','320');*/
-
-              delete from tablas where idtabla='formato_caratula_prestamo'and idelemento like 'seguro_periodicos%';
-              delete from tablas where idtabla='formato_caratula_prestamo'and idelemento  like 'aseguradora_periodicos%';
-              delete from tablas where idtabla='formato_caratula_prestamo'and idelemento  like 'clausula_seguro_periodicos%';
-
-             insert into tablas (idtabla,idelemento,dato1,dato2)       
-              values ('formato_caratula_prestamo','seguro_periodicos','30705|31505|32301|32311|32321|32401|32605|32615|32703|31704|32803','No aplica');
-             insert into tablas (idtabla,idelemento,dato1,dato2)
-              values ('formato_caratula_prestamo','seguro_periodicos1','31501|33001|33002|33003|31714|31724|32809|32819|30805','No aplica');
-              insert into tablas (idtabla,idelemento,dato1,dato2)
-              values ('formato_caratula_prestamo','seguro_periodicos2','30815|30825','No aplica');
-            insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','aseguradora_periodicos','30705|31505|32301|32311|32321|32401|32605|32615|32703|31704|32803','NO APLICA');
-             insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','aseguradora_periodicos1','31501|33001|33002|33003|31714|31724|32809|32819|30805','NO APLICA');
-              insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','aseguradora_periodicos2','30815|30825','NO APLICA');
-            insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','clausula_seguro_periodicos','30705|31505|32301|32311|32321|32401|32605|32615|32703|31704|32803', 'NO APLICA');
-            insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','clausula_seguro_periodicos1','31501|33001|33002|33003|31714|31724|32809|32819|30805', 'NO APLICA');
-              insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','clausula_seguro_periodicos2','30815|30825', 'NO APLICA');
-
-              delete from tablas where idtabla='formato_caratula_prestamo'and idelemento like 'seguro_unico%';
-              delete from tablas where idtabla='formato_caratula_prestamo'and idelemento like 'aseguradora_unico%';
-              delete from tablas where idtabla='formato_caratula_prestamo'and idelemento like 'clausula_seguro_unico%';
-
-              insert into tablas (idtabla,idelemento,dato1,dato2)
-              values ('formato_caratula_prestamo','seguro_unico','31101|31111|32201|32221|32301|32311|32321|32703|32803','NO APLICA');
-              insert into tablas (idtabla,idelemento,dato1,dato2)
-              values ('formato_caratula_prestamo','seguro_unico1','31121|30901|33001|33002|33003|323|31704|31714|31724','NO APLICA');
-              insert into tablas (idtabla,idelemento,dato1,dato2)
-              values ('formato_caratula_prestamo','seguro_unico2','32809|32819','NO APLICA');
-              insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','aseguradora_unico','31101|31111|32201|32221|32301|32311|32321|32703|32803','NO APLICA');
-              insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','aseguradora_unico1','31121|30901|33001|33002|33003|323|31704|31714|31724','NO APLICA');
-               insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','aseguradora_unico2','32809|32819','NO APLICA');
-              insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','clausula_seguro_unico','31101|31111|32201|32221|32301|32311|32321|32703|32803', 'NO APLICA');
-              insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','clausula_seguro_unico1','31121|30901|33001|33002|33003|323|31704|31714|31724', 'NO APLICA');
-              insert into tablas (idtabla,idelemento,dato2,dato1)
-              values ('formato_caratula_prestamo','clausula_seguro_unico2','32809|32819', 'NO APLICA');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'numero_contrato_conducef_331234';
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'numero_contrato_conducef_nomina'; /*like 'numero_contrato_conducef_331234'*/
-  insert into tablas (idtabla,idelemento,dato1,dato2) 
-    values ('formato_caratula_prestamo','numero_contrato_conducef_nomina','13161-450-034097/01-00208-0121','33101|33201|33301|33401'); /*like 'numero_contrato_conducef_331234'*/
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'nombre_caratula_331234';
-  insert into tablas (idtabla,idelemento,dato1,dato2) 
-    values ('formato_caratula_prestamo','nombre_caratula_331234','CAR&Aacute;TULA DEL CONTRATO DE CR&Eacute;DITO SIMPLE','33101|33201|33301|33401');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'seguro_331234';
-  insert into tablas (idtabla,idelemento,dato1,dato2) 
-    values ('formato_caratula_prestamo','seguro_331234','33101|33201|33301|33401','No aplica');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'aseguradora_331234';
-  insert into tablas (idtabla,idelemento,dato2,dato1) 
-    values ('formato_caratula_prestamo','aseguradora_331234','33101|33201|33301|33401','No aplica');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'clausula_seguro_331234';
-  insert into tablas (idtabla,idelemento,dato2,dato1) 
-    values ('formato_caratula_prestamo','clausula_seguro_331234','33101|33201|33301|33401', 'No aplica');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'nombre_comercial331';
-  insert into tablas (idtabla,idelemento,dato1,dato2) 
-    values ('formato_caratula_prestamo','nombre_comercial331','CR&Eacute;DITO N&Oacute;MINA','33101');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'nombre_comercial332';
-  insert into tablas (idtabla,idelemento,dato1,dato2) 
-    values ('formato_caratula_prestamo','nombre_comercial332','CR&Eacute;DITO N&Oacute;MINA','33201');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'nombre_comercial333';
-  insert into tablas (idtabla,idelemento,dato1,dato2) 
-    values ('formato_caratula_prestamo','nombre_comercial333','CR&Eacute;DITO N&Oacute;MINA','33301');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'nombre_comercial334';
-  insert into tablas (idtabla,idelemento,dato1,dato2) 
-    values ('formato_caratula_prestamo','nombre_comercial334','CR&Eacute;DITO ORDINARIO','33401');
-
------------------------------------------------------------------------------------------------------------------------
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'numero_contrato_conducef_hipoteca';
-insert into tablas (idtabla,idelemento,dato1,dato2)
-  values ('formato_caratula_prestamo','numero_contrato_conducef_hipoteca','13161-138-034125/01-00257-0121','32703,32803');
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'nombre_caratula_hipoteca';
-insert into tablas (idtabla,idelemento,dato1,dato2)
-  values ('formato_caratula_prestamo','nombre_caratula_hipoteca','CAR&Aacute;TULA DE CR&Eacute;DITO HIPOTECARIO','32703,32803');
-
-update tablas set dato1 = '30705|31505|32301|32311|32321|32401|32605|32615|31704' where idtabla = 'formato_caratula_prestamo' and idelemento = 'seguro_periodicos';
-update tablas set dato1 = '31101|31111|32201|32221|32301|32311|32321' where idtabla = 'formato_caratula_prestamo' and idelemento = 'seguro_unico';
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'seguro_hipoteca';
-insert into tablas (idtabla,idelemento,dato1,dato2)
-  values ('formato_caratula_prestamo','seguro_hipoteca','32703,32803','Seguro de da&ntilde;os a la vivienda');
-
-update tablas set dato2 = '30705|31505|32301|32311|32321|32401|32605|32615|31704' where idtabla = 'formato_caratula_prestamo' and idelemento = 'clausula_seguro_periodicos';
-update tablas set dato2 = '31101|31111|32201|32221|32301|32311|32321' where idtabla = 'formato_caratula_prestamo' and idelemento = 'clausula_seguro_unico';
-
-delete from tablas where idtabla = 'formato_caratula_prestamo' and idelemento like 'clausula_seguro_hipoteca';
-insert into tablas (idtabla,idelemento,dato2,dato1)
-  values ('formato_caratula_prestamo','clausula_seguro_hipoteca','32703,32803', 'Cuarta');
-
-insert into tablas (idtabla,idelemento,dato2,dato1)
-  values ('formato_caratula_prestamo','nombre_comercial32803','32803', 'CR&Eacute;DITO HIPOTECA 9.1');
-
-update tablas set tipo = -456 where idtabla = 'param' and idelemento = 'formato_caratula_prestamo';
-delete from tablas
-where       idtabla = 'param' and idelemento = 'formato_caratula_prestamo';
-
-
-INSERT INTO tablas
-            (idtabla,idelemento,dato1,dato3,dato4,tipo,dato2)
-     VALUES ('param','formato_caratula_prestamo',
-             'iconv %s -f ISO-8859-1 -t UTF-8 -o %s.html',
-             'gnome-open %s.html; sleep 12','rm -rf %s.*',3,
-             '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">                                                                                                                                                                                    
+UPDATE tablas
+set dato2 ='<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">                                                                                                                                                                                    
        <html xmlns="http://www.w3.org/1999/xhtml">
         <head>                                    
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />                  
@@ -248,7 +117,8 @@ INSERT INTO tablas
               }                                   
                                                   
              </style>                             
-            <script type="text/javascript">       
+
+             <script type="text/javascript">       
                                                   
                 window.onload = function seccion() {                                             
                 var Fecha_limite_pago = document.getElementById("Fecha_limite_pago");            
@@ -267,9 +137,9 @@ INSERT INTO tablas
                 if(@@idproducto@@==32102 || @@idproducto@@==31902) {                             
                  var t1=document.getElementById("txt1");                                         
                  var t2=document.getElementById("txt2");                                         
-                 t1.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios.";                                                                                                                                                                                                         
+                 t1.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                         
                  Fecha_corte.innerHTML=" @@siguiente_pago@@";                                    
-                 t2.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios.";                                                                                                                                                                                                         
+                 t2.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                         
                  comisiones.innerHTML ="ESTE PRODUCTO NO GENERA NINGUNA COMISI&Oacute;N";        
                    advertencia.innerHTML="Advertencia: En caso de no contratar el seguro de auto se cancelarÃ\u0083Â¡ el crÃ\u0083Â©dito.";                                                                                                                                                                         
                  }                                
@@ -292,12 +162,13 @@ INSERT INTO tablas
                  var t2=document.getElementById("txt2");                                         
                  var sg=document.getElementById("segob");                                        
                  Fecha_corte.innerHTML=" @@siguiente_pago@@";                                    
-                 t1.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios.";                                                                                                                                                                                                         
-                 t2.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios.";                                                                                                                                                                                                         
+                 t1.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                         
+                 t2.innerHTML=" y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                         
                  comisiones.innerHTML ="ESTE PRODUCTO NO GENERA NINGUNA COMISI&Oacute;N";        
                  sg.innerHTML="@@seguro@@";       
                                                   
-               }/*Pagos periodicos*/              
+               }/*Pagos periodicos*/
+                             
                                                   
                if (@@idproducto@@==33101 || @@idproducto@@==33201 || @@idproducto@@==33301 || @@idproducto@@==33401) {                                                                                                                                                                                              
                  var t1=document.getElementById("txt1");                                         
@@ -307,8 +178,8 @@ INSERT INTO tablas
                  var tasa=document.getElementById("tasa");                                       
                                                   
                  Fecha_corte.innerHTML = " @@siguiente_pago@@";                                  
-                 t1.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios.";                                                                                                                                                                                                       
-                 t2.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios.";                                                                                                                                                                                                       
+                 t1.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                       
+                 t2.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                       
                  comisiones.innerHTML = "ESTE PRODUCTO NO GENERA NINGUNA COMISI&Oacute;N";       
                  plazo.innerHTML = "semanas";     
                  t3.innerHTML = " ";              
@@ -382,7 +253,7 @@ INSERT INTO tablas
                    limite.innerHTML ="L&iacute;mite";                                            
                    sg.innerHTML="@@seguro@@";     
 
-                  tasa1.innerHTML="<b>@@cat1@@%</b>";
+                  tasa1.innerHTML="<b><strong>@@cat1@@%<strong></b>";
 
                  }
             //2-FIN
@@ -407,7 +278,7 @@ INSERT INTO tablas
               <td colspan="2" class="encabezado borde_bajo">                                     
                <p align="left">                   
                CAJA POPULAR 9 DE AGOSTO SALAMANCA <br> S.C. DE A.P. DE R.L. DE C.V.<br>          
-               CALLE <a id="juarez">JUAREZ No.</a> 408, ZONA CENTRO, SALAMANCA, GUANAJUATO. RFC: CPN890928HV0<br>                                                                                                                                                                                                   
+               CALLE <a id="juarez">JU&Aacute;REZ No.</a> 408, ZONA CENTRO, SALAMANCA, GUANAJUATO. RFC: CPN890928HV0<br>                                                                                                                                                                                                   
                </p>                               
                RECA @@numero_contrato_condusef@@  
               </td>                               
@@ -449,7 +320,7 @@ INSERT INTO tablas
               </td>                               
             </tr>                                 
             <tr>                                  
-              <td ><b> Sin IVA para fines Informativos y de comparacion. </b> <a id="tasa1">@@cat1@@%</a> </td>                                                                                                                                                                                                              
+              <td ><b> Sin IVA para fines Informativos y de comparaci&oacute;n. </b> <a id="tasa1"><strong>@@cat1@@%</strong></a> </td>                                                                                                                                                                                                              
               <td class="borde_izq">              
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">                  
             <tr>                                  
@@ -474,7 +345,7 @@ INSERT INTO tablas
                 <b> PLAZO DEL CR&Eacute;DITO: <br/> @@9ago_plazo@@ <a id="plaz">@@9ago_termino_plazo@@</a> </b>                                                                                                                                                                                                     
               </td>                               
               <td colspan="3" class="borde_izq borde_abajo">                                     
-                <b> Fecha <a id="limite">Limite</a> de Pago:</b><a id="Fecha_limite_pago"> @@siguiente_pago@@</a><a id="txt1"> </a><br/>                                                                                                                                                                            
+                <b> Fecha <a id="limite">L&iacute;mite</a> de Pago:</b><a id="Fecha_limite_pago"> @@siguiente_pago@@</a><a id="txt1"> </a><br/>                                                                                                                                                                            
                 <b> Fecha de Corte:</b><a id="Fecha_corte"> 30 de cada mes calendario</a><a id="txt2"> </a>                                                                                                                                                                                                         
               </td>                               
             </tr>                                 
@@ -519,8 +390,12 @@ INSERT INTO tablas
                 "Contratar <a id="creditos">creditos</a> por arriba de tu capacidad de pago puede afectar tu historial                                                                                                                                                                                              
                 crediticio".                      
                 <br />                            
-                <a id="adv3">"El avalista, obligado solidario o coacreditado <a id="respondera">respondera</a> como obligado principal                                                                                                                                                                              
-                frente a la Entidad Financiera".</a>                                             
+                
+                    <div id="adv3">
+                        El avalista, obligado solidario o coacreditado 
+                        <span id="respondera">responderá</span> 
+                        como obligado principal frente a la Entidad Financiera.
+                    </div>
               </td>                               
             </tr>                                 
             <tr>                                  
@@ -530,8 +405,8 @@ INSERT INTO tablas
               <td colspan="4">                    
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">                  
                   <tr>                            
-                    <td width="40%" class="borde_abajo" style="vertical-align: text-top;">       
-                      <b>SEGURO:</b><a id="segob"> @@seguro@@ </a> <a id="sele">(Obligatorio)</a>
+                    <td width="35%" class="borde_abajo" style="vertical-align: text-top;">       
+                      <b>SEGURO:</b><a id="segob"> @@seguro@@ </a> <a id="sele"></a>
                     </td>                         
                     <td width="30%" class="borde_izq borde_abajo">                               
                       <b>ASEGURADORA:</b> @@aseguradora@@                                        
@@ -561,7 +436,7 @@ INSERT INTO tablas
               <td colspan="4"> Unidad Especializada de Atenci&oacute;n a Usuarios: </td>         
             </tr>                                 
             <tr>                                  
-              <td colspan="4"> Domicilio:Calle <a id="calle">Juarez Numero</a> 408, Col. Zona Centro en Salamanca,Guanajuato.</td>                                                                                                                                                                                  
+              <td colspan="4"> Domicilio:Calle <a id="calle">Ju&aacute;rez N&uacute;mero</a> 408, Col. Zona Centro en Salamanca,Guanajuato.</td>                                                                                                                                                                                  
             </tr>                                 
             <tr>                                  
               <td width="42%" colspan="2"> Tel&eacute;fono: 464-647-17-10 y 464-647-1096 ext. 127</td>                                                                                                                                                                                                              
@@ -619,7 +494,7 @@ INSERT INTO tablas
                 </tr>                             
                 <tr>                              
                   <td colspan="3">                
-                    <center>C.P Manuel Ortiz <a id="lopez">Lopez</a><br />                       
+                    <center>C.P Manuel Ortiz <a id="lopez">L&oacute;pez</a><br />                       
                       Nombre y Firma del Representante Legal.                                    
                     </center>                     
                   </td>                           
@@ -633,14 +508,5 @@ INSERT INTO tablas
               </table>                            
               </div>                              
        </body>                                    
-       </html>      
-                                                                                                                                                                                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-');
+       </html>'      
+where idtabla ='param' and idelemento ='formato_caratula_prestamo';

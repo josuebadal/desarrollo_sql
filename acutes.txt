@@ -1,2 +1,9 @@
 ./psqlaccess.sh 192.168.99.203 prueba saicoop
 
+
+LIBRO ELOQUENT JAVASCRIPT
+Capitulo 11 
+PAGI 194 Pdf
+
+
+pl_informativa_intereses_retencion_haberes

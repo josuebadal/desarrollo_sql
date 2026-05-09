@@ -74,10 +74,10 @@ CREATE TEMP TABLE tmp_reinversiones_v2 (
 
         -- Aquí reutilizas tu logica existente (o versión adaptada)
         v_reinversiones :=
-            numero_reinversiones(
-                r_activa.idorigenp,
-                r_activa.idproducto,
-                r_activa.idauxiliar
+        numero_reinversiones(
+            r_activa.idorigenp,
+            r_activa.idproducto,
+            r_activa.idauxiliar
             );
         -- Poblar salida
         r_out.idorigen          := r_activa.idorigen;

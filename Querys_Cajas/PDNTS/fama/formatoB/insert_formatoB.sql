@@ -12,7 +12,7 @@ and idelemento like 'formato_analisis_credito_b' ;
 INSERT INTO tablas (idtabla,idelemento,nombre,dato1,dato2,dato3,dato4,dato5,tipo)
 VALUES ('param','indicador_inegi','Indicador Inegi',null,'18',null,null,null,0);
 
-
+ 
 UPDATE tablas
 SET dato2 = '<!DOCTYPE html>
 <html lang="en">
@@ -244,7 +244,7 @@ SET dato2 = '<!DOCTYPE html>
         var monto_mensual = document.getElementById("imp_cred_men").innerHTML; //id="imp_cred_men" 
         var monto_men = monto_mensual.replace(",",""); 
         var valor = document.getElementById("flujo_efec");
-        var si_no_morosidad = document.getElementById("cali").innerHTML;
+        //var si_no_morosidad = document.getElementById("cali").innerHTML;
         var flujo_efectivo_necesatio = 0;
         var morosidad_30 = 0;
         
@@ -259,29 +259,23 @@ SET dato2 = '<!DOCTYPE html>
         }
         var total = num * 100;
         porce.innerHTML = total + "%";
-        if (total >= 0 && total <= 60) {
-           valor.innerHTML = "SI";
-           leyenda.innerHTML = "Acredit&oacute; capacidad de pago";
-        }else {
-           valor.innerHTML = "NO";
-           leyenda.innerHTML = "No Acredit&oacute; capacidad de pago";
-        }          
-      } 
-/*
-      function calificacion(){
-         var tipo_calif = document.getElementById("cali").innerHTML;
-         var valor = document.getElementById("cali"); 
-         var resultado_monto = document.getElementById("resultado_monto").innerHTML;
-         if (tipo_calif == "NO") { 
-              valor.innerHTML = "SI"; 
-              //document.getElementById("cali");
-         }else {
-              valor.innerHTML = "NO";
-             // document.getElementById("cali");
-         }
-         fporcentaje(resultado_monto);
-       }
-       */ 
+      
+       /// SI EL PORCENTAJE ESTA ENTRO 0 Y 60 id="cali" = SI y id="leyenda" = Acredita capacidad...
+       var cali = document.getElementById("cali");
+       var leyenda = document.getElementById("leyenda");
+
+       if (total >= 0 && total <= 60) {
+          //valor.innerHTML = "SI";
+          cali.innerHTML = "SI";
+          leyenda.innerHTML = "Acredit&oacute; capacidad de pago";
+      } else {
+          //valor.innerHTML = "NO";
+          cali.innerHTML = "NO";
+          leyenda.innerHTML = "No Acredit&oacute; capacidad de pago";
+      }
+    }
+
+ 
     </script> 
   </head>
   <body>

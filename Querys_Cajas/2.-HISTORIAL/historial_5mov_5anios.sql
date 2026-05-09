@@ -1,9 +1,4 @@
 /*
-select * from personas where estatus = 't' and idgrupo = 10;
-
-select * from catalogo_menus where menu = 'nacionalidad' order by opcion;
-menu        | nacionalidad
-opcion      | 1
 
 Me pueden ayudar con 2 consultas por favor:
 Relacion de socios activos al cierre de octubre que contenga lo siguientes datos:
