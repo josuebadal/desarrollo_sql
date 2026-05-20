@@ -175,6 +175,11 @@ begin
     raise exception 'EL AUXILIAR: %-%-% NO EXISTE O YA NO ESTA NI ACTIVO, NI APERTURADO',p_idorigenp,p_idproducto,p_idauxiliar;
   end if;
   
+
+
+
+
+
 ------------------BADAL
     select
     into     r_sec *
@@ -223,9 +228,21 @@ raise notice '%', case when x_formato is NULL then 'a) x_formato is NULL' else '
   x_formato := replace(x_formato,'@@tasaio_mensual@@',        trim(to_char(r_aux.tasaio,'9.99')));
 raise notice '%', case when x_formato is NULL then 'b) x_formato is NULL' else '' end;
   x_formato := replace(x_formato,'@@monto_mensual_credito@@', trim(to_char(r_aux.monto_mensualidad, '999,999,999.99')));
+/*
+  x_formato := replace(x_formato,'@@considera_importe@@', 
+      (CASE 
+        WHEN r_sec.ingresosordinarios::numeric > x_divide_estimacion::numeric then  r_sec.ingresosordinarios
+        ELSE x_divide_estimacion
+        END)::text);
+*/
 raise notice '%', case when x_formato is NULL then 'c) x_formato is NULL' else '' end;
 raise notice 'ogs: %-%-%', r_aux.idorigen, r_aux.idgrupo, r_aux.idsocio;
 -------------------------BADAL
+
+
+
+
+
 -- Gastos: ----------
   x_formato := replace(x_formato,'@@gto_men_alimentos@@',        trim(to_char(coalesce(r_sec.gastos_tipo1,0), '999,999,990.00')));
   x_formato := replace(x_formato,'@@gto_men_servicios@@',        trim(to_char(coalesce(r_sec.gastos_tipo2,0), '999,999,990.00')));
@@ -281,7 +298,10 @@ raise notice '%', case when x_formato is NULL then 'd) x_formato is NULL' else '
       x_mes   := '@@flujo_ah_mes_'||x_cont::text||'@@';
       x_monto := '@@flujo_ah_monto_'||x_cont::text||'@@';
       x_formato := replace(x_formato,x_mes,   sai_formato_analisis_credito_nombre_periodo (x_periodo_ah::text));
-      x_formato := replace(x_formato,x_monto, case when x_periodo_ah is NULL then '' else trim(to_char(x_monto_abonos, '999,999,999.00')) end);
+      x_formato := replace(x_formato,x_monto, 
+                    case when x_periodo_ah is NULL then '' 
+                    else trim(to_char(x_monto_abonos, '999,999,999.00')) 
+                    end);
 
       x_suma_abonos := x_suma_abonos + x_monto_abonos;
     end loop;
@@ -290,21 +310,6 @@ raise notice '%', case when x_formato is NULL then 'd) x_formato is NULL' else '
     x_formato := replace(x_formato,'@@promedio_flujo_ah@@', trim(to_char(x_prom_flujo_ah, '999,999,999.00')));
 raise notice '%', case when x_formato is NULL then 'e) x_formato is NULL' else '' end;
     -- Prestamos ------------------------------------------------------------------------------------
-/*    
-    select
-    into     x_fechauma_pr fechauma
-    from     (select   fechauma
-              from     auxiliares as a
-              where    a.idorigen = r_aux.idorigen and a.idgrupo = r_aux.idgrupo and a.idsocio = r_aux.idsocio and
-                       idproducto between 30000 and 39999 and estatus in (2,3)
-              union    
-              select   fechauma
-              from     auxiliares_h as a
-              where    a.idorigen = r_aux.idorigen and a.idgrupo = r_aux.idgrupo and a.idsocio = r_aux.idsocio and
-                       idproducto between 30000 and 39999 and estatus = 3) as z
-    order by fechauma desc
-    limit    1;
-*/
     x_cont := 0;  x_suma_abonos := 0;  x_monto_abonos := 0.00;  x_max_dv := 0; x_periodo_pr := NULL;
     x_ab_reales := 0;
     for x_cont in reverse 12..1
@@ -388,19 +393,7 @@ raise notice '%', case when x_formato is NULL then 'f) x_formato is NULL' else '
 
 raise notice '%', case when x_formato is NULL then 'g) x_formato is NULL' else '' end;
   if p_formato = 'formato_analisis_credito_a' then
-/*  
-    select
-    into     r_tra *
-    from     trabajo
-    where    idorigen = r_aux.idorigen and idgrupo = r_aux.idgrupo and idsocio = r_aux.idsocio and ing_mensual_neto > 0
-    order by consecutivo desc
-    limit    1;
-
-    select
-    into     r_sec *
-    from     socioeconomicos
-    where    idorigen = r_aux.idorigen and idgrupo = r_aux.idgrupo and idsocio = r_aux.idsocio;
-*/    
+  
     select
     into   r_cod *
     from   notas

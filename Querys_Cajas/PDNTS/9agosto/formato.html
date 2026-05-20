@@ -152,7 +152,6 @@
                  t1.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                       
                  t2.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                       
                  comisiones.innerHTML = "ESTE PRODUCTO NO GENERA NINGUNA COMISI&Oacute;N";       
-                 plazo.innerHTML = "semanas";     
                  t3.innerHTML = " ";              
                  t4.innerHTML = " ";              
                  tasa.innerHTML="<b>Sin IVA para fines Informativos y de comparacion. @@cat1@@%</b>";                                                                                                                                                                                                               
@@ -230,7 +229,8 @@
             //2-FIN
 
        //1-FIN                                    
-                                                  
+               /* PERIODO O PLAZO PARA LOS PRODUCTOS CREDINOMINA*/
+               if (@@idproducto@@==33101) { plazo.innerHTML = "semanas"; }
                if (@@idproducto@@==33201) { plazo.innerHTML = "catorcenas"; }                    
                if (@@idproducto@@==33301) { plazo.innerHTML = "quincenas"; }                     
                if (@@idproducto@@==33401) { plazo.innerHTML = "meses"; }                         

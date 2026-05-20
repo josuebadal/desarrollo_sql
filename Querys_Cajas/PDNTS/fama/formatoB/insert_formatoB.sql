@@ -599,7 +599,7 @@ SET dato2 = '<!DOCTYPE html>
               <tr>
                 <td colspan="2" class="borde_L">Ingresos </td>
                 <td class="borde_L fondo">$ </td>
-                <td class="borde_L_inver text_der fondo">@@ing_men_sueldo_neto@@</td>
+                <td class="borde_L_inver text_der fondo"><a id="monto_mensual">@@ing_men_sueldo_neto@@ </a></td>
               </tr>
               <tr>
                 <td>&nbsp;</td>              
@@ -608,7 +608,7 @@ SET dato2 = '<!DOCTYPE html>
                 <th colspan="4" class="encabezado borde_abajo">Importe a considerar </th>
               </tr>
               <tr>
-                <td colspan="4" class="borde_U text_cent fondo"><a id="monto_mensual">@@ing_men_sueldo_neto@@ </a></td>
+                <td colspan="4" class="borde_U text_cent fondo"><a id="">@@considera_importe@@</a></td>
               </tr>
             </table>
           </td>

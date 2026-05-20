@@ -150,7 +150,12 @@ set dato2 =$$<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htt
                  sg.innerHTML="@@seguro@@";       
                                                   
                }/*Pagos periodicos*/
-                             
+
+               /*PLAZO PARA CREDITOS CREDINOMINA*/
+               if (@@idproducto@@==33101) { plazo.innerHTML = "semanas"; }                                   
+               if (@@idproducto@@==33201) { plazo.innerHTML = "catorcenas"; }                    
+               if (@@idproducto@@==33301) { plazo.innerHTML = "quincenas"; }                     
+               if (@@idproducto@@==33401) { plazo.innerHTML = "meses"; }              
                                                   
                if (@@idproducto@@==33101 || @@idproducto@@==33201 || @@idproducto@@==33301 || @@idproducto@@==33401) {                                                                                                                                                                                              
                  var t1=document.getElementById("txt1");                                         
@@ -163,11 +168,11 @@ set dato2 =$$<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htt
                  t1.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                       
                  t2.innerHTML = " y las fechas subsecuentes se encuentran en el reporte de pagos de socios anexo.";                                                                                                                                                                                                       
                  comisiones.innerHTML = "ESTE PRODUCTO NO GENERA NINGUNA COMISI&Oacute;N";       
-                 plazo.innerHTML = "semanas";     
                  t3.innerHTML = " ";              
                  t4.innerHTML = " ";              
                  tasa.innerHTML="<b>Sin IVA para fines Informativos y de comparacion. @@cat1@@%</b>";                                                                                                                                                                                                               
-               }                                  
+               } 
+                                                
                                                   
                if (@@idproducto@@==32201 || @@idproducto@@==32221 || @@idproducto@@==32301 || @@idproducto@@==32311 || @@idproducto@@==32401) {                                                                                                                                                                     
                  var t3=document.getElementById("sele");                                         
@@ -241,10 +246,8 @@ set dato2 =$$<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htt
             //2-FIN
 
        //1-FIN                                    
-                                                  
-               if (@@idproducto@@==33201) { plazo.innerHTML = "catorcenas"; }                    
-               if (@@idproducto@@==33301) { plazo.innerHTML = "quincenas"; }                     
-               if (@@idproducto@@==33401) { plazo.innerHTML = "meses"; }                         
+
+                                        
              };                                   
           </script>                               
        </head>                                    
