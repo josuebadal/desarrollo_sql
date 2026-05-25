@@ -1,0 +1,16 @@
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 20976;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21042;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21058;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21059;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21081;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21093;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21110;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21174;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21184;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 21185;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 10 and idsocio = 70174;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 20 and idsocio = 70542;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 20 and idsocio = 70544;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 20 and idsocio = 70549;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 20 and idsocio = 70550;
+update personas set idcolonia = 173315 where idorigen = 13503 and idgrupo = 20 and idsocio = 70551;

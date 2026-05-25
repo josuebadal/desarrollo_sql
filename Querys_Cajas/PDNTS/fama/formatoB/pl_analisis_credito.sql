@@ -175,11 +175,6 @@ begin
     raise exception 'EL AUXILIAR: %-%-% NO EXISTE O YA NO ESTA NI ACTIVO, NI APERTURADO',p_idorigenp,p_idproducto,p_idauxiliar;
   end if;
   
-
-
-
-
-
 ------------------BADAL
     select
     into     r_sec *
@@ -228,13 +223,6 @@ raise notice '%', case when x_formato is NULL then 'a) x_formato is NULL' else '
   x_formato := replace(x_formato,'@@tasaio_mensual@@',        trim(to_char(r_aux.tasaio,'9.99')));
 raise notice '%', case when x_formato is NULL then 'b) x_formato is NULL' else '' end;
   x_formato := replace(x_formato,'@@monto_mensual_credito@@', trim(to_char(r_aux.monto_mensualidad, '999,999,999.99')));
-/*
-  x_formato := replace(x_formato,'@@considera_importe@@', 
-      (CASE 
-        WHEN r_sec.ingresosordinarios::numeric > x_divide_estimacion::numeric then  r_sec.ingresosordinarios
-        ELSE x_divide_estimacion
-        END)::text);
-*/
 raise notice '%', case when x_formato is NULL then 'c) x_formato is NULL' else '' end;
 raise notice 'ogs: %-%-%', r_aux.idorigen, r_aux.idgrupo, r_aux.idsocio;
 -------------------------BADAL
@@ -264,6 +252,15 @@ raise notice 'ogs: %-%-%', r_aux.idorigen, r_aux.idgrupo, r_aux.idsocio;
   x_suma_ingresos := coalesce(r_sec.ingresosordinarios,0) + coalesce(r_sec.ingresosextraordinarios,0) + coalesce(x_ing_men_neto_cod,0);
   x_formato := replace(x_formato,'@@suma_ingresos@@',            trim(to_char(coalesce(x_suma_ingresos,0),    '999,999,990.00')));
 
+raise notice 'ingresosordinarios: %', r_sec.ingresosordinarios;
+raise notice 'estimacion: %',         x_divide_estimacion;
+
+
+  x_formato := replace(x_formato,'@@considera_importe@@', 
+      (CASE 
+        WHEN coalesce(r_sec.ingresosordinarios,0.00) > coalesce(x_divide_estimacion,0.00) then  coalesce(r_sec.ingresosordinarios,0.00)
+        ELSE coalesce(x_divide_estimacion,0)
+        END)::text);
 -------------------------BADAL    
 
 
@@ -366,7 +363,10 @@ raise notice '%', case when x_formato is NULL then 'e) x_formato is NULL' else '
       x_mes   := '@@flujo_pr_mes_'||x_cont::text||'@@';
       x_monto := '@@flujo_pr_monto_'||x_cont::text||'@@';
       x_formato := replace(x_formato,x_mes,   sai_formato_analisis_credito_nombre_periodo (x_periodo_pr::text));
-      x_formato := replace(x_formato,x_monto, case when x_periodo_pr is NULL then '' else trim(to_char(x_monto_abonos, '999,999,999.00')) end);
+      x_formato := replace(x_formato,x_monto, 
+                            case when x_periodo_pr is NULL then '' 
+                                 else trim(to_char(x_monto_abonos, '999,999,999.00')) 
+                            end);
      
       x_suma_abonos := x_suma_abonos + x_monto_abonos;
     end loop;
@@ -387,7 +387,9 @@ raise notice '%', case when x_formato is NULL then 'f) x_formato is NULL' else '
     RAISE NOTICE 'INEGI: %, SUMA: %', x_inegi, x_suma_prom_flujos_pr_ah;
 
     x_divide_estimacion  := (x_suma_prom_flujos_pr_ah / x_inegi)*100.00 ;
+    RAISE NOTICE 'divide: %', x_divide_estimacion;
     x_formato := replace(x_formato,'@@estimacion_gastos@@',trim(to_char(x_divide_estimacion,'999,999,999.00'))); ---ADD ABRIL 2026 JJBADAL
+    
   end if;
 
 
