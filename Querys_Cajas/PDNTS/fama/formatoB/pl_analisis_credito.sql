@@ -252,18 +252,6 @@ raise notice 'ogs: %-%-%', r_aux.idorigen, r_aux.idgrupo, r_aux.idsocio;
   x_suma_ingresos := coalesce(r_sec.ingresosordinarios,0) + coalesce(r_sec.ingresosextraordinarios,0) + coalesce(x_ing_men_neto_cod,0);
   x_formato := replace(x_formato,'@@suma_ingresos@@',            trim(to_char(coalesce(x_suma_ingresos,0),    '999,999,990.00')));
 
-raise notice 'ingresosordinarios: %', r_sec.ingresosordinarios;
-raise notice 'estimacion: %',         x_divide_estimacion;
-
-
-  x_formato := replace(x_formato,'@@considera_importe@@', 
-      (CASE 
-        WHEN coalesce(r_sec.ingresosordinarios,0.00) > coalesce(x_divide_estimacion,0.00) then  coalesce(r_sec.ingresosordinarios,0.00)
-        ELSE coalesce(x_divide_estimacion,0)
-        END)::text);
--------------------------BADAL    
-
-
 
   if p_formato = 'formato_analisis_credito_b' then
     -- Ahorros --------------------------------------------------------------------------------------
@@ -385,14 +373,33 @@ raise notice '%', case when x_formato is NULL then 'f) x_formato is NULL' else '
     
     ---------- BADAL ----------
     RAISE NOTICE 'INEGI: %, SUMA: %', x_inegi, x_suma_prom_flujos_pr_ah;
+    ----- DEBUG BADAL -----
+    raise notice 'ingresosordinarios: %', r_sec.ingresosordinarios;
+    raise notice 'divide_estimacion: %',         x_divide_estimacion;
+    RAISE NOTICE 'antes de entrar';
+
+
 
     x_divide_estimacion  := (x_suma_prom_flujos_pr_ah / x_inegi)*100.00 ;
     RAISE NOTICE 'divide: %', x_divide_estimacion;
+    raise notice 'despues de entrar';
     x_formato := replace(x_formato,'@@estimacion_gastos@@',trim(to_char(x_divide_estimacion,'999,999,999.00'))); ---ADD ABRIL 2026 JJBADAL
     
+    x_formato := replace(x_formato,'@@considera_importe@@', 
+      trim(to_char(
+      numeric_smaller ( coalesce(r_sec.ingresosordinarios, 0.00), coalesce (x_divide_estimacion, 0.00)) 
+      ,'999,999,999.00'))
+     /* (CASE 
+        WHEN coalesce(r_sec.ingresosordinarios,0.00) < coalesce(x_divide_estimacion,0.00) then  coalesce(r_sec.ingresosordinarios,0.00)
+        ELSE coalesce(x_divide_estimacion,0)
+        END)::text)*/
+        
+      );
+-------------------------BADAL  
   end if;
 
 
+----------INICIAN VALIDACIONES SI EL APLICA FORMATO_ANALIS_CREDITO_A ---------
 raise notice '%', case when x_formato is NULL then 'g) x_formato is NULL' else '' end;
   if p_formato = 'formato_analisis_credito_a' then
   

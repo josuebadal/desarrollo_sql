@@ -1,5 +1,5 @@
 --UBICAMOS EL FORMATO
-SELECT idtabla,idelemento,nombre,dato1,dato3,dato4,dato5 
+SELECT idtabla,idelemento,nombre,dato1,dato3,dato4,dato5,tipo
 FROM tablas 
 WHERE idtabla='param' 
 AND idelemento='formato_caratula_dpf';

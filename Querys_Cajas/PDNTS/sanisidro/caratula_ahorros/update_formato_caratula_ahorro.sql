@@ -9,7 +9,7 @@ WHERE idtabla='param'
 AND idelemento='formato_caratula_ahorro';
 
 UPDATE tablas
-set dato2 = $$
+set dato2 = '
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -70,19 +70,19 @@ set dato2 = $$
 
 
       if (@@idproducto@@ == 120 ) {
-        t_op.innerHTML = "<td><table><tr><td><center><b>GAT <br> Nominal <br><br> <u>@@gat_nominal_99.99@@</u>%</b></center></td><td ><center><b>GAT <br> Real <br><br> <u>@@gat_real_99.99@@</u>%</b></center> </td></tr></table><center><b>Antes de impuestos</b></center><br><center> <b>&quot;Para fines informativos y de comparaci&oacute;n&quot;</b></center><br><center> <b>La GAT real es el rendimiento que obtendr&iacute;a despu&eacute;s de descontar la inflaci&oacute;n estimada</b></center></td>";
+        t_op.innerHTML = "<td><table><tr><td><center><b>GAT <br> Nominal <br><br> <u>@@gat_nominal_99.99@@</u>%</b></center></td><td ><center><b>GAT <br> Real <br><br> <u>@@gat_real_99.99@@</u>%</b></center> </td></tr></table><center><b>Antes de impuestos</b></center><br><center> <b>&quot;Para fines informativos y de comparaci&oacute;n &quot;</b></center><br><center> <b>La GAT real es el rendimiento que obtendr&iacute;a despu&eacute;s de descontar la inflaci&oacute;n estimada</b></center></td>";
         nom_prod.innerHTML ="Ahorro Menor";
         num_contra.innerHTML="5021-003-010388/03-04812-1122";
       }
 
       if (@@idproducto@@ == 110){
-        t_op.innerHTML ="GAT NOMINAL: <u>@@gat_nominal_99.99@@ </u>%Antes de impuestos "Para fines informativos y de comparaci&oacute;n" <br><br>  GAT REAL: <u>@@gat_real_99.99@@</u>% antes de impuestos <br> <br>La GAT real es el rendimiento que obtendr&iacute;a despu&eacute;s de descontar la inflaci&oacute;n estimada";
+        t_op.innerHTML ="GAT NOMINAL: <u>@@gat_nominal_99.99@@ </u>%Antes de impuestos Para fines informativos y de comparaci&oacute;n <br><br>  GAT REAL: <u>@@gat_real_99.99@@</u>% antes de impuestos <br> <br>La GAT real es el rendimiento que obtendr&iacute;a despu&eacute;s de descontar la inflaci&oacute;n estimada";
         nom_prod.innerHTML ="Ahorro Mayor";
-        num_contra.innerHTML="5021-003-008988/10-01065-0526";
+        num_contra.innerHTML="5021-003-008988/10-01065-0526PBA";
 
       }
       if (@@idproducto@@ == 130){
-        t_op.innerHTML ="GAT NOMINAL: <u>@@gat_nominal_99.99@@ </u>%Antes de impuestos "Para fines informativos y de comparaci&oacute;n" <br><br>  GAT REAL: <u>@@gat_real_99.99@@</u>% antes de impuestos <br> <br>La GAT real es el rendimiento que obtendr&iacute;a despu&eacute;s de descontar la inflaci&oacute;n estimada";
+        t_op.innerHTML ="GAT NOMINAL: <u>@@gat_nominal_99.99@@ </u>%Antes de impuestos Para fines informativos y de comparaci&oacute;n <br><br>  GAT REAL: <u>@@gat_real_99.99@@</u>% antes de impuestos <br> <br>La GAT real es el rendimiento que obtendr&iacute;a despu&eacute;s de descontar la inflaci&oacute;n estimada";
         nom_prod.innerHTML ="Ahorro Disponible";
         num_contra.innerHTML="5021-003-012959/08-01066-0526";
       }
@@ -292,6 +292,6 @@ set dato2 = $$
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-$$
+'
 WHERE idtabla='param' 
 AND idelemento='formato_caratula_ahorro';

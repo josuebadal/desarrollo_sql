@@ -1,10 +1,8 @@
---QUITAMOS CANDADO PARA PODER ACTUALIZAR
 UPDATE tablas
 set tipo = -456
 WHERE idtabla='param' 
 AND idelemento='formato_caratula_dpf';
 
---ACTALIZAMOS PARAMETRO PARA EDICION
 UPDATE tablas
 set tipo = 0
 WHERE idtabla='param' 
@@ -82,7 +80,7 @@ set dato2 = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htt
                   <td class="encabezado_2">
                     Ter&aacute;n 503 oriente Colonia Centro CP 26500 Morelos, Coahuila. <br />
                     Tel. (862) 62 40 450 y 62 40 304 <br />
-                    cajasanisidro@gmail.com
+                    cajasanisidro@gmail.comPBA
                   </td>
                 </tr>
               </table>
@@ -199,7 +197,7 @@ set dato2 = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htt
             <td>
               Unidad Especializada de Atenci&oacute;n a Usuarios: Lic. Rosaura Paola Zertuche de Hoyos <br />
               Domicilio: Calle Ter&aacute;n 503 oriente, Centro,  Morelos, Coahulia, M&eacute;xico. CP 26500 <br />
-              Tel&eacute;fono: (862) 624 0304 y 624 0450 Correo electr&oacute;nico: cajasanisidro@gmail.com  <br />
+              Tel&eacute;fono: (862) 624 0304 y 624 0450 Correo electr&oacute;nico: cajasanisidro@gmail.comPBA  <br />
               P&aacute;gina de Internet: www.cajasanisidro.com.mx <br />
               Comisi&oacute;n Nacional para la Protecci&oacute;n y Defensa de los Usuarios de Servicios Financieros (CONDUSEF): <br />
               Tel&eacute;fono: 01 800 999 8080 y (55) 53400999. P&aacute;gina de Internet: www.condusef.gob.mx
@@ -251,15 +249,6 @@ set dato2 = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htt
   </table>
 </div>
 </body>
-</html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-'
+</html>'
 WHERE idtabla='param' 
 AND idelemento='formato_caratula_dpf';

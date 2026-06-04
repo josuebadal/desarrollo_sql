@@ -50,12 +50,14 @@ where    idtabla = 'param'
 and idelemento like 'formato_analisis_credito_b' ;
 
 
-Buen día
-
-Este formato se genera en el proceso de apertura de un producto a un socio. 
 Como ejemplo se tomo el OGS: 30502-10-227270, 
 se le aperturó el producto   30302
-con un monto de $5,000, con un número de pagos de 24. 
+con un monto de $5,000 
+con un número de pagos de 24.
+
+DATOS para el cambio que dicen
+OGS 30512 - 10 - 1540
+OPA 30302 - 18331
 
 El sistema nos solicita capturar garantía, poseteriormente nos genera la tabla de amortización de manera automática. Seguidamente nos arroja una ventana de pregunta para imprimir analisis de credito, en donde e elige "FORMATO B", se adjunta SS al respecto.
 Así mismo se adjunta pdf de analisis de credito generado en prueba y se adjunta .xls con los campos que se requieren actualizar.

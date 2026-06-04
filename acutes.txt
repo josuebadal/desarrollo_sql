@@ -6,3 +6,13 @@ Capitulo 11
 PAGI 212 Pdf  navegador 223
 
 
+COMILLAS &quot; texto &quot;
+&Aacute;
+&Eacute;
+&Iacute;
+&Oacute;
+&Uacute;
+
+iconv -f UTF-8 -t UTF-8 archivo.html > /dev/null
+
+
