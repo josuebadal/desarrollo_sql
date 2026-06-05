@@ -13,6 +13,12 @@ COMILLAS &quot; texto &quot;
 &Oacute;
 &Uacute;
 
-iconv -f UTF-8 -t UTF-8 archivo.html > /dev/null
+á
+é
+í
+ó
+ú
+ñ
 
-
+CARACTERES RAROS UTF 8
+“Para fines informativos y de comparaci&oacute;n”
