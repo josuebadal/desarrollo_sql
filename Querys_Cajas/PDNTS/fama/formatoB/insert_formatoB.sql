@@ -12,7 +12,7 @@ and idelemento like 'formato_analisis_credito_b' ;
 INSERT INTO tablas (idtabla,idelemento,nombre,dato1,dato2,dato3,dato4,dato5,tipo)
 VALUES ('param','indicador_inegi','Indicador Inegi',null,'18',null,null,null,0);
 
- 
+
 UPDATE tablas
 SET dato2 = '<!DOCTYPE html>
 <html lang="en">
@@ -125,6 +125,7 @@ SET dato2 = '<!DOCTYPE html>
          localStorage.setItem("monto_negocio_propio", "");
          operacion(3);
       };
+
       function local_storage(dato){
         var numero = dato;
         if (typeof(Storage) !== "undefined") {
@@ -208,7 +209,7 @@ SET dato2 = '<!DOCTYPE html>
   importe_tecleado = parseFloat(importe_tecleado || 0);
 
   // ===== OBTENER DATOS DEL DOM =====
-  var ingreso = document.getElementById("monto_mensual").innerHTML;
+  var ingreso = document.getElementById("considera_importe").innerHTML;
   var gastos = document.getElementById("efectivo").innerHTML;
 
   // limpiar formato
@@ -608,7 +609,7 @@ SET dato2 = '<!DOCTYPE html>
                 <th colspan="4" class="encabezado borde_abajo">Importe a considerar </th>
               </tr>
               <tr>
-                <td colspan="4" class="borde_U text_cent fondo"><a id="">@@considera_importe@@</a></td>
+                <td colspan="4" class="borde_U text_cent fondo"><a id="considera_importe">@@considera_importe@@</a></td>
               </tr>
             </table>
           </td>

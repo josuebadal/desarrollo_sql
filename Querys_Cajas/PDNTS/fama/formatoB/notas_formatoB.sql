@@ -59,7 +59,22 @@ DATOS para el cambio que dicen
 OGS 30512 - 10 - 1540
 OPA 30302 - 18331
 
-El sistema nos solicita capturar garantía, poseteriormente nos genera la tabla de amortización de manera automática. Seguidamente nos arroja una ventana de pregunta para imprimir analisis de credito, en donde e elige "FORMATO B", se adjunta SS al respecto.
-Así mismo se adjunta pdf de analisis de credito generado en prueba y se adjunta .xls con los campos que se requieren actualizar.
+INGRESO DECLARADO
+monto =  83,266.64
+id =     "monto_mensual"
+clave =  @@ing_men_sueldo_neto@@
 
-Quedamos atentos a sus comentarios.
+IMPORTE A CONSIDERAR
+monto =  28,407.87
+id =     "considera_importe"  //este dato estaba vacio  se le asigna un ID Para calculos futuros
+clave =  @@considera_importe@@
+
+SUMA DE GASTOS 
+monto =  $32,000.00
+id =     "efectivo"
+clave =  @@suma_gastos@@
+
+EFECTIVO DISPONIBLE
+monto =  51266.64 
+id =     "resultado_monto"
+clave =  //no posee una porque hace el calculo en JS
