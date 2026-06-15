@@ -1,0 +1,143 @@
+/*
+--3 años de antiguedad.
+--101 con saldo 1000
+--Tenga capturado en su datos socieconomico como casa propia.
+
+110 tenga de 6 a 9 depositos de ahorro 
+(NO DICE QUE SEAN CONSECUTIVOS NI EN QUE FECHA)
+
+todos sus creditos no 10 dias vencidos.
+
+
+Historial de 6 meses en cualquiera de los siguientes creditos 30102,30112,30202,30212,32602,32612,32702,32712,32602
+
+El resultado muestre No. de socio, Nombre, Fecha ingreso.
+
+antes de meter cartera vencida
+-[ RECORD 1 ]
+count | 743
+
+agregando el historial de 6 meses de creditos
+-[ RECORD 1 ]
+count | 487
+
+*/
+
+--SELECT COUNT(*) FROM (
+SELECT DISTINCT
+    p.idorigen || ' ' || p.idgrupo || ' ' || p.idsocio AS OGS,
+    p.fechaingreso,
+    p.nombre || ' ' || p.appaterno || ' ' || p.apmaterno AS nombre,
+    a.idorigenp || ' ' ||a.idproducto || ' ' ||a.idauxiliar AS producto,
+    a.saldo as saldo, cv.diasvencidos as diasven
+FROM auxiliares  as a
+INNER JOIN auxiliares a1
+    ON a1.idorigen = a.idorigen AND a1.idgrupo  = a.idgrupo AND a1.idsocio  = a.idsocio AND a1.idproducto = 101 AND a1.saldo >= 1000
+INNER JOIN personas as p ON p.idorigen = a.idorigen and p.idgrupo = a.idgrupo and p.idsocio = a.idsocio
+INNER JOIN socioeconomicos as se ON p.idorigen = se.idorigen and p.idgrupo = se.idgrupo and p.idsocio = se.idsocio and se.estatusvivienda = 1
+LEFT JOIN (
+    SELECT DISTINCT ON (idorigenp,idproducto,idauxiliar)
+           idorigenp,
+           idproducto,
+           idauxiliar,
+           diasvencidos
+    FROM carteravencida
+    ORDER BY idorigenp,idproducto,idauxiliar,fechacalculo DESC
+) cv
+    ON a.idorigenp = cv.idorigenp
+   AND a.idproducto = cv.idproducto
+   AND a.idauxiliar = cv.idauxiliar
+WHERE p.fechaingreso <= ((select fechatrabajo::date from origenes limit 1 ) - INTERVAL '3 years')
+    AND a.idproducto IN (30102,30112,30202,30212,32602,32612,32702,32712) AND a.estatus = 2
+    AND a.fechaape  <= ((select fechatrabajo::date from origenes limit 1 ) - INTERVAL '6 month')
+    AND COALESCE(cv.diasvencidos,0) = 0
+--) as x
+;
+
+------------------------- VERSION 2 ----------------------------
+--SELECT COUNT(*) FROM (
+SELECT DISTINCT
+    p.idorigen || ' ' || p.idgrupo || ' ' || p.idsocio AS OGS,
+    p.fechaingreso,
+    p.nombre || ' ' || p.appaterno || ' ' || p.apmaterno AS nombre,
+    a.idorigenp || ' ' ||a.idproducto || ' ' ||a.idauxiliar AS producto,
+    a.saldo as saldo,
+    cv.diasvencidos as diasven
+FROM auxiliares  as a
+INNER JOIN auxiliares a1
+    ON a1.idorigen = a.idorigen
+   AND a1.idgrupo  = a.idgrupo
+   AND a1.idsocio  = a.idsocio
+   AND a1.idproducto = 101
+   AND a1.saldo >= 1000
+
+INNER JOIN personas as p
+    ON p.idorigen = a.idorigen
+   AND p.idgrupo = a.idgrupo
+   AND p.idsocio = a.idsocio
+
+INNER JOIN socioeconomicos as se
+    ON p.idorigen = se.idorigen
+   AND p.idgrupo = se.idgrupo
+   AND p.idsocio = se.idsocio
+   AND se.estatusvivienda = 1
+
+LEFT JOIN (
+    SELECT DISTINCT ON (idorigenp,idproducto,idauxiliar)
+           idorigenp,
+           idproducto,
+           idauxiliar,
+           diasvencidos
+    FROM carteravencida
+    ORDER BY idorigenp,idproducto,idauxiliar,fechacalculo DESC
+) cv
+    ON a.idorigenp = cv.idorigenp
+   AND a.idproducto = cv.idproducto
+   AND a.idauxiliar = cv.idauxiliar
+
+
+--------------------------------------------------------------------------------
+--  INICIO: VALIDACIÓN DE 9 DEPÓSITOS EN PRODUCTO 110 (ÚLTIMO AÑO)
+--------------------------------------------------------------------------------
+AND EXISTS (
+    SELECT 1
+    FROM (
+        SELECT ad.idorigenp,
+               ad.idproducto,
+               ad.idauxiliar,
+               COUNT(*) AS total_depositos
+        FROM auxiliares_d ad
+        WHERE ad.idproducto = 110
+          AND ad.cargoabono = 1
+          AND idtipo = 1
+          AND tipomov = 0
+          --AND ad.idusuario <> 999
+          AND ad.fecha BETWEEN (
+                (SELECT fechatrabajo::date FROM origenes LIMIT 1) - INTERVAL '1 year'
+          )
+          AND (SELECT fechatrabajo::date FROM origenes LIMIT 1)
+        GROUP BY ad.idorigenp, ad.idproducto, ad.idauxiliar
+    ) x
+    WHERE x.idorigenp  = a.idorigenp
+      AND x.idproducto = 110
+      AND x.idauxiliar = a.idauxiliar
+      AND x.total_depositos >= 9
+)
+--------------------------------------------------------------------------------
+--  FIN: VALIDACIÓN DE 9 DEPÓSITOS EN PRODUCTO 110
+--------------------------------------------------------------------------------
+
+
+WHERE p.fechaingreso <= (
+        (SELECT fechatrabajo::date FROM origenes LIMIT 1)
+        - INTERVAL '3 years'
+    )
+    AND a.idproducto IN (30102,30112,30202,30212,32602,32612,32702,32712)
+    AND a.estatus = 2
+    AND a.fechaape <= (
+        (SELECT fechatrabajo::date FROM origenes LIMIT 1)
+        - INTERVAL '6 month'
+    )
+    AND COALESCE(cv.diasvencidos,0) = 0
+--) as x
+;
