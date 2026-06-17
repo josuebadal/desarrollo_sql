@@ -133,12 +133,9 @@ begin
                  else '-'||p.numeroint
             end) as numero_casa,
          p.colonia, p.municipio, p.codigopostal,
-
          coalesce(p.telefono,'') as telefono,
-
          trim(to_char(a.idorigenp,'099999'))||'-'||trim(to_char(a.idproducto,'09999'))||'-'||
            trim(to_char(a.idauxiliar,'09999999')) as opa,
-
          a.idorigenp,a.idproducto,a.idauxiliar,
 
          (select nombre
@@ -187,6 +184,9 @@ begin
     where    idorigen = r_aux.idorigen and idgrupo = r_aux.idgrupo and idsocio = r_aux.idsocio and ing_mensual_neto > 0
     order by consecutivo desc
     limit    1;
+
+
+
 ------------------BADAL  
 
   SELECT
@@ -225,11 +225,7 @@ raise notice '%', case when x_formato is NULL then 'b) x_formato is NULL' else '
   x_formato := replace(x_formato,'@@monto_mensual_credito@@', trim(to_char(r_aux.monto_mensualidad, '999,999,999.99')));
 raise notice '%', case when x_formato is NULL then 'c) x_formato is NULL' else '' end;
 raise notice 'ogs: %-%-%', r_aux.idorigen, r_aux.idgrupo, r_aux.idsocio;
--------------------------BADAL
-
-
-
-
+raise notice 'opa: %-%-%', p_idorigenp, p_idproducto, p_idauxiliar;
 
 -- Gastos: ----------
   x_formato := replace(x_formato,'@@gto_men_alimentos@@',        trim(to_char(coalesce(r_sec.gastos_tipo1,0), '999,999,990.00')));
@@ -240,17 +236,27 @@ raise notice 'ogs: %-%-%', r_aux.idorigen, r_aux.idgrupo, r_aux.idsocio;
   x_formato := replace(x_formato,'@@gto_men_otros@@',            trim(to_char(coalesce(r_sec.gastos_tipo6,0), '999,999,990.00')));
 
   x_suma_gastos := coalesce(r_sec.gastos_tipo1,0) + coalesce(r_sec.gastos_tipo2,0) + coalesce(r_sec.gastos_tipo3,0) + coalesce(r_sec.gastos_tipo4,0) +
-                     coalesce(r_sec.gastos_tipo5,0) + coalesce(r_sec.gastos_tipo6,0) + coalesce(x_cod_gasto1,0) + coalesce(x_cod_gasto2,0) +
-                     coalesce(x_cod_gasto3,0) + coalesce(x_cod_gasto4,0) + coalesce(x_cod_gasto5,0) + coalesce(x_cod_gasto6,0);
+                   coalesce(r_sec.gastos_tipo5,0) + coalesce(r_sec.gastos_tipo6,0) + coalesce(x_cod_gasto1,0) + coalesce(x_cod_gasto2,0) +
+                   coalesce(x_cod_gasto3,0) + coalesce(x_cod_gasto4,0) + coalesce(x_cod_gasto5,0) + coalesce(x_cod_gasto6,0);
   x_formato := replace(x_formato,'@@suma_gastos@@',              trim(to_char(coalesce(x_suma_gastos,0),      '999,999,990.00')));
     
 
 -- Ingresos: --------
   x_formato := replace(x_formato,'@@ing_men_sueldo_neto@@',      trim(to_char(coalesce(r_sec.ingresosordinarios,0),       '999,999,990.00')));
   x_formato := replace(x_formato,'@@ing_men_otro_empleo@@',      trim(to_char(coalesce(r_sec.ingresosextraordinarios,0),  '999,999,990.00')));
-  x_formato := replace(x_formato,'@@ing_men_ingreso_familiar@@', trim(to_char(coalesce(x_ing_men_neto_cod,0),             '999,999,990.00')));
+  /*x_formato := replace(x_formato,'@@ing_men_ingreso_familiar@@', trim(to_char(coalesce(x_ing_men_neto_cod,0),             '999,999,990.00')));*/
   x_suma_ingresos := coalesce(r_sec.ingresosordinarios,0) + coalesce(r_sec.ingresosextraordinarios,0) + coalesce(x_ing_men_neto_cod,0);
   x_formato := replace(x_formato,'@@suma_ingresos@@',            trim(to_char(coalesce(x_suma_ingresos,0),    '999,999,990.00')));
+
+
+
+
+
+
+
+
+
+
 
 
   if p_formato = 'formato_analisis_credito_b' then
