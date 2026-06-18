@@ -31,7 +31,6 @@ AS $$
 DECLARE
     r_activa   record;              -- inversiones activas
     r_out      tipo_reinversion_v2; -- fila de salida
-
     v_reinversiones integer;
 
 BEGIN
@@ -40,7 +39,6 @@ CREATE TEMP TABLE tmp_reinversiones_v2 (
     idorigen        integer,
     idgrupo         integer,
     idsocio         integer,
-    
     idorigenp       integer,
     idproducto      integer,
     idauxiliar      integer,
@@ -67,7 +65,7 @@ CREATE TEMP TABLE tmp_reinversiones_v2 (
             pr.nombre
         FROM v_auxiliares a
         JOIN productos pr ON pr.idproducto = a.idproducto
-        INNER JOIN (select * from v_auxiliaresd) 
+        INNER JOIN (select * from v_auxiliares_d) 
         WHERE pr.tipoproducto IN (1,8)
           AND a.estatus = 2
     LOOP

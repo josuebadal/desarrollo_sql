@@ -16,3 +16,9 @@ select * from v_auxiliares_d where (idorigenp,idproducto,idauxiliar) = (30146,20
 --Valdidar quien esta en referenciasp 
 --No existe datos en referenciasp lo debe traer de otr amanera
 select * from referenciasp where (idorigenp,idproducto,idauxiliar) = (30146,202,124);
+
+-----MANERA DE CORRER LA FUNCION 
+SELECT * FROM reinversiones_dpf();
+
+
+Ultima modificacion 17 de junio 2026
