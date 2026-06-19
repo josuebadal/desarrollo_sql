@@ -1,6 +1,6 @@
 DROP FUNCTION IF EXISTS public.reinversiones_dpf CASCADE;
 DROP TYPE IF EXISTS public.reinversiones_dpf CASCADE;
-    
+--- Se usa la funcion numero_reinversiones(integer,integer,integer);    
 CREATE TYPE public.reinversiones_dpf AS (
     idorigen                    integer,
     idgrupo                     integer,
@@ -16,7 +16,8 @@ CREATE TYPE public.reinversiones_dpf AS (
     periodo                     varchar,
     idtipo                      integer,
     idpoliza                    integer,
-    tipomov                     integer
+    tipomov                     integer,
+    reinversion                 text
     --num_reinversiones           integer
 );
 
@@ -46,7 +47,8 @@ CREATE TEMP TABLE tmp_reinversiones (
     periodo                     varchar,
     idtipo                      integer,
     idpoliza                    integer,
-    tipomov                     integer
+    tipomov                     integer,
+    reinversion                 text
 ) ON COMMIT PRESERVE ROWS;
 
     -----QUERY PARA TRAER LAS INVERSIONES ACTIVAS-----
@@ -54,14 +56,14 @@ CREATE TEMP TABLE tmp_reinversiones (
         SELECT a.idorigen, a.idgrupo, a.idsocio,
         a.idorigenp, a.idproducto, a.idauxiliar, 
         a.saldo, a.fechaactivacion, a.elaboro, ad.cargoabono,
-        ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza, ad.tipomov
+        ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza, ad.tipomov,
+        (select numero_reinversiones(a.idorigenp,a.idproducto,a.idauxiliar)) as reinversion
         FROM v_auxiliares AS a
         INNER JOIN v_auxiliares_d AS ad ON a.idorigenp = ad.idorigenp AND a.idproducto = ad.idproducto 
         AND a.idauxiliar = ad.idauxiliar AND a.fechaactivacion = ad.fecha::date
         WHERE a.idproducto IN (200,201,202,203) AND a.estatus = 2
         AND ad.cargoabono = 1
     LOOP
-
         
         r_out.idorigen                      := r_activa.idorigen;
         r_out.idgrupo                       := r_activa.idgrupo;
@@ -78,7 +80,7 @@ CREATE TEMP TABLE tmp_reinversiones (
         r_out.idtipo                        := r_activa.idtipo;
         r_out.idpoliza                      := r_activa.idpoliza;
         r_out.tipomov                       := r_activa.tipomov;
-        --r_out.num_reinversiones             := v_reinversiones;
+        r_out.reinversion                   := r_activa.reinversion;
         
 
     INSERT INTO tmp_reinversiones
@@ -97,7 +99,8 @@ CREATE TEMP TABLE tmp_reinversiones (
         r_out.periodo,
         r_out.idtipo,
         r_out.idpoliza,
-        r_out.tipomov);
+        r_out.tipomov,
+        r_out.reinversion);
     RETURN NEXT r_out;
     END LOOP;
     RETURN;
