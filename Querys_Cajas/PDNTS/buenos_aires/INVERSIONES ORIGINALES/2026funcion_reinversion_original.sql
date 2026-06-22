@@ -18,15 +18,14 @@ CREATE TYPE public.reinversiones_dpf AS (
     idpoliza                    integer,
     tipomov                     integer,
     reinversion                 text
-    --num_reinversiones           integer
 );
 
 CREATE OR REPLACE FUNCTION public.reinversiones_dpf()
 RETURNS SETOF reinversiones_dpf
 AS $$
 DECLARE 
-    r_activa   record;              -- inversiones activas
-    r_out      reinversiones_dpf;              -- fila de salida
+    r_activa        record;                         -- inversiones activas
+    r_out           reinversiones_dpf;              -- fila de salida
     v_reinversiones integer;
 
 BEGIN 
@@ -107,3 +106,4 @@ CREATE TEMP TABLE tmp_reinversiones (
 END;
 $$ 
 LANGUAGE plpgsql;
+
