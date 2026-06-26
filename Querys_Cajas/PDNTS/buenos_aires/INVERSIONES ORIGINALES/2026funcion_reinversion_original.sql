@@ -24,9 +24,19 @@ CREATE OR REPLACE FUNCTION public.reinversiones_dpf()
 RETURNS SETOF reinversiones_dpf
 AS $$
 DECLARE 
-    r_activa        record;                         -- inversiones activas
-    r_out           reinversiones_dpf;              -- fila de salida
-    v_reinversiones integer;
+    
+    r_activa                record;                         -- inversiones actuales
+    r_hist                  record;                         -- inversiones historicas
+    r_out                   reinversiones_dpf;              -- fila de salida
+    
+    origen_ref      integer;
+    prdct_ref       integer;
+    auxi_ref        integer;
+
+    idorigenc_v     integer;
+    periodo_v       varchar;
+    idtipo_v        integer;
+    idpoliza_v      integer;
 
 BEGIN 
 -----TABLA TEMPORAL DE INVERSIONES ACTIVAS Y SU POLIZA-----
@@ -62,8 +72,11 @@ CREATE TEMP TABLE tmp_reinversiones (
         AND a.idauxiliar = ad.idauxiliar AND a.fechaactivacion = ad.fecha::date
         WHERE a.idproducto IN (200,201,202,203) AND a.estatus = 2
         AND ad.cargoabono = 1
-    LOOP
+
+    LOOP 
+
         
+
         r_out.idorigen                      := r_activa.idorigen;
         r_out.idgrupo                       := r_activa.idgrupo;
         r_out.idsocio                       := r_activa.idsocio;
@@ -99,10 +112,27 @@ CREATE TEMP TABLE tmp_reinversiones (
         r_out.idtipo,
         r_out.idpoliza,
         r_out.tipomov,
-        r_out.reinversion);
+        r_out.reinversion
+        );
+    --raise notice  'primera poliza: %,%,%,%,%', ad.idorigenc, ad.periodo, ad.idtipo ,ad.idpoliza, ad.tipomov;
+
     RETURN NEXT r_out;
     END LOOP;
-    RETURN;
+
+    /*FOR r_activa IN
+        SELECT a.idorigen, a.idgrupo, a.idsocio,
+        a.idorigenp, a.idproducto, a.idauxiliar, 
+        a.saldo, a.fechaactivacion, a.elaboro, ad.cargoabono,
+        ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza, ad.tipomov,
+        (select numero_reinversiones(a.idorigenp,a.idproducto,a.idauxiliar)) as reinversion
+        FROM v_auxiliares AS a
+        INNER JOIN v_auxiliares_d AS ad ON a.idorigenp = ad.idorigenp AND a.idproducto = ad.idproducto 
+        AND a.idauxiliar = ad.idauxiliar AND a.fechaactivacion = ad.fecha::date
+        WHERE a.idproducto IN (200,201,202,203) AND a.estatus = 2
+        AND ad.cargoabono = 1
+    RETURN;*/
+
+
 END;
 $$ 
 LANGUAGE plpgsql;

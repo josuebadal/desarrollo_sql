@@ -1,13 +1,20 @@
 --Sacar las inerversiones activas
- idorigen | idgrupo | idsocio | idorigenp | idproducto | idauxiliar | fechaactivacion | elaboro 
-----------+---------+---------+-----------+------------+------------+-----------------+---------
-    30109 |      10 |   16757 |     30137 |        202 |        680 | 04/12/2025      |     999
-    30133 |      10 |  122022 |     30139 |        202 |        818 | 04/12/2025      |    1618
-    30122 |      10 |  110389 |     30122 |        201 |       2324 | 21/08/2024      |    1313
-    30122 |      10 |  266788 |     30122 |        202 |        291 | 21/09/2024      |    1313
-    30109 |      10 |  191335 |     30109 |        202 |       2236 | 03/12/2025      |     999
-    30124 |      10 |  222109 |     30124 |        202 |       1973 | 03/12/2025      |     999
-    30125 |      10 |  201842 |     30125 |        202 |        812 | 03/12/2025      |     999
+idorigen        | 30101
+idgrupo         | 10
+idsocio         | 260372
+idorigenp       | 30101
+idproducto      | 200
+idauxiliar      | 44445
+saldo           | 29477.77
+fechaactivacion | 31/05/2026
+elaboro         | 999
+cargoabono      | 1
+idorigenc       | 30101
+periodo         | 202605
+idtipo          | 3
+idpoliza        | 564
+tipomov         | 0
+reinversion     | 2
 
 
 --Validar las inversiones anterior en auxiliares_d , la poliza original sale con la fecha de activacion
@@ -20,5 +27,14 @@ select * from referenciasp where (idorigenp,idproducto,idauxiliar) = (30146,202,
 -----MANERA DE CORRER LA FUNCION 
 SELECT * FROM reinversiones_dpf();
 
+select * 
+from v_auxiliares_d as ad 
+INNER JOIN v_auxiliares as a
+ON ad.idorigenp =30101
+AND ad.idproducto = 200
+and ad.idauxiliar = 44445
+where idorigenc = 30101
+and   periodo   = '202605'
+and idtipo      = 3
+and idpoliza    = 564; 
 
-Ultima modificacion 17 de junio 2026

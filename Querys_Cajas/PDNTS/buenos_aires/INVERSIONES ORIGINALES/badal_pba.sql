@@ -1,113 +1,132 @@
---DROP FUNCTION numero_reinversiones_v2();
-/*
-SELECT numero_reinversiones_v2();
-SELECT * FROM tmp_reinversiones_v2;
-SELECT *
-FROM tmp_reinversiones_v2
-ORDER BY num_reinversiones DESC;
-*/
+DROP FUNCTION public.numero_reinversiones(integer,integer,integer);
+-- select * from numero_reinversiones(20702,00200,00006543);
 
-DROP TYPE IF EXISTS tipo_reinversion_v2 CASCADE;
-CREATE TYPE public.tipo_reinversion_v2 AS (
-    idorigen        integer,
-    idgrupo         integer,
-    idsocio         integer,
+-- select * from numero_reinversiones(31003 ,200 ,13267);
 
-    idorigenp       integer,
-    idproducto      integer,
-    idauxiliar      integer,
-    elaboro         integer,
-    fechaactivacion  date,
-    saldo_actual    numeric,
-    nombreproducto        varchar,
-
-    num_reinversiones integer
-);
-CREATE OR REPLACE FUNCTION public.numero_reinversiones_v2()
-RETURNS SETOF tipo_reinversion_v2
-LANGUAGE plpgsql
-AS $$
+CREATE OR REPLACE FUNCTION public.numero_reinversiones(integer,integer,integer)
+ RETURNS   integer as $$ 
 
 DECLARE
-    r_activa   record;              -- inversiones activas
-    r_out      tipo_reinversion_v2; -- fila de salida
-    v_reinversiones integer;
+---SE DECLARAN LOS PARAMETROS QUE RECIBE LA FUNCION
+	op1				ALIAS FOR $1;
+	op2   			ALIAS FOR $2;
+	op3   			ALIAS FOR $3;
+---SE DECLARA EL CONTADOR Y CUANTAS VUELTAS DA PARA SACAR EL TOTAL DE REINVERSIONES QUE HA TENIDO
+	v_contador    			integer;  
+	v_contador_vuelta       integer;
+---SE DECLARA LA REFERENCIA DE PRODUCTOS PARA VALIDAR QUE SEA REINVERSION
+	origen_ref 			integer;
+	prdct_ref 			integer; 
+	auxi_ref 			integer;
+---SE DECLARA Y GUARDAN LAS POLIZAS PARA RELACIONAR LA INVERSION
+	idorigenc_v 			integer;
+  	periodo_v 				varchar;
+  	idtipo_v 				integer;
+  	idpoliza_v 				integer;
+--- SE DECLARA EL RECORD
+  	r_rec                   record;
+---SE GUARDAN LOS PARAMETROS RECIBIDOS POR LA FUNCION
+	v_idorigen  			integer;
+	v_idgrupo       		integer;
+	v_idsocio       		integer;
 
-BEGIN
-DROP TABLE IF EXISTS tmp_reinversiones_v2;
-CREATE TEMP TABLE tmp_reinversiones_v2 (
-    idorigen        integer,
-    idgrupo         integer,
-    idsocio         integer,
-    idorigenp       integer,
-    idproducto      integer,
-    idauxiliar      integer,
-    elaboro         integer,
-    fechaactivacion  date,
-    saldo_actual    numeric,
-    nombreproducto        varchar,
+BEGIN 
 
-    num_reinversiones integer
-) ON COMMIT PRESERVE ROWS;
-    -- Limpieza controlada (opcional)
+		v_contador := 0;
 
-    FOR r_activa IN
-        SELECT
-            a.idorigen,
-            a.idgrupo,
-            a.idsocio,
-            a.idorigenp,
-            a.idproducto,
-            a.idauxiliar,
-            a.elaboro,
-            a.fechaactivacion,
-            a.saldo,
-            pr.nombre
-        FROM v_auxiliares a
-        JOIN productos pr ON pr.idproducto = a.idproducto
-        INNER JOIN (select * from v_auxiliares_d) 
-        WHERE pr.tipoproducto IN (1,8)
-          AND a.estatus = 2
-    LOOP
+	select into v_idorigen, v_idgrupo ,v_idsocio  idorigen, idgrupo, idsocio 
+	from v_auxiliares where 
+	(idorigenp,idproducto,idauxiliar)=(	op1 ,op2, op3 );
 
-        -- Aquí reutilizas tu logica existente (o versión adaptada)
-        v_reinversiones :=
-        numero_reinversiones(
-            r_activa.idorigenp,
-            r_activa.idproducto,
-            r_activa.idauxiliar
-            );
-        -- Poblar salida
-        r_out.idorigen          := r_activa.idorigen;
-        r_out.idgrupo           := r_activa.idgrupo;
-        r_out.idsocio           := r_activa.idsocio;
-        r_out.idorigenp         := r_activa.idorigenp;
-        r_out.idproducto        := r_activa.idproducto;
-        r_out.idauxiliar        := r_activa.idauxiliar;
-        r_out.elaboro                   := r_activa.elaboro;
-        r_out.fechaactivacion    := r_activa.fechaactivacion;
-        r_out.saldo_actual      := r_activa.saldo;
-        r_out.nombreproducto          := r_activa.nombre;
-        r_out.num_reinversiones := v_reinversiones;
+--raise notice  ' socio: %,%,%',v_idorigen, v_idgrupo ,v_idsocio;
 
-        -- Guardar en tabla temporal
-        INSERT INTO tmp_reinversiones_v2
-        VALUES (
-            r_out.idorigen,
-            r_out.idgrupo,
-            r_out.idsocio,
-            r_out.idorigenp,
-            r_out.idproducto,
-            r_out.idauxiliar,
-            r_out.elaboro,
-            r_out.fechaactivacion,
-            r_out.saldo_actual,
-            r_out.nombreproducto,
-            r_out.num_reinversiones
-        );
-        -- Retornar fila
-        RETURN NEXT r_out;
-    END LOOP;
-    RETURN;
+-- Buscamos el ogs del socio para tener el historial de inversiones que ha hecho
+
+
+
+select into idorigenc_v ,periodo_v ,idtipo_v ,idpoliza_v idorigenc,periodo,idtipo,idpoliza 
+from 
+(select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d ad
+	 inner join auxiliares a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3) and a.idorigen = v_idorigen and a.idgrupo = v_idgrupo and a.idsocio = v_idsocio
+	 union all
+	 select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d_h ad
+	 inner join auxiliares_h a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3) and a.idorigen=v_idorigen and a.idgrupo=v_idgrupo and a.idsocio=v_idsocio) as x
+where (idorigenp, idproducto, idauxiliar)=(op1 ,op2, op3 ) and cargoabono=1 ;
+
+raise notice  'primera poliza: %,%,%,%',idorigenc_v ,periodo_v ,idtipo_v ,idpoliza_v;
+
+ -- BUSCAMOS LA PRIMERA POLIZA DE LA INVERSION EN DONDE SE DEPOSITO EL CAPITAL
+/*
+if found then 
+
+	v_contador := 1;
+
+	else 
+
+	v_contador := 0;
+
+end if;
+*/
+
+---------------------------CHECK POINT BADAL ----------------------------
+for r_rec in
+select * from 
+(select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d ad
+	 inner join auxiliares a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3) and a.idorigen=v_idorigen and a.idgrupo=v_idgrupo and a.idsocio=v_idsocio
+	 union all
+	 select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d_h ad
+	 inner join auxiliares_h a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3) and a.idorigen=v_idorigen and a.idgrupo=v_idgrupo and a.idsocio=v_idsocio) as x
+
+loop 
+
+select into origen_ref ,prdct_ref,auxi_ref x.idorigenp,x.idproducto,x.idauxiliar  
+from (select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d ad
+	 inner join auxiliares a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3) and a.idorigen=v_idorigen and a.idgrupo=v_idgrupo and a.idsocio=v_idsocio
+	 union all
+	 select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d_h ad
+	 inner join auxiliares_h a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3) and a.idorigen=v_idorigen and a.idgrupo=v_idgrupo and a.idsocio=v_idsocio) as x 
+where (idorigenc,periodo,idtipo,idpoliza)=( idorigenc_v ,periodo_v ,idtipo_v ,idpoliza_v )  and cargoabono=0;
+
+
+raise notice  'opa pasado : %,%,%',origen_ref ,prdct_ref,auxi_ref;
+select into idorigenc_v ,periodo_v ,idtipo_v ,idpoliza_v idorigenc,periodo,idtipo,idpoliza 
+from  
+(select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d ad
+	 inner join auxiliares a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3) and a.idorigen=v_idorigen and a.idgrupo=v_idgrupo and a.idsocio=v_idsocio
+	 union all
+	 select a.idorigen, a.idgrupo, a.idsocio, ad.idorigenp, ad.idproducto, ad.idauxiliar,  ad.cargoabono,  ad.idorigenc, ad.periodo, ad.idtipo, ad.idpoliza
+	 from auxiliares_d_h ad
+	 inner join auxiliares_h a using (idorigenp,idproducto,idauxiliar)
+	 where a.idproducto in (200,201,202,203,2002,20102) and a.estatus in (2,3)and a.idorigen=v_idorigen and a.idgrupo=v_idgrupo and a.idsocio=v_idsocio) as x 
+where (idorigenp, idproducto, idauxiliar)=(origen_ref ,prdct_ref,auxi_ref) and cargoabono=1;
+
+raise notice  ' poliza pasada: %,%,%,%',idorigenc_v ,periodo_v ,idtipo_v ,idpoliza_v;
+
+
+if found  then
+v_contador := v_contador + 1;
+-- raise notice  ' vueltas: %,%,%,%',v_contador,origen_ref ,prdct_ref,auxi_ref ;
+
+---raise notice  ' poliza: %,%,%,%',idorigenc_v ,periodo_v ,idtipo_v ,idpoliza_v;
+else 
+exit;
+end if;
+end loop;
+--raise notice  ' vueltas: %,%,%,%',v_contador,op1 ,op2,op3 ;
+return v_contador;
 END;
-$$;
+$$ language 'plpgsql';
