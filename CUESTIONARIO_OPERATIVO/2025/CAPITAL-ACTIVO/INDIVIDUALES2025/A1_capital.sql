@@ -51,8 +51,6 @@ y:=1;
 p_inicial :=(amo||'01')::integer;
 p_final   :=(amo||'12')::integer;
 
-
-
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------TABLAS PARA OBTENER LOS SOCIOS 
 ------------------------------------------------------------------------------------------------------------------------
@@ -151,7 +149,7 @@ raise notice 'Se genero la tabla temp_pfae';
 
 
 for r_paso in select * from
-        (select tipo_clien_usua,clasi_grado_riesgo,enti_fede_residencia,sum(num_total_clien_usua) as num_total_clien_usua,espep,nacion, act_eco_pld from
+        (select tipo_clien_usua,clasi_grado_riesgo,pais_residencia,enti_fede_residencia,sum(num_total_clien_usua) as num_total_clien_usua,espep,nacion, act_eco_pld from
         (select
         /*(case when p.nacionalidad != 3 and (p.razon_social is NULL or p.razon_social = '') then 1
             when p.nacionalidad != 3 and (p.razon_social is not NULL and p.razon_social != '')then 2
@@ -161,18 +159,15 @@ for r_paso in select * from
         (case when peps = 1 then 15
               else (case when (select count(*) from temp_pfae
                                where idorigen = p.idorigen and idgrupo = p.idgrupo and
-                                     idsocio = p.idsocio) > 0 then 5
-                         else (case when p.nacionalidad != 3 and
-                                         (p.razon_social is NULL or p.razon_social = '') then 1
-                                    when p.nacionalidad != 3 and
-                                         (p.razon_social is not NULL and p.razon_social != '')then 2
-                                    when p.nacionalidad  = 3 and
-                                         (p.razon_social is NULL or p.razon_social = '') then 3
-                                    when p.nacionalidad  = 3 and
-                                         (p.razon_social is not NULL and p.razon_social != '') then 4
-                               end)
+                                     idsocio = p.idsocio and p.nacionalidad != 3) > 0 then 5
+                         else (case when p.nacionalidad != 3 and (p.razon_social is NULL or p.razon_social = '') then 1
+                                    when p.nacionalidad != 3 and (p.razon_social is not NULL and p.razon_social != '')then 2
+                                    when p.nacionalidad  = 3 and (p.razon_social is NULL or p.razon_social = '') then 6
+                                    when p.nacionalidad  = 3 and (p.razon_social is not NULL and p.razon_social != '') then 4
+                              end)
                     end)
          end) as tipo_clien_usua,
+
         (case when p.nivel_riesgo = 1 then 1
               when p.nivel_riesgo = 2 then 5
               --when p.nivel_riesgo = 3 then 5
@@ -180,6 +175,9 @@ for r_paso in select * from
         end) clasi_grado_riesgo,
         count(*) as num_total_clien_usua,
         e.idestado as enti_fede_residencia,
+        (case 
+                  when pa.idpais = 1 THEN '157'
+                  else '999' end ) as pais_residencia,
         (case 
                   when p.pais_nacimiento= 2   and p.nacionalidad  = 3 then  '3'
                   when p.pais_nacimiento= 3   and p.nacionalidad  = 3 then  '4'
@@ -377,7 +375,7 @@ for r_paso in select * from
                   when p.pais_nacimiento= 195 and p.nacionalidad  = 3 then  '83'
                   when p.pais_nacimiento= 196 and p.nacionalidad  = 3 then  '117'                        
                         else  '157' end) as nacion,
-        (case when c.peps=1 then 'PEP'
+        (case when ac.peps=1 then 'PEP'
                else ' '
                end) as espep,
         tr.actividad_economica_pld as act_eco_pld
@@ -390,8 +388,8 @@ for r_paso in select * from
         inner join estados e on(e.idestado=m.idestado)
         inner join paises pa on(pa.idpais=e.idpais)
         where ax.idsocio is not null 
-        group by p.idorigen, p.idgrupo, p.idsocio,p.nacionalidad,p.razon_social,p.nivel_riesgo,e.idestado, peps, p.pais_nacimiento, tr.actividad_economica_pld) ope
-        group by tipo_clien_usua,clasi_grado_riesgo,enti_fede_residencia, espep, nacion,act_eco_pld) aa
+        group by p.idorigen, p.idgrupo, p.idsocio,p.nacionalidad,p.razon_social,p.nivel_riesgo,pa.idpais,e.idestado, peps, p.pais_nacimiento, tr.actividad_economica_pld) ope
+        group by tipo_clien_usua,clasi_grado_riesgo,enti_fede_residencia,pais_residencia, espep, nacion,act_eco_pld) aa
 loop
 
 r.anio                                    :=amo;
@@ -400,7 +398,7 @@ r.clave_de_entidad                        :=clave_enti;
 r.tipo_cliente_o_usuario                  :=trim(to_char(r_paso.tipo_clien_usua,'99'));
 r.clasificacion_grado_riesgo              :=trim(to_char(r_paso.clasi_grado_riesgo,'9'));
 r.pais_nacionalidad                       :=r_paso.nacion;
-r.pais_residencia                         :=r_paso.nacion;
+r.pais_residencia                         :=r_paso.pais_residencia;
 r.entidad_federativa_residencia           :=trim(to_char(r_paso.enti_fede_residencia,'99'));
 r.act_eco_pld                             :=(CASE 
                                                   WHEN r_paso.act_eco_pld IS NULL OR r_paso.act_eco_pld = '' THEN '0'
