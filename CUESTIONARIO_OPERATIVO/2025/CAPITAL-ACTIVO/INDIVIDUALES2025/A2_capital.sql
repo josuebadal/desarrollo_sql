@@ -283,7 +283,7 @@ create temp table temp_auxi2 as (
 
     for r_paso in
       select *
-      from (select count(*) as num_cli, tipoc, nries,nacion,enti_fede_residencia,act_eco_pld
+      from (select count(*) as num_cli, tipoc, nries,nacion,pais_residencia,enti_fede_residencia,act_eco_pld
             from (select /* (case when p.nacionalidad != 3 and (p.razon_social is NULL or p.razon_social = '') then 1
                                when p.nacionalidad != 3 and (p.razon_social is not NULL and p.razon_social != '')then 2
                                when p.nacionalidad  = 3 and (p.razon_social is NULL or p.razon_social = '') then 3
@@ -296,13 +296,13 @@ create temp table temp_auxi2 as (
                          (case when a.peps = 1 then 15
                                else (case when (select count(*) from temp_pfae
                                                 where idorigen = p.idorigen and idgrupo = p.idgrupo and
-                                                      idsocio = p.idsocio) > 0 then 5
+                                                      idsocio = p.idsocio and p.nacionalidad != 3) > 0 then 5
                                           else (case when p.nacionalidad != 3 and
                                                           (p.razon_social is NULL or p.razon_social = '') then 1
                                                      when p.nacionalidad != 3 and
                                                           (p.razon_social is not NULL and p.razon_social != '')then 2
                                                      when p.nacionalidad  = 3 and
-                                                          (p.razon_social is NULL or p.razon_social = '') then 3
+                                                          (p.razon_social is NULL or p.razon_social = '') then 6
                                                      when p.nacionalidad  = 3 and
                                                           (p.razon_social is not NULL and p.razon_social != '') then 4
                                                 end)
@@ -510,6 +510,9 @@ create temp table temp_auxi2 as (
                   when p.pais_nacimiento= 195 and p.nacionalidad  = 3 then  '83'
                   when p.pais_nacimiento= 196 and p.nacionalidad  = 3 then  '117'                        
                         else  '157' end) as nacion,
+                  (case 
+                        when pa.idpais = 1 THEN '157'
+                        else '999' end ) as pais_residencia,
                   e.idestado as enti_fede_residencia,
                   tr.actividad_economica_pld as act_eco_pld
                   from temp_auxi a 
@@ -547,6 +550,9 @@ create temp table temp_auxi2 as (
                         else 1
                      end) nries,
                      '157'as nacion,
+                     (case 
+                              when pa.idpais = 1 THEN '157'
+                              else '999' end ) as pais_residencia,
                      e.idestado as enti_fede_residencia,
                      tr.actividad_economica_pld as act_eco_pld
                 from temp_remesas a 
@@ -559,7 +565,7 @@ create temp table temp_auxi2 as (
                 where a.idcuestionario = r_prod.idelemento::integer   
 
                    ) x 
-            group by tipoc,nries,nacion,enti_fede_residencia,act_eco_pld
+            group by tipoc,nries,nacion,pais_residencia,enti_fede_residencia,act_eco_pld
             order by tipoc) aa
     loop
 
@@ -570,7 +576,7 @@ create temp table temp_auxi2 as (
       r.tipo_cliente_usuario              := r_paso.tipoc;
       r.clasificacion_grado_riesgo        := r_paso.nries;
       r.pais_nacionalidad                 := r_paso.nacion;
-      r.pais_residencia                   := r_paso.nacion;
+      r.pais_residencia                   := r_paso.pais_residencia;
       r.entidad_federativa_residencia     :=trim(to_char(r_paso.enti_fede_residencia,'99'));
       r.act_eco_pld                       :=(CASE 
                                                   WHEN r_paso.act_eco_pld IS NULL OR r_paso.act_eco_pld = '' THEN '0'
