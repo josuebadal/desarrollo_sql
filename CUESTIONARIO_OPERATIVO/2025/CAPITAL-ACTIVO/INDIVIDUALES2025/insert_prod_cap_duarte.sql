@@ -6,7 +6,7 @@ insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_oper
 insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',7,'Cartera de crédito: Crédito con garab liquida', null);
 insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',8,'Cartera de crédito: Comercial','30101,30102,30103,30104,30112,30121,30122,30201,30202,30212');
 insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',9,'Cartera de crédito: Factoraje financiero','30701, 30702, 30703');
-insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',10,'Cartera de crédito: Consumo',' 30301, 30302, 30303, 30304, 30305, 30322, 30402, 30410, 30411');
+insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',10,'Cartera de crédito: Consumo',' 30301, 30302, 30303, 30304, 30305, 30322, 30402, 30410, 30411, 30412, 30501, 30502, 30512, 30513');
 insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',11,'Cartera de crédito: Arrendamiento financiero',null);
 insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',12,'Cartera de crédito: Vivienda','30601, 30602');
 insert into tablas(idtabla, idelemento, nombre, dato2) values('cuestionario_opera_cnbv',13,'Cartera de crédito: Puente',null);
@@ -60,8 +60,6 @@ insert into tablas values ('prod_base_cuestionario_op', '35', NULL,  '30701', '0
 insert into tablas values ('prod_base_cuestionario_op', '36', NULL,  '30702', '0.01', NULL, NULL, NULL, 0);
 insert into tablas values ('prod_base_cuestionario_op', '37', NULL,  '30703', '0.01', NULL, NULL, NULL, 0);
 insert into tablas values ('prod_base_cuestionario_op', '38', NULL,  '39999', '0.01', NULL, NULL, NULL, 0); 
-
-
 
 
 ----TABLA ESTADOS

@@ -127,6 +127,28 @@ inner join estados as est ON mun.idestado = est.idestado
 inner join paises  as pa on est.idpais = pa.idpais
 where p.nacionalidad  = 3;
 
+--------- VALIDACIONES PARA EL CUESTIONARIO D1 -----------
+capitalactivo31dic25_movimientos=# select count(*) from tmp_act;
+757
+
+
+SELECT tact.idorigen, tact.idgrupo, tact.idsocio,
+col.idcolonia, col.nombre, 
+mun.idmunicipio, mun.nombre,
+est.idestado, est.nombre,
+pa.idpais, pa.nombre,
+p.lugarnacimiento,p.nacionalidad,p.razon_social,
+tr.consecutivo, tr.actividad_economica_pld
+FROM tmp_act as tact
+inner join personas as p on tact.idorigen = p.idorigen AND tact.idgrupo = p.idgrupo AND tact.idsocio = p.idsocio
+inner join trabajo as tr on tact.idorigen = tr.idorigen AND tact.idgrupo = tr.idgrupo AND tact.idsocio = tr.idsocio AND consecutivo = 1
+inner join colonias as col ON p.idcolonia = col.idcolonia
+inner join municipios as mun ON col.idmunicipio = mun.idmunicipio
+inner join estados as est ON mun.idestado = est.idestado
+inner join paises  as pa on est.idpais = pa.idpais
+;
+
+
 
 -----CAMBIO DE PASWWORD -----
 update usuario set passwd = md5('247cambio')

@@ -29,7 +29,7 @@ ON a.idproducto = pr.idproducto
 INNER JOIN v_auxiliares_d AS ad
 ON  a.idorigenp = ad.idorigenp AND a.idproducto = ad.idproducto AND a.idauxiliar = ad.idauxiliar
 WHERE a.idproducto BETWEEN 30000 AND 39999
-AND ad.fecha BETWEEN '2025-07-01 00:00:00' AND '2026-06-30 23:59:59'
+AND ad.fecha BETWEEN '2025-01-01 00:00:00' AND '2025-12-31 23:59:59'
 
 UNION ALL
 

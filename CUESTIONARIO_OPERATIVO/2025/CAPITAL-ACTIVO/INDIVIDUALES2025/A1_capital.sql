@@ -75,7 +75,9 @@ p_final   :=(amo||'12')::integer;
 
 
 
-
+------------------------------------------------------------------------------------------------------------------------
+------------------------------TABLAS PARA OBTENER LOS SOCIOS PEP
+------------------------------------------------------------------------------------------------------------------------
   drop table if exists temp_peps;
   create temp table temp_peps as
     select distinct idorigen,idgrupo,idsocio,idorigenp,idproducto,idauxiliar
@@ -93,9 +95,7 @@ p_final   :=(amo||'12')::integer;
   create index temp_peps_pkey on temp_peps (idorigen,idgrupo,idsocio,idorigenp,idproducto,idauxiliar);
 raise notice 'Se genero la tabla temp_peps';
 
-------------------------------------------------------------------------------------------------------------------------
--- MODIFICADO ----------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
+
 
   drop table if exists tmp_act_peps;
   create temp table tmp_act_peps as (
@@ -109,31 +109,11 @@ raise notice 'Se genero la tabla temp_peps';
   create index tmp_act_peps_pkey on tmp_act_peps (idorigen,idgrupo,idsocio);
 
 raise notice 'Se genero la tabla tmp_act_peps';
-/*
-drop table if exists tmp_act_peps;
-create temp table tmp_act_peps as (
-select idorigen,idgrupo,idsocio , 1 as peps,idproducto  from tmp_act 
-where (idorigen,idgrupo,idsocio) in (select idorigen,idgrupo,idsocio from temp_peps)
-union all
-select idorigen,idgrupo,idsocio , 0 as peps,idproducto  from tmp_act 
-where (idorigen,idgrupo,idsocio) not in (select idorigen,idgrupo,idsocio from temp_peps) 
-order by idorigen,idgrupo,idsocio
-);
-*/
-raise notice 'Se genero la tabla tmp_act_peps';
-
-
-
-
-
 
 
 ------------------------------------------------------------------------------------------------------------------------
-------------------------------TABLAS PARA OBTENER LOS SOCIOS PEP
+------------------------------TABLAS PARA OBTENER LOS SOCIOS PERSONAS FISICAS CON ACTIVIDAD EMPRESARIAL
 ------------------------------------------------------------------------------------------------------------------------
-
-
-
 drop table if exists temp_pfae;
 create local temp table temp_pfae as
   select distinct idorigen, idgrupo, idsocio
@@ -147,6 +127,9 @@ raise notice 'Se genero la tabla temp_pfae';
 
 
 
+------------------------------------------------------------------------------------------------------------------------
+--CONSULTA FINAL
+------------------------------------------------------------------------------------------------------------------------
 
 for r_paso in select * from
         (select tipo_clien_usua,clasi_grado_riesgo,pais_residencia,enti_fede_residencia,sum(num_total_clien_usua) as num_total_clien_usua,espep,nacion, act_eco_pld from
@@ -404,8 +387,6 @@ r.act_eco_pld                             :=(CASE
                                                   WHEN r_paso.act_eco_pld IS NULL OR r_paso.act_eco_pld = '' THEN '0'
                                                   ELSE r_paso.act_eco_pld
                                             END);
-
-
 r.numero_total_clientes                   :=trim(to_char(r_paso.num_total_clien_usua,'99999999999999999'));
 
 return next r;
