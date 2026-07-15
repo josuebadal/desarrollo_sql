@@ -171,3 +171,11 @@ INSERT INTO actividades_economicas_pld (id_actividad,descripcion,idx) VALUES ('1
 INSERT INTO actividades_economicas_pld (id_actividad,descripcion,idx) VALUES ('10000041','Comercio al por menor de productos farmacéuticos y naturistas','10000041');
 INSERT INTO actividades_economicas_pld (id_actividad,descripcion,idx) VALUES ('10000051','Comercio al por menor de combustibles','10000051');
 INSERT INTO actividades_economicas_pld (id_actividad,descripcion,idx) VALUES ('10000056','Intermediación al por mayor','10000056');
+
+
+------ ACTIVIDADES PENDIENTES NUEVAS SEGUN JESUS
+INSERT INTO actividades_economicas_pld (id_actividad,descripcion,idx) 
+VALUES ('112128','Cultivo de hortalizas','112128');
+
+INSERT INTO actividades_economicas_pld (id_actividad,descripcion,idx) 
+VALUES ('8922016','Reparación y mantenimiento de equipo electrónico y de equipo de precisión','8922016');

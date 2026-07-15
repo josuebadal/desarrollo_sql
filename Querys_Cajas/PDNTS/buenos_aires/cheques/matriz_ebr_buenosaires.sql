@@ -54,7 +54,7 @@ pr.nombre as producto,ad.fecha, ad.monto, ad.montoio, ad.montoim, ad.montoiva,
 (case 
         when ad.cargoabono = 1 then 'cargo'
         else 'abono' end ) as cargoabono,
-'creditos' as tipoprod,
+'AHORRO' as tipoprod,
 ad.idorigenc||'-'||ad.periodo||'-'||ad.idtipo||'-'||ad.idpoliza as poliza
 FROM v_auxiliares AS a
 INNER JOIN personas AS p

@@ -362,7 +362,7 @@ order by insm, tipo_oper
         r.tipo_instrumento_monetario              := trim(to_char(r_paso.insm::numeric,'99'));
         r.operac_entr_salida                      := r_paso.tipo_oper;
         r.numero_operaciones                      := trim(to_char(r_paso.num_entr_sali,'99999999999999999'));
-        r.monto_operaciones                       := trim(to_char(r_paso.monto_entr_sali::numeric,'99999999999999999'));
+        r.monto_operaciones                       := trim(to_char(r_paso.monto_entr_sali::integer,'99999999999999999'));
         return next r;
 
         insert

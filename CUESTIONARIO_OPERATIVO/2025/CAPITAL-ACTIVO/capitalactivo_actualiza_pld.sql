@@ -213,3 +213,15 @@ UPDATE trabajo SET actividad_economica_pld = '9312018' WHERE actividad_economica
 UPDATE trabajo SET actividad_economica_pld = '9331018' WHERE actividad_economica_pld LIKE '%81321';
 UPDATE trabajo SET actividad_economica_pld = '8900004' WHERE actividad_economica_pld LIKE '%81411';
 UPDATE trabajo SET actividad_economica_pld = '9400003' WHERE actividad_economica_pld LIKE '%93161';
+
+----- 2DO AVANCE CON MODIFICACIONES DE ACTIVIDADES ECOMONICAS -----
+UPDATE trabajo SET actividad_economica_pld = '112128' WHERE actividad_economica_pld LIKE '%11121';
+UPDATE trabajo SET actividad_economica_pld = '8300006' WHERE actividad_economica_pld LIKE '%23899';
+UPDATE trabajo SET actividad_economica_pld = '2400000' WHERE actividad_economica_pld LIKE '%46311';
+UPDATE trabajo SET actividad_economica_pld = '2400000' WHERE actividad_economica_pld LIKE '%46321';
+UPDATE trabajo SET actividad_economica_pld = '7129019' WHERE actividad_economica_pld LIKE '%48411';
+UPDATE trabajo SET actividad_economica_pld = '7611016' WHERE actividad_economica_pld LIKE '%51721';
+UPDATE trabajo SET actividad_economica_pld = '9119018' WHERE actividad_economica_pld LIKE '%61118';
+
+UPDATE trabajo SET actividad_economica_pld = '10000001' WHERE actividad_economica_pld LIKE '%71312';
+UPDATE trabajo SET actividad_economica_pld = '8922016' WHERE actividad_economica_pld LIKE '%81121';

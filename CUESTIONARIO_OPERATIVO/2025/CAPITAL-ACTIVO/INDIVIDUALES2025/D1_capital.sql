@@ -13,7 +13,7 @@ create type numero_operaciones_producto_servicio_por_canal_envio as (
     tipo_canal                          integer,
     operacion_entrada_salida            integer,
     num_operaciones                     integer,
-    monto_operaciones                   varchar
+    monto_operaciones                   numeric
 );
 
 create or replace function cuestionario_d1 (integer,integer)
@@ -106,7 +106,7 @@ drop table if exists tmp_act_x;
          inner join temp_productos te using(idproducto)
          inner join tmp_act ta using (idorigen, idgrupo, idsocio)
          inner join polizas        po using (idorigenc,periodo,idtipo,idpoliza)
-         where --ad.tipomov = 0 and ad.idtipo in (1,2,3) and 
+         where ad.tipomov = 0 and ad.idtipo in (1,2,3) and 
         ad.periodo:: integer between p_inicial and p_final
          UNION  
          select ad.*, te.idcuestionario, po.concepto
@@ -115,7 +115,7 @@ drop table if exists tmp_act_x;
          inner join temp_productos te using(idproducto)
          inner join tmp_act ta using (idorigen, idgrupo, idsocio)
          inner join polizas        po using (idorigenc,periodo,idtipo,idpoliza)
-         where --ad.tipomov = 0 and ad.idtipo in (1,2,3) and 
+         where ad.tipomov = 0 and ad.idtipo in (1,2,3) and 
          ad.periodo:: integer between p_inicial and p_final);
 
         CREATE INDEX index_temp_auxi_d1
@@ -124,7 +124,7 @@ drop table if exists tmp_act_x;
 
         ---------------------------------------------------------------
         --BANCA MOVIL NO UTLIZA LA SOFIPO------
-    /*    drop table if exists temp_auxi_bk;
+       drop table if exists temp_auxi_bk;
     create temp table temp_auxi_bk as 
         (select ad.*, te.idcuestionario, po.concepto
          from auxiliares_d ad 
@@ -144,13 +144,13 @@ drop table if exists tmp_act_x;
          where po.idusuario=banca_usu 
          and ad.periodo:: integer between p_inicial and p_final);
         raise notice 'Se genero la tabla temp_auxi_bk';
-    */
+    
 
       ----------------------------------------------------------------------------
       --TABLA TEMPORAL DE REMESAS PARA LOS PRODUCTOS DE ORDENES DE PAGO NACIONALES
       ----------------------------------------------------------------------------
 
-    /*    drop table if exists temp_remesas_d;
+        drop table if exists temp_remesas_d;
     create temp table temp_remesas_d  (
             idorigenc       integer,
             periodo             varchar,
@@ -190,7 +190,7 @@ and idelemento in ('27','28','29') order by idelemento::integer
 
       
  end loop; 
- */
+
 
 
 
@@ -212,7 +212,7 @@ and idelemento in ('27','28','29') order by idelemento::integer
 
     raise notice 'Cuestionario Operativo CNBV por CLIENTE:  %', r_prod.nombre;
 
-    IF (r_prod.dato2 is not null and TRIM(r_prod.dato2) <> '' --or r_prod.idelemento::integer=27
+    IF (r_prod.dato2 is not null and TRIM(r_prod.dato2) <> '' or r_prod.idelemento::integer=27
     ) THEN --****Agregué el or para que permita ingresar el prod 27 (ordenes de pagos nacionales)****
 
     for r_paso in 

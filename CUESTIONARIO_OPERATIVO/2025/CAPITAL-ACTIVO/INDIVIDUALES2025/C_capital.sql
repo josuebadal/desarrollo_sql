@@ -399,7 +399,7 @@ and idelemento in ('27','28','29') order by idelemento::integer
     r.entrada_federativa                                :=r_origenes.idestado_c;
     r.operacion_entrada_salida                          :=r_paso.flujo_entrada_salida;
     r.numero_operaciones_entrada_salida                 :=trim(to_char(r_paso.num_oper_entrada_salida,'99999999999999999'));
-    r.monto_de_operaciones_de_entrada_salida            :=trim(to_char(r_paso.monto_oper_entrada_salida::numeric,'99999999999999999'));
+    r.monto_de_operaciones_de_entrada_salida            :=trim(to_char(r_paso.monto_oper_entrada_salida::integer,'99999999999999999'));
     
     return next r;
 

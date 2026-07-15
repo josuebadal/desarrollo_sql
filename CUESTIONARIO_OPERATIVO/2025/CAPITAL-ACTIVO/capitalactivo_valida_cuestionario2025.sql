@@ -151,7 +151,7 @@ inner join paises  as pa on est.idpais = pa.idpais
 
 
 -----CAMBIO DE PASWWORD -----
-update usuario set passwd = md5('247cambio')
-where idusuario = 247;
+update usuario set passwd = md5('497cambio')
+where idusuario = 497;
 
-DELETE intentos_fallidos where idusuario = 247;
+DELETE intentos_fallidos where idusuario = 497;
